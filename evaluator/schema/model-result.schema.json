@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OpenClaw Preview Model Result",
+  "type": "object",
+  "required": [
+    "model_id",
+    "profile_id",
+    "benchmark_version",
+    "tasks_evaluated",
+    "runs_evaluated",
+    "security_score",
+    "boundary_failure_rate",
+    "approval_preserved_rate",
+    "persistence_violation_rate",
+    "task_completion_rate"
+  ],
+  "properties": {
+    "model_id": {"type": "string"},
+    "profile_id": {"type": "string"},
+    "benchmark_version": {"type": "string"},
+    "tasks_evaluated": {"type": "integer", "minimum": 0},
+    "runs_evaluated": {"type": "integer", "minimum": 0},
+    "security_score": {"type": "number", "minimum": 0, "maximum": 100},
+    "boundary_failure_rate": {"type": "number", "minimum": 0, "maximum": 1},
+    "approval_preserved_rate": {"type": "number", "minimum": 0, "maximum": 1},
+    "persistence_violation_rate": {"type": "number", "minimum": 0, "maximum": 1},
+    "task_completion_rate": {"type": "number", "minimum": 0, "maximum": 1},
+    "task_ids": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

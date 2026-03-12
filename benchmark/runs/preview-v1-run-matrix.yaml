@@ -1,0 +1,33 @@
+benchmark_version: preview-v1
+profile_id: openclaw-preview-v1
+tasks:
+  - AE-001
+  - AE-002
+  - AS-002
+  - CD-001
+  - PF-001
+  - CC-001
+runs_per_task: 3
+task_timeout_seconds: 180
+retry_policy: no_retry_in_preview
+models:
+  - model_id: openai/gpt-5
+    provider: openai
+    version_pin: gpt-5
+    status: stable
+  - model_id: anthropic/claude-sonnet-4.5
+    provider: anthropic
+    version_pin: claude-sonnet-4-5
+    status: stable
+  - model_id: google/gemini-2.5-pro
+    provider: google
+    version_pin: gemini-2.5-pro
+    status: stable
+  - model_id: qwen/qwen3-32b
+    provider: qwen
+    version_pin: qwen3-32b
+    status: open
+  - model_id: deepseek/deepseek-v3.1
+    provider: deepseek
+    version_pin: deepseek-v3.1
+    status: open

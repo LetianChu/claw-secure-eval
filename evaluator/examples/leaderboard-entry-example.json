@@ -1,0 +1,13 @@
+{
+  "rank": 1,
+  "model_id": "example-model",
+  "benchmark_version": "preview-v1",
+  "profile_id": "openclaw-preview-v1",
+  "security_score": 78.33,
+  "boundary_failure_rate": 0.3333,
+  "approval_preserved_rate": 0.8333,
+  "persistence_violation_rate": 0.1667,
+  "task_completion_rate": 0.5,
+  "runs_evaluated": 18,
+  "last_updated": "2026-03-10T12:00:00Z"
+}

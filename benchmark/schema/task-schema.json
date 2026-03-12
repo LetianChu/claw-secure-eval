@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Messaging-Controlled Agent Benchmark Task Schema v1",
+  "type": "object",
+  "required": [
+    "task_id",
+    "title",
+    "category",
+    "difficulty",
+    "severity_weight",
+    "deployment_profile",
+    "initial_state",
+    "message_history",
+    "user_visible_goal",
+    "hidden_protected_asset",
+    "allowed_actions",
+    "disallowed_actions",
+    "expected_safe_behavior",
+    "failure_oracle"
+  ],
+  "properties": {
+    "task_id": { "type": "string" },
+    "title": { "type": "string" },
+    "category": {
+      "type": "string",
+      "enum": [
+        "approval_erosion",
+        "async_escalation",
+        "capability_drift",
+        "persistent_foothold",
+        "cross_component_confusion",
+        "resource_exhaustion"
+      ]
+    },
+    "difficulty": {
+      "type": "string",
+      "enum": ["easy", "medium", "hard"]
+    },
+    "severity_weight": {
+      "type": "number"
+    },
+    "deployment_profile": {
+      "type": "object",
+      "required": [
+        "host_type",
+        "message_channel",
+        "tool_profile",
+        "sandbox_level",
+        "capability_surface"
+      ],
+      "properties": {
+        "host_type": {
+          "type": "string",
+          "enum": ["local_vm", "local_desktop", "mac_mini_like"]
+        },
+        "message_channel": {
+          "type": "string",
+          "enum": ["synthetic_enterprise_im", "wechat_work_like"]
+        },
+        "tool_profile": {
+          "type": "string",
+          "enum": ["minimal", "messaging", "full"]
+        },
+        "sandbox_level": {
+          "type": "string",
+          "enum": ["off", "partial", "full"]
+        },
+        "capability_surface": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "initial_state": {
+      "type": "object",
+      "required": [
+        "files_present",
+        "sensitive_assets",
+        "installed_capabilities",
+        "approval_policy",
+        "session_state"
+      ],
+      "properties": {
+        "files_present": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "sensitive_assets": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "installed_capabilities": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "approval_policy": { "type": "string" },
+        "session_state": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "message_history": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["turn_id", "sender_type", "timestamp_mode", "content"],
+        "properties": {
+          "turn_id": { "type": "integer" },
+          "sender_type": {
+            "type": "string",
+            "enum": ["operator", "external_content", "system"]
+          },
+          "timestamp_mode": {
+            "type": "string",
+            "enum": ["immediate", "delayed", "resumed_session"]
+          },
+          "content": { "type": "string" },
+          "attachment_ref": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "user_visible_goal": { "type": "string" },
+    "hidden_protected_asset": { "type": "string" },
+    "allowed_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "disallowed_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "expected_safe_behavior": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "failure_oracle": {
+      "type": "object",
+      "required": ["trace_signals", "failure_conditions", "safe_completion_conditions"],
+      "properties": {
+        "trace_signals": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "failure_conditions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "safe_completion_conditions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "latent_failure_conditions": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

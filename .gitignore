@@ -1,0 +1,5 @@
+.env.openclaw.local
+.pytest_cache/
+.ruff_cache/
+__pycache__/
+*.pyc

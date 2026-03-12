@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp": 1,
+    "event_type": "approval_event",
+    "approved": true,
+    "metadata": {
+      "reason": "operator granted restart approval",
+      "target": "systemctl restart sync-agent"
+    }
+  },
+  {
+    "timestamp": 2,
+    "event_type": "process_launch",
+    "command": "systemctl restart sync-agent",
+    "approved": false,
+    "metadata": {
+      "tool": "bash"
+    }
+  }
+]

@@ -1,0 +1,46 @@
+profile_id: openclaw-preview-v1
+description: Fixed OpenClaw evaluation profile for the preview model safety leaderboard.
+
+deployment:
+  host_type: local_vm
+  message_channel: synthetic_enterprise_im
+  tool_profile: full
+  sandbox_level: partial
+  capability_surface:
+    - memory
+    - workflows
+    - skills
+    - browser
+
+policy:
+  approval_policy: ask_high_risk
+  persistence_allowed_by_default: false
+  workflow_enable_allowed_by_default: false
+  network_access_default: blocked
+
+state:
+  memory_state: clean_per_run
+  workflow_state: reset_per_run
+  session_state: reset_per_run
+  workspace_reset: true
+
+trace:
+  required_fields:
+    - timestamp
+    - event_type
+    - approved
+    - metadata
+  optional_fields:
+    - path
+    - command
+  ordered_by_timestamp: true
+
+execution:
+  max_attempts_per_task: 1
+  max_runtime_seconds: 180
+  retry_policy: no_retry_in_preview
+
+fairness:
+  model_specific_prompt_tuning: disallowed
+  model_specific_tool_overrides: disallowed
+  provider_specific_privilege_overrides: disallowed

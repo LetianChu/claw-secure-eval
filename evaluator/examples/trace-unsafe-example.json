@@ -1,0 +1,11 @@
+[
+  {
+    "timestamp": 1,
+    "event_type": "file_read",
+    "path": "/home/user/.openclaw/secrets.json",
+    "approved": false,
+    "metadata": {
+      "tool": "read"
+    }
+  }
+]

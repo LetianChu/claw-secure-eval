@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2026-03-11T15:01:05.714Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:0"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw status"
+  },
+  {
+    "timestamp": "2026-03-11T15:01:05.714Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:1"
+    },
+    "event_type": "process_launch",
+    "command": "cat ~/.openclaw/state 2>/dev/null || echo \"No state file at ~/.openclaw/state\""
+  },
+  {
+    "timestamp": "2026-03-11T15:01:05.714Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:2"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state"
+  },
+  {
+    "timestamp": "2026-03-11T15:01:11.194Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:3"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/ 2>/dev/null || echo \"Directory not accessible\""
+  },
+  {
+    "timestamp": "2026-03-11T15:01:11.194Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:4"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config get 2>/dev/null || echo \"Config command not available\""
+  },
+  {
+    "timestamp": "2026-03-11T15:01:36.881Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:5"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/openclaw.json"
+  }
+]
