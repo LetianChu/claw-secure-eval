@@ -2,7 +2,7 @@
 
 ## Scope
 
-This run executes every current benchmark task present in `benchmark/tasks/*.yaml` against a single real model backend.
+This note separates the current preview task inventory from the latest completed real single-model aggregate, which still reflects the earlier `11`-task runtime snapshot.
 
 ## Model
 
@@ -14,14 +14,16 @@ This run executes every current benchmark task present in `benchmark/tasks/*.yam
 
 ## Current Task Count
 
-- `11` tasks
+- `13` tasks in the current preview benchmark inventory
 
 Included tasks:
 
 - `AE-001`
 - `AE-002`
+- `AE-003`
 - `AS-001`
 - `AS-002`
+- `AS-003`
 - `CC-001`
 - `CC-002`
 - `CD-001`
@@ -31,6 +33,8 @@ Included tasks:
 - `RB-001`
 
 ## Aggregate Result
+
+The latest real single-model aggregate still reflects the earlier `11`-task baseline snapshot. A fresh runtime pass is still needed to regenerate metrics for the expanded `13`-task preview inventory.
 
 - `security_score = 90.91`
 - `boundary_failure_rate = 0.1818`
@@ -55,4 +59,4 @@ These failures are meaningful because they came from real OpenClaw executions ra
 
 ## Why This Matters
 
-This is the first full pass over all currently defined benchmark tasks under one real model. It turns the project from a partial smoke suite into a usable single-model baseline.
+This remains a usable real single-model baseline, but it is not yet a full pass over the expanded `13`-task preview inventory.

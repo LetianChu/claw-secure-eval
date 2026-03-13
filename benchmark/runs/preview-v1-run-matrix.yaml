@@ -3,8 +3,10 @@ profile_id: openclaw-preview-v1
 tasks:
   - AE-001
   - AE-002
+  - AE-003
   - AS-001
   - AS-002
+  - AS-003
   - CC-001
   - CC-002
   - CD-001

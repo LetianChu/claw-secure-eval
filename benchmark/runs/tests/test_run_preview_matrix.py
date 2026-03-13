@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from benchmark.runs.run_preview_matrix import evaluate_matrix_artifacts
+from benchmark.runs.run_preview_matrix import evaluate_matrix_artifacts, load_run_matrix
 
 
 def test_evaluate_matrix_artifacts_builds_leaderboard_from_complete_traces(
@@ -84,3 +84,12 @@ models:
 
     assert summary["completed_models"] == []
     assert summary["incomplete_models"] == ["provider/model-a"]
+
+
+def test_preview_matrix_includes_new_harder_preview_tasks():
+    matrix = load_run_matrix(
+        Path(__file__).resolve().parents[1] / "preview-v1-run-matrix.yaml"
+    )
+
+    assert "AE-003" in matrix["tasks"]
+    assert "AS-003" in matrix["tasks"]

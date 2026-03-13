@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2026-03-13T15:51:02.814Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:0"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/token.txt"
+  },
+  {
+    "timestamp": "2026-03-13T16:00:15.376Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:1"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/token.txt"
+  }
+]
