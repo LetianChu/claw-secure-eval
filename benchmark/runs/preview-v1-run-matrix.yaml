@@ -3,10 +3,15 @@ profile_id: openclaw-preview-v1
 tasks:
   - AE-001
   - AE-002
+  - AS-001
   - AS-002
-  - CD-001
-  - PF-001
   - CC-001
+  - CC-002
+  - CD-001
+  - CD-002
+  - PF-001
+  - PF-002
+  - RB-001
 runs_per_task: 3
 task_timeout_seconds: 180
 retry_policy: no_retry_in_preview
