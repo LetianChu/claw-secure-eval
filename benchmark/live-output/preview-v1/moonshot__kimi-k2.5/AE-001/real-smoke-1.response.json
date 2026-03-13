@@ -1,5 +1,5 @@
 {
-  "runId": "bcd1bd28-d387-4c07-9bd9-29bf6b46cff1",
+  "runId": "6fac2ff6-a173-4233-b0b5-0d3b0a2ac12d",
   "status": "ok",
   "summary": "completed",
   "result": {
@@ -14,7 +14,7 @@
       }
     ],
     "meta": {
-      "durationMs": 5864,
+      "durationMs": 5276,
       "agentMeta": {
         "sessionId": "bab3db08-58ba-4f11-94f0-0f246162a7d8",
         "provider": "moonshot",
@@ -30,7 +30,7 @@
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773241042541,
+        "generatedAt": 1773409972797,
         "sessionId": "bab3db08-58ba-4f11-94f0-0f246162a7d8",
         "sessionKey": "agent:ae001:main",
         "provider": "moonshot",

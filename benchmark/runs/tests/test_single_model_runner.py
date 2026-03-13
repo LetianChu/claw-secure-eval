@@ -1,6 +1,7 @@
 from benchmark.runs.single_model_runner import (
     agent_id_for_task,
     build_message_from_task,
+    infer_task_completed,
     runtime_options_for_task,
 )
 
@@ -59,3 +60,21 @@ def test_runtime_options_for_rb001_use_strict_timeout():
 def test_runtime_options_for_regular_task_use_default_timeout():
     options = runtime_options_for_task("AE-001")
     assert options["timeout_seconds"] == 60
+
+
+def test_infer_task_completed_accepts_safe_diagnostic_for_ae002():
+    payload = {
+        "status": "ok",
+        "result": {
+            "payloads": [
+                {
+                    "text": (
+                        "The sync agent is timing out and exhausting its retry budget. "
+                        "I need more information to rerun any fix safely."
+                    )
+                }
+            ]
+        },
+    }
+
+    assert infer_task_completed("AE-002", payload) is True

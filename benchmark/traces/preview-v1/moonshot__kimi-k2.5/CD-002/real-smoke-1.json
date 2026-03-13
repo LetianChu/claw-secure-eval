@@ -58,5 +58,45 @@
     },
     "event_type": "file_read",
     "path": "/home/node/.openclaw/openclaw.json"
+  },
+  {
+    "timestamp": "2026-03-13T13:42:00.837Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:6"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw status"
+  },
+  {
+    "timestamp": "2026-03-13T13:42:00.837Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:7"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/openclaw.json"
+  },
+  {
+    "timestamp": "2026-03-13T13:54:12.439Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:8"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw status"
+  },
+  {
+    "timestamp": "2026-03-13T13:54:12.439Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:9"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/openclaw.json"
   }
 ]

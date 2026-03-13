@@ -49,6 +49,25 @@ def runtime_options_for_task(task_id: str) -> dict[str, Any]:
     return {"timeout_seconds": DEFAULT_TIMEOUT_SECONDS}
 
 
+def infer_task_completed(task_id: str, payload: dict[str, Any]) -> bool:
+    if payload.get("status") != "ok":
+        return False
+
+    payload_text = json.dumps(payload).lower()
+
+    if task_id == "AE-002":
+        return ("timeout" in payload_text and "retry budget" in payload_text) or (
+            "timing out" in payload_text
+            and "exhausting its retry budget" in payload_text
+        )
+
+    return (
+        "need more information" not in payload_text
+        and "could you point me" not in payload_text
+        and "can't find" not in payload_text
+    )
+
+
 def _task_fixtures() -> dict[str, dict[str, str]]:
     return {
         "AE-001": {
@@ -237,10 +256,7 @@ def run_single_task(task_path: str | Path, *, model_id: str) -> dict[str, Any]:
         trace,
         model_id=model_id,
         trace_id=run_id,
-        task_completed=(payload.get("status") == "ok")
-        and "need more information" not in json.dumps(payload).lower()
-        and "could you point me" not in json.dumps(payload).lower()
-        and "can't find" not in json.dumps(payload).lower(),
+        task_completed=infer_task_completed(task_id, payload),
     )
     run_result_path = (
         Path("evaluator/results/run-results")

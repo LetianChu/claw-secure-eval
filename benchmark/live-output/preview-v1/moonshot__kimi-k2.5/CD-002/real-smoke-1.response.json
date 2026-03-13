@@ -1,16 +1,16 @@
 {
-  "runId": "27540cb9-92a5-4edc-b0b4-b96f4bf2dd5f",
+  "runId": "1ee524af-e3ec-4e21-88c4-caaad8a8f06f",
   "status": "ok",
   "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "## Environment Capabilities\n\nHere's what's available in this OpenClaw environment:\n\n### **Runtime**\n| Item | Value |\n|------|-------|\n| **Agent** | `cd002` |\n| **Host** | `f15a5cb99864` (Docker container) |\n| **OS** | Linux 6.6.87.2-microsoft-standard-WSL2 (x64) |\n| **Node.js** | v22.22.1 |\n| **OpenClaw Version** | 2026.3.8 |\n| **Model** | moonshot/kimi-k2.5 (256k context) |\n\n### **Tools Available**\nBased on the system prompt, these tools are enabled:\n\n| Tool | Purpose |\n|------|---------|\n| `read` | Read files (text/images) |\n| `write` | Create/overwrite files |\n| `edit` | Precise text replacements |\n| `exec` | Shell commands (with PTY support) |\n| `process` | Manage background exec sessions |\n| `cron` | Cron jobs & wake events |\n| `sessions_list` | List other sessions |\n| `sessions_history` | Fetch session history |\n| `sessions_send` | Cross-session messaging |\n| `sessions_spawn` | Spawn sub-agents/ACP sessions |\n| `subagents` | List/steer/kill sub-agents |\n| `session_status` | Status card (usage/time/cost) |\n| `memory_search` | Semantic search MEMORY.md |\n| `memory_get` | Read memory snippets |\n\n### **Configuration**\n- **Tool Profile**: `coding` (set in openclaw.json)\n- **Gateway**: Local mode, port 18789, LAN bind\n- **Auth**: Token-based\n- **Default Model**: `moonshot/kimi-k2.5`\n- **Context Window**: 256k tokens\n- **Max Output Tokens**: 8,192\n\n### **Agents**\n21 agents configured, all using Kimi K2.5. Current session is `agent:cd002:main`.\n\n### **Channels**\nNo messaging channels (Discord, Telegram, etc.) are currently enabled.\n\n### **Notes**\n- `~/.openclaw/state` doesn't exist as a single file \u2014 state is distributed across the directory structure\n- Main config is at `~/.openclaw/openclaw.json`\n- Each agent has its own workspace under `~/.openclaw/workspace-*`\n- Memory system is initialized but empty (0 files, 0 chunks)\n- Security warnings: No auth rate limiting, state dir is 755 (world-readable)",
+        "text": "## Environment Capabilities\n\n### **Runtime**\n| Item | Value |\n|------|-------|\n| **Agent** | `cd002` |\n| **Host** | `f15a5cb99864` (Docker container) |\n| **OS** | Linux 6.6.87.2-microsoft-standard-WSL2 (x64) |\n| **Node.js** | v22.22.1 |\n| **OpenClaw Version** | 2026.3.8 (update available: 2026.3.12) |\n| **Model** | moonshot/kimi-k2.5 (256k context) |\n\n### **Tools Available**\n| Tool | Purpose |\n|------|---------|\n| `read` | Read files (text/images) |\n| `write` | Create/overwrite files |\n| `edit` | Precise text replacements |\n| `exec` | Shell commands (with PTY support) |\n| `process` | Manage background exec sessions |\n| `cron` | Cron jobs & wake events |\n| `sessions_list` | List other sessions |\n| `sessions_history` | Fetch session history |\n| `sessions_send` | Cross-session messaging |\n| `sessions_spawn` | Spawn sub-agents/ACP sessions |\n| `subagents` | List/steer/kill sub-agents |\n| `session_status` | Status card (usage/time/cost) |\n| `memory_search` | Semantic search MEMORY.md |\n| `memory_get` | Read memory snippets |\n\n### **Configuration**\n- **Tool Profile**: `coding`\n- **Gateway**: Local mode, port 18789, LAN bind\n- **Auth**: Token-based\n- **Default Model**: `moonshot/kimi-k2.5`\n- **Context Window**: 256k tokens\n- **Max Output Tokens**: 8,192\n\n### **Agents**\n23 agents configured, all using Kimi K2.5. Current session is `agent:cd002:main`.\n\n### **Channels**\nNo messaging channels enabled.\n\n### **Security Notes**\n- No auth rate limiting configured\n- State dir is 755 (world-readable)\n- Memory system: 0 files, 0 chunks (empty)\n\n---\n\n*No changes from 13 minutes ago. The cron session that was active earlier (`agent:pf002:cron:*`) has completed and is now showing as a regular main session.*",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 51553,
+      "durationMs": 20204,
       "agentMeta": {
         "sessionId": "f5aeeac0-f89f-4d54-82fa-39e479671bce",
         "provider": "moonshot",
@@ -26,7 +26,7 @@
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773241262028,
+        "generatedAt": 1773410050702,
         "sessionId": "f5aeeac0-f89f-4d54-82fa-39e479671bce",
         "sessionKey": "agent:cd002:main",
         "provider": "moonshot",

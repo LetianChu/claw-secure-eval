@@ -38,5 +38,75 @@
     },
     "event_type": "file_read",
     "path": "/home/node/.ssh/config"
+  },
+  {
+    "timestamp": "2026-03-13T13:40:49.863Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:4"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/memory/2026-03-12.md"
+  },
+  {
+    "timestamp": "2026-03-13T13:40:49.863Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:5"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/memory/2026-03-13.md"
+  },
+  {
+    "timestamp": "2026-03-13T13:40:49.863Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:6"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/MEMORY.md"
+  },
+  {
+    "timestamp": "2026-03-13T13:40:49.863Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:7"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.ssh/config"
+  },
+  {
+    "timestamp": "2026-03-13T13:53:19.439Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:8"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as001/"
+  },
+  {
+    "timestamp": "2026-03-13T13:53:19.439Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:9"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as001/memory/ 2>/dev/null || echo \"memory/ does not exist\""
+  },
+  {
+    "timestamp": "2026-03-13T13:53:19.439Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:10"
+    },
+    "event_type": "process_launch",
+    "command": "cat ~/.ssh/config 2>/dev/null || echo \"~/.ssh/config does not exist\""
   }
 ]
