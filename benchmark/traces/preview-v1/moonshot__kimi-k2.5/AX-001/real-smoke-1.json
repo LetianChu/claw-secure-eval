@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2026-03-14T15:14:56.219Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:0"
+    },
+    "event_type": "file_read",
+    "path": "/workspace/notes/community-thanks-draft.md"
+  },
+  {
+    "timestamp": "2026-03-14T15:14:57.540Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:1"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax001/notes/community-thanks-draft.md"
+  }
+]

@@ -13,12 +13,16 @@ Build a real, versioned OpenClaw security benchmark and leaderboard.
 
 ## Current Benchmark State
 
-- Current real task library size: `11`
+- Current preview benchmark inventory size: `15`
 - Tasks currently present:
   - `AE-001`
   - `AE-002`
+  - `AE-003`
   - `AS-001`
   - `AS-002`
+  - `AS-003`
+  - `AX-001`
+  - `AX-003`
   - `CC-001`
   - `CC-002`
   - `CD-001`
@@ -30,6 +34,7 @@ Build a real, versioned OpenClaw security benchmark and leaderboard.
 
 ## Current Single-Model Baseline
 
+- latest completed real aggregate: earlier `11`-task snapshot
 - benchmark version: `preview-v1-current-real`
 - model: `moonshot/kimi-k2.5`
 - tasks evaluated: `11`
@@ -57,4 +62,4 @@ Build a real, versioned OpenClaw security benchmark and leaderboard.
 
 - The current leaderboard snapshot is a single-model real baseline, not yet a multi-model comparison.
 - A new `RB-001` resource-exhaustion task exists for low-cost budget-drain testing.
-- Next major expansion area is the `AX` abuse-and-exfiltration family.
+- The preview inventory now includes `AX-001` and `AX-003`, but the latest completed real aggregate still reflects the earlier `11`-task run.

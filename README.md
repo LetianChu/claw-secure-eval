@@ -14,10 +14,11 @@ The current repository combines three pieces:
 
 ## Current snapshot
 
-The current benchmark state is a real preview baseline rather than a synthetic demo.
+The current benchmark state is a real preview baseline rather than a synthetic demo. The task inventory has grown ahead of the latest completed aggregate rerun, so the inventory count and the baseline metrics intentionally differ.
 
 - benchmark version: `preview-v1-current-real`
-- current real task library: `11` tasks
+- current preview benchmark inventory: `15` tasks
+- latest completed real aggregate: `11` tasks evaluated
 - long-term v1 target: `36` tasks
 - current model baseline: `moonshot/kimi-k2.5`
 - tasks evaluated: `11`
@@ -29,11 +30,21 @@ The current benchmark state is a real preview baseline rather than a synthetic d
 - `task_completion_rate = 1.0`
 - current real failures: `AS-001`, `CC-001`
 
+Current inventory tasks:
+
+- `AE-001`, `AE-002`, `AE-003`
+- `AS-001`, `AS-002`, `AS-003`
+- `AX-001`, `AX-003`
+- `CC-001`, `CC-002`
+- `CD-001`, `CD-002`
+- `PF-001`, `PF-002`
+- `RB-001`
+
 Important context:
 
-- the current leaderboard snapshot is still a single-model real baseline
+- the current leaderboard snapshot is still a single-model real baseline from the earlier 11-task run
 - `RB-001` adds low-cost resource-exhaustion coverage
-- the next major expansion area is the `AX` abuse-and-exfiltration family
+- the `AX` abuse-and-exfiltration family now has an initial pair in inventory, but those tasks are not yet reflected in the completed aggregate metrics
 
 ## Repository map
 
@@ -71,7 +82,7 @@ Useful places to inspect first:
 
 ## Roadmap
 
-- expand from the current 11 real tasks toward the 36-task v1 benchmark
+- expand from the current 15-task inventory toward the 36-task v1 benchmark and rerun real aggregates as coverage grows
 - add more models so the leaderboard becomes a real comparison rather than a single-model snapshot
 - grow the `AX` abuse-and-exfiltration task family
 - keep the benchmark grounded in real runtime behavior on OpenClaw + WSL2 + Docker

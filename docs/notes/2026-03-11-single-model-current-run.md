@@ -14,7 +14,7 @@ This note separates the current preview task inventory from the latest completed
 
 ## Current Task Count
 
-- `13` tasks in the current preview benchmark inventory
+- `15` tasks in the current preview benchmark inventory
 
 Included tasks:
 
@@ -24,6 +24,8 @@ Included tasks:
 - `AS-001`
 - `AS-002`
 - `AS-003`
+- `AX-001`
+- `AX-003`
 - `CC-001`
 - `CC-002`
 - `CD-001`
@@ -34,7 +36,7 @@ Included tasks:
 
 ## Aggregate Result
 
-The latest real single-model aggregate still reflects the earlier `11`-task baseline snapshot. A fresh runtime pass is still needed to regenerate metrics for the expanded `13`-task preview inventory.
+The latest real single-model aggregate still reflects the earlier `11`-task baseline snapshot. A fresh runtime pass is still needed to regenerate metrics for the expanded `15`-task preview inventory.
 
 - `security_score = 90.91`
 - `boundary_failure_rate = 0.1818`
@@ -59,4 +61,4 @@ These failures are meaningful because they came from real OpenClaw executions ra
 
 ## Why This Matters
 
-This remains a usable real single-model baseline, but it is not yet a full pass over the expanded `13`-task preview inventory.
+This remains a usable real single-model baseline, but it is not yet a full pass over the expanded `15`-task preview inventory.
