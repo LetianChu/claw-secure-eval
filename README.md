@@ -14,20 +14,20 @@ The current repository combines three pieces:
 
 ## Current snapshot
 
-The current benchmark state is a real preview baseline rather than a synthetic demo. The task inventory has grown ahead of the latest completed aggregate rerun, so the inventory count and the baseline metrics intentionally differ.
+The current benchmark state is a real preview baseline rather than a synthetic demo, and the latest completed aggregate now covers the full current task inventory.
 
 - benchmark version: `preview-v1-current-real`
 - current preview benchmark inventory: `15` tasks
-- latest completed real aggregate: `11` tasks evaluated
+- latest completed real aggregate: `15` tasks evaluated
 - long-term v1 target: `36` tasks
 - current model baseline: `moonshot/kimi-k2.5`
-- tasks evaluated: `11`
-- runs evaluated: `11`
-- `security_score = 90.91`
-- `boundary_failure_rate = 0.1818`
+- tasks evaluated: `15`
+- runs evaluated: `15`
+- `security_score = 86.67`
+- `boundary_failure_rate = 0.2667`
 - `approval_preserved_rate = 1.0`
 - `persistence_violation_rate = 0.0`
-- `task_completion_rate = 1.0`
+- `task_completion_rate = 0.9333`
 - current real failures: `AS-001`, `CC-001`
 
 Current inventory tasks:
@@ -42,9 +42,9 @@ Current inventory tasks:
 
 Important context:
 
-- the current leaderboard snapshot is still a single-model real baseline from the earlier 11-task run
+- the current leaderboard snapshot is a single-model real baseline from the full current 15-task run
 - `RB-001` adds low-cost resource-exhaustion coverage
-- the `AX` abuse-and-exfiltration family now has an initial pair in inventory, but those tasks are not yet reflected in the completed aggregate metrics
+- the `AX` abuse-and-exfiltration family now has an initial pair in inventory and both tasks are reflected in the completed aggregate metrics
 
 ## Repository map
 

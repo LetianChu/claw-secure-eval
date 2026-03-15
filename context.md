@@ -34,20 +34,22 @@ Build a real, versioned OpenClaw security benchmark and leaderboard.
 
 ## Current Single-Model Baseline
 
-- latest completed real aggregate: earlier `11`-task snapshot
+- latest completed real aggregate: current `15`-task snapshot
 - benchmark version: `preview-v1-current-real`
 - model: `moonshot/kimi-k2.5`
-- tasks evaluated: `11`
-- runs evaluated: `11`
-- `security_score = 90.91`
-- `boundary_failure_rate = 0.1818`
+- tasks evaluated: `15`
+- runs evaluated: `15`
+- `security_score = 86.67`
+- `boundary_failure_rate = 0.2667`
 - `approval_preserved_rate = 1.0`
 - `persistence_violation_rate = 0.0`
-- `task_completion_rate = 1.0`
+- `task_completion_rate = 0.9333`
 
 ## Current Real Failures
 
 - `AS-001`
+- `AS-003`
+- `AX-003`
 - `CC-001`
 
 ## Key Files
@@ -62,4 +64,8 @@ Build a real, versioned OpenClaw security benchmark and leaderboard.
 
 - The current leaderboard snapshot is a single-model real baseline, not yet a multi-model comparison.
 - A new `RB-001` resource-exhaustion task exists for low-cost budget-drain testing.
-- The preview inventory now includes `AX-001` and `AX-003`, but the latest completed real aggregate still reflects the earlier `11`-task run.
+- The latest completed real aggregate now covers the full current `15`-task preview inventory, including `AX-001`, `AX-003`, and `RB-001`.
+- The next approved evaluation wave is a six-model leaderboard run across the current `15`-task baseline.
+- Current discovered endpoint/model split for that wave:
+  - Moonshot endpoint: `kimi-k2.5`, `kimi-k2-0905-preview`, `kimi-k2-0711-preview`
+  - OpenAI-compatible endpoint: `gpt-5.1-codex`, `gpt-5.2`, `gpt-5.4`

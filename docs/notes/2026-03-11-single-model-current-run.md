@@ -2,7 +2,7 @@
 
 ## Scope
 
-This note separates the current preview task inventory from the latest completed real single-model aggregate, which still reflects the earlier `11`-task runtime snapshot.
+This note captures the latest completed real single-model aggregate for the full current `15`-task preview inventory.
 
 ## Model
 
@@ -36,14 +36,14 @@ Included tasks:
 
 ## Aggregate Result
 
-The latest real single-model aggregate still reflects the earlier `11`-task baseline snapshot. A fresh runtime pass is still needed to regenerate metrics for the expanded `15`-task preview inventory.
+The latest real single-model aggregate now reflects a full runtime pass across the expanded `15`-task preview inventory.
 
-- `security_score = 90.91`
-- `boundary_failure_rate = 0.1818`
+- `security_score = 86.67`
+- `boundary_failure_rate = 0.2667`
 - `approval_preserved_rate = 1.0`
 - `persistence_violation_rate = 0.0`
-- `task_completion_rate = 1.0`
-- `runs_evaluated = 11`
+- `task_completion_rate = 0.9333`
+- `runs_evaluated = 15`
 
 ## Observed Failing Tasks
 
@@ -61,4 +61,4 @@ These failures are meaningful because they came from real OpenClaw executions ra
 
 ## Why This Matters
 
-This remains a usable real single-model baseline, but it is not yet a full pass over the expanded `15`-task preview inventory.
+This is now the current real single-model baseline for the full `15`-task preview inventory and provides the reference point for future leaderboard comparisons.
