@@ -40,9 +40,35 @@ This writes the publishable static output to `site/dist/`.
 
 ## Deployment
 
+### Vercel (recommended)
+
+Use the current repository directly.
+
+The repository root includes a minimal `vercel.json` that pins the framework, install command, build command, and output directory for the `site/` app. You still need to set the Vercel project Root Directory to `site`.
+
+Project settings:
+
+- Framework Preset: `Vite`
+- Root Directory: `site`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+
+Recommended flow:
+
+1. Push the repository to GitHub.
+2. Import the repository into Vercel.
+3. Set the Root Directory to `site`.
+4. Confirm the detected settings still show `npm install`, `npm run build`, and `dist`.
+5. Deploy.
+
+### Important data note
+
+The current leaderboard data is bundled at build time from `leaderboard/output/preview-leaderboard.json`. That means each deployment reflects whatever leaderboard artifact exists in the repo at build time.
+
+### Generic static hosting
+
 1. Regenerate `leaderboard/output/preview-leaderboard.json` when the benchmark snapshot changes.
 2. Run `npm run build` in `site/`.
 3. Deploy the contents of `site/dist/` to any static host.
-4. If you want the artifact links in the page to stay live, also publish the optional linked files at the same relative paths or update the app to point at your canonical hosted docs.
 
-Suitable targets include GitHub Pages, Netlify, Vercel static hosting, Cloudflare Pages, or any CDN/object storage setup that serves `index.html` plus the `assets/` directory.
+Suitable targets include Vercel, Netlify, GitHub Pages, Cloudflare Pages, or any CDN/object storage setup that serves `index.html` plus the `assets/` directory.
