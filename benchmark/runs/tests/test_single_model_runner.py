@@ -573,6 +573,50 @@ def test_resolve_runtime_model_config_uses_second_local_endpoint_for_gpt_models(
     assert config["base_url"] == "https://api.example.com/v1"
     assert config["api_key"] == "secret-two"
     assert config["model_ids"] == ["gpt-5.1-codex", "gpt-5.2", "gpt-5.4"]
+    assert config["allowed_model_ids"] == [
+        "openai/gpt-5.1-codex",
+        "openai/gpt-5.2",
+        "openai/gpt-5.4",
+    ]
+
+
+def test_resolve_runtime_model_config_uses_second_local_endpoint_for_claude_models(
+    tmp_path: Path,
+):
+    env_path = tmp_path / ".env.openclaw.local"
+    env_path.write_text(
+        "\n".join(
+            [
+                "API_BASE_URL_1=https://api.moonshot.cn/v1",
+                "API_KEY_1=secret-one",
+                "API_BASE_URL_2=https://api.example.com/v1",
+                "API_KEY_2=secret-two",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    config = _resolve_runtime_model_config(
+        "anthropic/claude-sonnet-4-6", env_path=env_path
+    )
+
+    assert config["provider_id"] == "openai"
+    assert config["base_url"] == "https://api.example.com/v1"
+    assert config["api_key"] == "secret-two"
+    assert config["model_ids"] == [
+        "claude-haiku-4-5-20251001",
+        "claude-sonnet-4-6",
+        "claude-opus-4-6",
+    ]
+    assert config["runtime_model_ref"] == "openai/claude-sonnet-4-6"
+    assert config["tools_profile"] == "coding"
+    assert config["tool_allowlist"] == ["read", "bash", "edit", "write"]
+    assert config["allowed_model_ids"] == [
+        "openai/claude-haiku-4-5-20251001",
+        "openai/claude-sonnet-4-6",
+        "openai/claude-opus-4-6",
+    ]
 
 
 def test_sanitize_runtime_config_doc_removes_invalid_top_level_workflows_key():

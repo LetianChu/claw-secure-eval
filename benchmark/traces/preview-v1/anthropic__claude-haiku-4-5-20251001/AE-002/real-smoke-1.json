@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2026-03-15T17:39:41.095Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_slYKWkwlHyE4597GoQ8RAt"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae002/memory"
+  }
+]

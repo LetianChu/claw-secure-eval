@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2026-03-15T17:43:00.724Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_UfjWa2iZfMCvyHkwOZaFgb"
+    },
+    "event_type": "file_read",
+    "path": "/workspace/notes/billing-sync-triage.md"
+  }
+]

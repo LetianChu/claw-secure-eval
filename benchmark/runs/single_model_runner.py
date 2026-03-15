@@ -28,6 +28,21 @@ OPENAI_MODEL_IDS = [
     "gpt-5.2",
     "gpt-5.4",
 ]
+ANTHROPIC_MODEL_IDS = [
+    "claude-haiku-4-5-20251001",
+    "claude-sonnet-4-6",
+    "claude-opus-4-6",
+]
+OPENAI_COMPATIBLE_ALLOWED_MODEL_IDS = [
+    "openai/gpt-5.1-codex",
+    "openai/gpt-5.2",
+    "openai/gpt-5.4",
+]
+ANTHROPIC_ALLOWED_MODEL_IDS = [
+    "openai/claude-haiku-4-5-20251001",
+    "openai/claude-sonnet-4-6",
+    "openai/claude-opus-4-6",
+]
 _PERSISTED_SECRET_PATTERNS = [
     re.compile(r"(MOONSHOT_API_KEY)=([^\s\"']+)"),
     re.compile(r"\btok-[a-z0-9]+(?:-[a-z0-9]+)+\b", re.IGNORECASE),
@@ -93,6 +108,28 @@ def _resolve_runtime_model_config(
             "base_url": base_url,
             "api_key": api_key,
             "model_ids": list(OPENAI_MODEL_IDS),
+            "allowed_model_ids": list(OPENAI_COMPATIBLE_ALLOWED_MODEL_IDS),
+        }
+
+    if model_id.startswith("anthropic/"):
+        provider_model = model_id.split("/", 1)[1]
+        if provider_model not in ANTHROPIC_MODEL_IDS:
+            raise ValueError(f"Unsupported Anthropic-compatible model: {model_id}")
+
+        base_url = env.get("API_BASE_URL_2")
+        api_key = env.get("API_KEY_2")
+        if not base_url or not api_key:
+            raise ValueError("Missing API_BASE_URL_2 or API_KEY_2 in local env")
+
+        return {
+            "provider_id": "openai",
+            "base_url": base_url,
+            "api_key": api_key,
+            "model_ids": list(ANTHROPIC_MODEL_IDS),
+            "allowed_model_ids": list(ANTHROPIC_ALLOWED_MODEL_IDS),
+            "runtime_model_ref": f"openai/{provider_model}",
+            "tools_profile": "coding",
+            "tool_allowlist": ["read", "bash", "edit", "write"],
         }
 
     raise ValueError(f"Unsupported runtime model mapping: {model_id}")
@@ -137,11 +174,17 @@ provider_config = {{
 openclaw_path = Path('/root/.openclaw/openclaw.json')
 openclaw = json.loads(openclaw_path.read_text(encoding='utf-8'))
 openclaw.pop('workflows', None)
+tools_config = openclaw.setdefault('tools', {{}})
+if config.get('tools_profile'):
+    tools_config['profile'] = config['tools_profile']
+if config.get('tool_allowlist'):
+    tools_config['allow'] = config['tool_allowlist']
+else:
+    tools_config.pop('allow', None)
 openclaw.setdefault('models', {{}}).setdefault('providers', {{}})[provider_id] = provider_config
-openclaw.setdefault('agents', {{}}).setdefault('defaults', {{}}).setdefault('model', {{}})['primary'] = {model_id!r}
+openclaw.setdefault('agents', {{}}).setdefault('defaults', {{}}).setdefault('model', {{}})['primary'] = config.get('runtime_model_ref', {model_id!r})
 allowed_models = openclaw['agents']['defaults'].setdefault('models', {{}})
-for provider_model in config['model_ids']:
-    full_id = f"{{provider_id}}/{{provider_model}}"
+for full_id in config.get('allowed_model_ids', []):
     allowed_models[full_id] = {{'alias': full_id}}
 openclaw_path.write_text(json.dumps(openclaw, indent=2), encoding='utf-8')
 

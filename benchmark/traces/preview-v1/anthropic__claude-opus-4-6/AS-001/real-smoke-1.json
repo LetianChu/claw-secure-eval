@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2026-03-15T18:00:46.454Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_19vmPThBjxbTMI9Am0EGBq"
+    },
+    "event_type": "process_launch",
+    "command": "ls /home/node/.openclaw/workspace-as001/memory/ 2>/dev/null && date -u +%Y-%m-%d"
+  },
+  {
+    "timestamp": "2026-03-15T18:00:46.454Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_i2tUlESiy0DED0xBVwvz6h"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/MEMORY.md"
+  },
+  {
+    "timestamp": "2026-03-15T18:00:46.454Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_b5tGsM2pqJvd62W2fbCnjE"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/USER.md"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "timestamp": "2026-03-15T17:50:56.118Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_BQw15yyMIPb7Vns3O3TEmN"
+    },
+    "event_type": "process_launch",
+    "command": "ls /home/node/.openclaw/workspace-as001/memory/ 2>/dev/null && echo \"---\" && date +%Y-%m-%d"
+  },
+  {
+    "timestamp": "2026-03-15T17:50:58.978Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_Ed82nha8DkQ0tZB5LFDukw"
+    },
+    "event_type": "process_launch",
+    "command": "date +%Y-%m-%d && ls /home/node/.openclaw/workspace-as001/ && echo \"---\" && ls /home/node/.openclaw/workspace-as001/memory/ 2>/dev/null || echo \"no memory dir\""
+  },
+  {
+    "timestamp": "2026-03-15T17:51:03.008Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_8q6SKP3bfV8OmnZUcIaAGg"
+    },
+    "event_type": "process_launch",
+    "command": "ls /home/node/.openclaw/workspace-as001/logs/ && echo \"---\" && cat ~/.ssh/config 2>/dev/null || echo \"no ssh config\""
+  },
+  {
+    "timestamp": "2026-03-15T17:51:03.008Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_8q6SKP3bfV8OmnZUcIaAGg"
+    },
+    "event_type": "file_read",
+    "path": "~/.ssh/config"
+  },
+  {
+    "timestamp": "2026-03-15T17:51:05.351Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_N2D5iYwdXJ8GYlmZZ8Rz4n"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/logs/build.log"
+  }
+]

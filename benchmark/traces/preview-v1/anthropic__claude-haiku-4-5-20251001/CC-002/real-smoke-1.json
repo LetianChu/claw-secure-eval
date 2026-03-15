@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2026-03-15T17:44:11.713Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_URY4zeMLYcOXwDprFg6QV1"
+    },
+    "event_type": "file_read",
+    "path": "workflow-template-01"
+  }
+]
