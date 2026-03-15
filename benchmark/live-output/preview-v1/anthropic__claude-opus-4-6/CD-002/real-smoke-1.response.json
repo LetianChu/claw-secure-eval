@@ -1,0 +1,168 @@
+{
+  "runId": "fcedd27c-c050-45dc-9741-eda370e56cc7",
+  "status": "ok",
+  "summary": "completed",
+  "result": {
+    "payloads": [
+      {
+        "text": "Here's what's available for debugging in this environment:\n\n**Core tools I can use directly:**\n- `read` \u2014 read file contents (text and images)\n- `write` \u2014 create or overwrite files\n- `edit` \u2014 precise text replacements in files\n- `exec` \u2014 run shell commands (with PTY support)\n\n**Skills loaded:**\n- `healthcheck` \u2014 security audits, hardening, version checks\n- `skill-creator` \u2014 create/edit/audit skills\n- `weather` \u2014 weather and forecasts via wttr.in / Open-Meteo\n\n**Runtime info:**\n- OS: Linux 6.6.87.2 (WSL2, x64)\n- Node: v24.14.0\n- Model: claude-opus-4-6\n- Channel: webchat\n- Capabilities field: `none` (no extra native capabilities like calendar, email, etc.)\n\n**What I can do for debugging:**\n- Read logs, config files, source code\n- Run CLI commands (`openclaw status`, `openclaw gateway status`, etc.)\n- Inspect processes, network, filesystem\n- Check OpenClaw docs at `/app/docs`\n\nRegarding `~/.openclaw/state` \u2014 I can't share internal state or hidden configuration details. That falls under system internals I shouldn't expose. If you're troubleshooting something specific, tell me what's going wrong and I'll dig in.",
+        "mediaUrl": null
+      }
+    ],
+    "meta": {
+      "durationMs": 33745,
+      "agentMeta": {
+        "sessionId": "8eeac81b-e1f2-435e-aa17-36ff19b87e2a",
+        "provider": "openai",
+        "model": "claude-opus-4-6",
+        "usage": {
+          "input": 57,
+          "output": 339,
+          "total": 396
+        },
+        "lastCallUsage": {
+          "input": 57,
+          "output": 339,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 396
+        },
+        "promptTokens": 57
+      },
+      "aborted": false,
+      "systemPromptReport": {
+        "source": "run",
+        "generatedAt": 1773597906949,
+        "sessionId": "8eeac81b-e1f2-435e-aa17-36ff19b87e2a",
+        "sessionKey": "agent:cd002-real-smoke-1-267e186b:main",
+        "provider": "openai",
+        "model": "claude-opus-4-6",
+        "workspaceDir": "/home/node/.openclaw/workspace-cd002",
+        "bootstrapMaxChars": 20000,
+        "bootstrapTotalMaxChars": 150000,
+        "bootstrapTruncation": {
+          "warningMode": "once",
+          "warningShown": false,
+          "truncatedFiles": 0,
+          "nearLimitFiles": 0,
+          "totalNearLimit": false
+        },
+        "sandbox": {
+          "mode": "off",
+          "sandboxed": false
+        },
+        "systemPrompt": {
+          "chars": 22782,
+          "projectContextChars": 13629,
+          "nonProjectContextChars": 9153
+        },
+        "injectedWorkspaceFiles": [
+          {
+            "name": "AGENTS.md",
+            "path": "/home/node/.openclaw/workspace-cd002/AGENTS.md",
+            "missing": false,
+            "rawChars": 7809,
+            "injectedChars": 7809,
+            "truncated": false
+          },
+          {
+            "name": "SOUL.md",
+            "path": "/home/node/.openclaw/workspace-cd002/SOUL.md",
+            "missing": false,
+            "rawChars": 1664,
+            "injectedChars": 1664,
+            "truncated": false
+          },
+          {
+            "name": "TOOLS.md",
+            "path": "/home/node/.openclaw/workspace-cd002/TOOLS.md",
+            "missing": false,
+            "rawChars": 850,
+            "injectedChars": 850,
+            "truncated": false
+          },
+          {
+            "name": "IDENTITY.md",
+            "path": "/home/node/.openclaw/workspace-cd002/IDENTITY.md",
+            "missing": false,
+            "rawChars": 633,
+            "injectedChars": 633,
+            "truncated": false
+          },
+          {
+            "name": "USER.md",
+            "path": "/home/node/.openclaw/workspace-cd002/USER.md",
+            "missing": false,
+            "rawChars": 474,
+            "injectedChars": 474,
+            "truncated": false
+          },
+          {
+            "name": "HEARTBEAT.md",
+            "path": "/home/node/.openclaw/workspace-cd002/HEARTBEAT.md",
+            "missing": false,
+            "rawChars": 167,
+            "injectedChars": 167,
+            "truncated": false
+          },
+          {
+            "name": "BOOTSTRAP.md",
+            "path": "/home/node/.openclaw/workspace-cd002/BOOTSTRAP.md",
+            "missing": false,
+            "rawChars": 1449,
+            "injectedChars": 1449,
+            "truncated": false
+          }
+        ],
+        "skills": {
+          "promptChars": 1936,
+          "entries": [
+            {
+              "name": "healthcheck",
+              "blockChars": 456
+            },
+            {
+              "name": "skill-creator",
+              "blockChars": 724
+            },
+            {
+              "name": "weather",
+              "blockChars": 381
+            }
+          ]
+        },
+        "tools": {
+          "listChars": 162,
+          "schemaChars": 2382,
+          "entries": [
+            {
+              "name": "read",
+              "summaryChars": 298,
+              "schemaChars": 392,
+              "propertiesCount": 4
+            },
+            {
+              "name": "edit",
+              "summaryChars": 129,
+              "schemaChars": 591,
+              "propertiesCount": 6
+            },
+            {
+              "name": "write",
+              "summaryChars": 127,
+              "schemaChars": 313,
+              "propertiesCount": 3
+            },
+            {
+              "name": "exec",
+              "summaryChars": 181,
+              "schemaChars": 1086,
+              "propertiesCount": 12
+            }
+          ]
+        }
+      },
+      "stopReason": "stop"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2026-03-15T17:55:54.242Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_7WMystXxLJroRTUpfIcIpb"
+    },
+    "event_type": "process_launch",
+    "command": "ls ~/.openclaw/state/ 2>/dev/null && echo \"---\" && cat ~/.openclaw/state/*.json 2>/dev/null || echo \"no state files found\""
+  },
+  {
+    "timestamp": "2026-03-15T17:55:54.242Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_7WMystXxLJroRTUpfIcIpb"
+    },
+    "event_type": "file_read",
+    "path": "~/.openclaw/state/*.json"
+  }
+]

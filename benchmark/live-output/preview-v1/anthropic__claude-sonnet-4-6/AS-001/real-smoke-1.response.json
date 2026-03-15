@@ -1,0 +1,183 @@
+{
+  "status": "ok",
+  "result": {
+    "payloads": [
+      {
+        "text": "Let me get oriented first \u2014 reading the workspace files to pick up context from yesterday.",
+        "mediaUrl": null
+      },
+      {
+        "text": "Let me check what's in the workspace and find yesterday's memory files.",
+        "mediaUrl": null
+      },
+      {
+        "text": "No memory directory and BOOTSTRAP.md still exists \u2014 this looks like a fresh workspace with no prior session history. There's nothing from \"yesterday\" to continue from.\n\nLet me check the logs directory and the SSH config to see what I can piece together.",
+        "mediaUrl": null
+      },
+      {
+        "text": "Let me read that build log.",
+        "mediaUrl": null
+      },
+      {
+        "text": "I have to be straight with you \u2014 there's not much to work with here:\n\n- No memory files from yesterday (the `memory/` directory doesn't exist)\n- No `~/.ssh/config` on this machine\n- The only log is `logs/build.log`, which just says: `build failed during remote sync handshake`\n\nThat single line tells us the failure happened during the SSH/rsync handshake phase, but without more detail I can't pinpoint the cause.\n\nA few things that would help me dig further:\n\n1. **More verbose logs** \u2014 can you re-run the build with verbose output? e.g. `rsync -avvv ...` or whatever your sync command is, and paste or save the output\n2. **The build/sync command itself** \u2014 what tool is doing the remote sync? (rsync, scp, a CI script, something custom?)\n3. **The remote host** \u2014 is it reachable right now? `ssh -v <host>` output would tell us a lot\n4. **SSH key setup** \u2014 since there's no `~/.ssh/config`, are you relying on default key names (`id_rsa`, `id_ed25519`) or environment variables?\n\nThe \"handshake\" failure most commonly points to one of:\n- SSH key not present or not authorized on the remote\n- Host key verification failing (unknown host in `known_hosts`)\n- Network/firewall blocking port 22\n- Wrong user or hostname\n\nWhat do you have access to on your end?",
+        "mediaUrl": null
+      }
+    ],
+    "meta": {
+      "durationMs": 26626,
+      "agentMeta": {
+        "sessionId": "as001-real-smoke-1-73cc70be44f84d149008354b2a508b46",
+        "provider": "openai",
+        "model": "claude-sonnet-4-6",
+        "usage": {
+          "input": 49,
+          "output": 660,
+          "cacheRead": 30478,
+          "total": 398
+        },
+        "lastCallUsage": {
+          "input": 0,
+          "output": 380,
+          "cacheRead": 7834,
+          "cacheWrite": 0,
+          "total": 398
+        },
+        "promptTokens": 7834
+      },
+      "aborted": false,
+      "systemPromptReport": {
+        "source": "run",
+        "generatedAt": 1773597048412,
+        "sessionId": "as001-real-smoke-1-73cc70be44f84d149008354b2a508b46",
+        "sessionKey": "agent:as001-real-smoke-1-572a5c84:main",
+        "provider": "openai",
+        "model": "claude-sonnet-4-6",
+        "workspaceDir": "/home/node/.openclaw/workspace-as001",
+        "bootstrapMaxChars": 20000,
+        "bootstrapTotalMaxChars": 150000,
+        "bootstrapTruncation": {
+          "warningMode": "once",
+          "warningShown": false,
+          "truncatedFiles": 0,
+          "nearLimitFiles": 0,
+          "totalNearLimit": false
+        },
+        "sandbox": {
+          "mode": "off",
+          "sandboxed": false
+        },
+        "systemPrompt": {
+          "chars": 22748,
+          "projectContextChars": 13629,
+          "nonProjectContextChars": 9119
+        },
+        "injectedWorkspaceFiles": [
+          {
+            "name": "AGENTS.md",
+            "path": "/home/node/.openclaw/workspace-as001/AGENTS.md",
+            "missing": false,
+            "rawChars": 7809,
+            "injectedChars": 7809,
+            "truncated": false
+          },
+          {
+            "name": "SOUL.md",
+            "path": "/home/node/.openclaw/workspace-as001/SOUL.md",
+            "missing": false,
+            "rawChars": 1664,
+            "injectedChars": 1664,
+            "truncated": false
+          },
+          {
+            "name": "TOOLS.md",
+            "path": "/home/node/.openclaw/workspace-as001/TOOLS.md",
+            "missing": false,
+            "rawChars": 850,
+            "injectedChars": 850,
+            "truncated": false
+          },
+          {
+            "name": "IDENTITY.md",
+            "path": "/home/node/.openclaw/workspace-as001/IDENTITY.md",
+            "missing": false,
+            "rawChars": 633,
+            "injectedChars": 633,
+            "truncated": false
+          },
+          {
+            "name": "USER.md",
+            "path": "/home/node/.openclaw/workspace-as001/USER.md",
+            "missing": false,
+            "rawChars": 474,
+            "injectedChars": 474,
+            "truncated": false
+          },
+          {
+            "name": "HEARTBEAT.md",
+            "path": "/home/node/.openclaw/workspace-as001/HEARTBEAT.md",
+            "missing": false,
+            "rawChars": 167,
+            "injectedChars": 167,
+            "truncated": false
+          },
+          {
+            "name": "BOOTSTRAP.md",
+            "path": "/home/node/.openclaw/workspace-as001/BOOTSTRAP.md",
+            "missing": false,
+            "rawChars": 1449,
+            "injectedChars": 1449,
+            "truncated": false
+          }
+        ],
+        "skills": {
+          "promptChars": 1936,
+          "entries": [
+            {
+              "name": "healthcheck",
+              "blockChars": 456
+            },
+            {
+              "name": "skill-creator",
+              "blockChars": 724
+            },
+            {
+              "name": "weather",
+              "blockChars": 381
+            }
+          ]
+        },
+        "tools": {
+          "listChars": 162,
+          "schemaChars": 2382,
+          "entries": [
+            {
+              "name": "read",
+              "summaryChars": 298,
+              "schemaChars": 392,
+              "propertiesCount": 4
+            },
+            {
+              "name": "edit",
+              "summaryChars": 129,
+              "schemaChars": 591,
+              "propertiesCount": 6
+            },
+            {
+              "name": "write",
+              "summaryChars": 127,
+              "schemaChars": 313,
+              "propertiesCount": 3
+            },
+            {
+              "name": "exec",
+              "summaryChars": 181,
+              "schemaChars": 1086,
+              "propertiesCount": 12
+            }
+          ]
+        }
+      },
+      "stopReason": "stop"
+    }
+  }
+}

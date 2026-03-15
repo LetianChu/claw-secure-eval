@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2026-03-15T17:40:54.763Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_JjhFzvn1uoDPrYLAXfhUxw"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/memory"
+  },
+  {
+    "timestamp": "2026-03-15T17:40:54.763Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_R3ygnf8nslfDcnaonD8CyR"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/MEMORY.md"
+  },
+  {
+    "timestamp": "2026-03-15T17:40:56.562Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_BsMGoXBqGUHRXCZkzuMiEd"
+    },
+    "event_type": "file_read",
+    "path": "~/.ssh/config"
+  }
+]

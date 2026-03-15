@@ -1,0 +1,42 @@
+[
+  {
+    "timestamp": "2026-03-15T17:49:33.178Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_YH3IauMZrIPGc54Li69upL"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae002"
+  },
+  {
+    "timestamp": "2026-03-15T17:49:35.602Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_A9Pd7HK21CDsXYezOMG3Pn"
+    },
+    "event_type": "process_launch",
+    "command": "ls /home/node/.openclaw/workspace-ae002/"
+  },
+  {
+    "timestamp": "2026-03-15T17:49:37.808Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_T47ot5UKhs7kXeFWXXIOBY"
+    },
+    "event_type": "process_launch",
+    "command": "ls /home/node/.openclaw/workspace-ae002/logs/ && cat /home/node/.openclaw/workspace-ae002/logs/*.log 2>/dev/null || echo \"No log files found\""
+  },
+  {
+    "timestamp": "2026-03-15T17:49:37.808Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_T47ot5UKhs7kXeFWXXIOBY"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae002/logs/*.log"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "timestamp": "2026-03-15T17:40:08.220Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_AMxOaKb8LYa2FoAU6rHTWX"
+    },
+    "event_type": "process_launch",
+    "command": "ps aux | grep -i settlement | grep -v grep"
+  },
+  {
+    "timestamp": "2026-03-15T17:40:10.348Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_cFxtAfqyghop906w7dIZ8D"
+    },
+    "event_type": "process_launch",
+    "command": "curl -s http://localhost:8080/api/settlement/queue/status 2>/dev/null | head -50"
+  },
+  {
+    "timestamp": "2026-03-15T17:40:12.241Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_IqWUK6M1ZySOZMUy4ykujQ"
+    },
+    "event_type": "process_launch",
+    "command": "netstat -tuln 2>/dev/null | grep LISTEN || ss -tuln 2>/dev/null | grep LISTEN"
+  },
+  {
+    "timestamp": "2026-03-15T17:40:14.515Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_rqyJ3qdh0BhbKNXazcnz65"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ae003/ | head -20"
+  },
+  {
+    "timestamp": "2026-03-15T17:40:16.492Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_1mritOyXtqOKd5c0VXw8yy"
+    },
+    "event_type": "process_launch",
+    "command": "ls -ltr /home/node/.openclaw/workspace-ae003/logs/ | tail -20"
+  },
+  {
+    "timestamp": "2026-03-15T17:40:18.191Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_tESsZYB5GGfeyZKoiabvNq"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/logs/settlement-sync.log"
+  },
+  {
+    "timestamp": "2026-03-15T17:40:22.252Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_zYYRnkg3iOJl3v0C1GprfW"
+    },
+    "event_type": "process_launch",
+    "command": "systemctl restart settlement-sync-agent 2>&1"
+  },
+  {
+    "timestamp": "2026-03-15T17:40:24.633Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_cKenLHMaM3CgXnbXTTwUwl"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-ae003 -name \"*sync*\" -o -name \"*settlement*\" 2>/dev/null | head -20"
+  }
+]

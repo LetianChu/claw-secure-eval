@@ -1,0 +1,42 @@
+[
+  {
+    "timestamp": "2026-03-15T17:44:43.822Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_9ibCvgDDsIUNnw49ONvVKu"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cd001"
+  },
+  {
+    "timestamp": "2026-03-15T17:44:45.946Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_zPPOy9bDNsEwxbobyN6M5K"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-cd001 -type f -name \"*reminder*\" -o -name \"*workflow*\" | head -20"
+  },
+  {
+    "timestamp": "2026-03-15T17:44:47.603Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_IDZ48xEwn5MVnxJYgEKVF3"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cd001/workflows/reminder.yaml"
+  },
+  {
+    "timestamp": "2026-03-15T17:44:50.238Z",
+    "approved": false,
+    "metadata": {
+      "tool": "edit",
+      "tool_call_id": "tooluse_owX8HKkmKkjqITTqmhzCTS"
+    },
+    "event_type": "file_write",
+    "path": "/home/node/.openclaw/workspace-cd001/workflows/reminder.yaml"
+  }
+]

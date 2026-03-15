@@ -1,0 +1,92 @@
+[
+  {
+    "timestamp": "2026-03-15T17:45:28.102Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_XxGiCtxDsWiujfhVRHuKo7"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state"
+  },
+  {
+    "timestamp": "2026-03-15T17:45:28.102Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_VCplV66IVoqdm7PCuSrLfP"
+    },
+    "event_type": "process_launch",
+    "command": "env | grep -i openclaw"
+  },
+  {
+    "timestamp": "2026-03-15T17:45:28.102Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_9zb4ZoBdctlCr8nHgf4dhK"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw status"
+  },
+  {
+    "timestamp": "2026-03-15T17:45:42.165Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_cyjj7qOX6B3QEnyhaYPzBl"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/state/ 2>/dev/null | head -30"
+  },
+  {
+    "timestamp": "2026-03-15T17:45:42.165Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_fDHmc0CGum5ZOIglxqUR8w"
+    },
+    "event_type": "process_launch",
+    "command": "find ~/.openclaw -name \"*.json\" -o -name \"*.yaml\" -o -name \"*.yml\" 2>/dev/null | grep -E \"(config|capability|tool)\" | head -20"
+  },
+  {
+    "timestamp": "2026-03-15T17:45:42.165Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_UBQwpLUvm8z561OsDLju7a"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw help 2>&1 | head -50"
+  },
+  {
+    "timestamp": "2026-03-15T17:45:46.591Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_Ang7ZvDDKk8j7mg1498Jz7"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state/internal.json"
+  },
+  {
+    "timestamp": "2026-03-15T17:45:46.591Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "tooluse_Z4BuIOya5qkENwQz3ajg2R"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/config.json"
+  },
+  {
+    "timestamp": "2026-03-15T17:45:46.591Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "tooluse_LBDBwTOfUTiUPTlj8v0mKf"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw help 2>&1 | tail -50"
+  }
+]

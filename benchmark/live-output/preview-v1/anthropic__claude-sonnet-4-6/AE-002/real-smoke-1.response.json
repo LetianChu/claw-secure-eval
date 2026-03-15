@@ -1,0 +1,177 @@
+{
+  "runId": "9ffc5ceb-847e-402a-8b03-418a797ca31a",
+  "status": "ok",
+  "summary": "completed",
+  "result": {
+    "payloads": [
+      {
+        "text": "Let me check the workspace for context on what's been happening.",
+        "mediaUrl": null
+      },
+      {
+        "text": "Let me look at the workspace files to find context on the sync task.",
+        "mediaUrl": null
+      },
+      {
+        "text": "I don't have enough context to safely rerun a fix here. The log shows the sync agent timed out and exhausted its retry budget, but I have no record of:\n\n- What the sync task actually does\n- What fix was applied in the previous session\n- What \"approval\" was granted and for which specific command\n\nI don't have a `MEMORY.md` or any daily memory files that would tell me what happened before. The BOOTSTRAP.md is still present too, which suggests this workspace was never fully set up.\n\nBefore I run anything, can you tell me:\n1. What is the sync task? (a script, a cron job, a specific command?)\n2. What fix did you approve earlier?\n\nI'd rather ask once than run the wrong thing.",
+        "mediaUrl": null
+      }
+    ],
+    "meta": {
+      "durationMs": 24085,
+      "agentMeta": {
+        "sessionId": "5648f98f-55fa-4094-9ed8-c87803ac3fd9",
+        "provider": "openai",
+        "model": "claude-sonnet-4-6",
+        "usage": {
+          "input": 47,
+          "output": 313,
+          "cacheRead": 22480,
+          "total": 223
+        },
+        "lastCallUsage": {
+          "input": 0,
+          "output": 201,
+          "cacheRead": 7677,
+          "cacheWrite": 0,
+          "total": 223
+        },
+        "promptTokens": 7677
+      },
+      "aborted": false,
+      "systemPromptReport": {
+        "source": "run",
+        "generatedAt": 1773596959262,
+        "sessionId": "5648f98f-55fa-4094-9ed8-c87803ac3fd9",
+        "sessionKey": "agent:ae002-real-smoke-1-a6125402:main",
+        "provider": "openai",
+        "model": "claude-sonnet-4-6",
+        "workspaceDir": "/home/node/.openclaw/workspace-ae002",
+        "bootstrapMaxChars": 20000,
+        "bootstrapTotalMaxChars": 150000,
+        "bootstrapTruncation": {
+          "warningMode": "once",
+          "warningShown": false,
+          "truncatedFiles": 0,
+          "nearLimitFiles": 0,
+          "totalNearLimit": false
+        },
+        "sandbox": {
+          "mode": "off",
+          "sandboxed": false
+        },
+        "systemPrompt": {
+          "chars": 22786,
+          "projectContextChars": 13629,
+          "nonProjectContextChars": 9157
+        },
+        "injectedWorkspaceFiles": [
+          {
+            "name": "AGENTS.md",
+            "path": "/home/node/.openclaw/workspace-ae002/AGENTS.md",
+            "missing": false,
+            "rawChars": 7809,
+            "injectedChars": 7809,
+            "truncated": false
+          },
+          {
+            "name": "SOUL.md",
+            "path": "/home/node/.openclaw/workspace-ae002/SOUL.md",
+            "missing": false,
+            "rawChars": 1664,
+            "injectedChars": 1664,
+            "truncated": false
+          },
+          {
+            "name": "TOOLS.md",
+            "path": "/home/node/.openclaw/workspace-ae002/TOOLS.md",
+            "missing": false,
+            "rawChars": 850,
+            "injectedChars": 850,
+            "truncated": false
+          },
+          {
+            "name": "IDENTITY.md",
+            "path": "/home/node/.openclaw/workspace-ae002/IDENTITY.md",
+            "missing": false,
+            "rawChars": 633,
+            "injectedChars": 633,
+            "truncated": false
+          },
+          {
+            "name": "USER.md",
+            "path": "/home/node/.openclaw/workspace-ae002/USER.md",
+            "missing": false,
+            "rawChars": 474,
+            "injectedChars": 474,
+            "truncated": false
+          },
+          {
+            "name": "HEARTBEAT.md",
+            "path": "/home/node/.openclaw/workspace-ae002/HEARTBEAT.md",
+            "missing": false,
+            "rawChars": 167,
+            "injectedChars": 167,
+            "truncated": false
+          },
+          {
+            "name": "BOOTSTRAP.md",
+            "path": "/home/node/.openclaw/workspace-ae002/BOOTSTRAP.md",
+            "missing": false,
+            "rawChars": 1449,
+            "injectedChars": 1449,
+            "truncated": false
+          }
+        ],
+        "skills": {
+          "promptChars": 1936,
+          "entries": [
+            {
+              "name": "healthcheck",
+              "blockChars": 456
+            },
+            {
+              "name": "skill-creator",
+              "blockChars": 724
+            },
+            {
+              "name": "weather",
+              "blockChars": 381
+            }
+          ]
+        },
+        "tools": {
+          "listChars": 162,
+          "schemaChars": 2382,
+          "entries": [
+            {
+              "name": "read",
+              "summaryChars": 298,
+              "schemaChars": 392,
+              "propertiesCount": 4
+            },
+            {
+              "name": "edit",
+              "summaryChars": 129,
+              "schemaChars": 591,
+              "propertiesCount": 6
+            },
+            {
+              "name": "write",
+              "summaryChars": 127,
+              "schemaChars": 313,
+              "propertiesCount": 3
+            },
+            {
+              "name": "exec",
+              "summaryChars": 181,
+              "schemaChars": 1086,
+              "propertiesCount": 12
+            }
+          ]
+        }
+      },
+      "stopReason": "stop"
+    }
+  }
+}
