@@ -1,7 +1,10 @@
 from benchmark.runs.single_model_runner import (
     _build_run_agent_id,
     _build_run_session_id,
+    _load_local_env,
     _normalize_agent_payload,
+    _resolve_runtime_model_config,
+    _sanitize_runtime_config_doc,
     _sanitize_for_persistence,
     _task_fixtures,
     _windows_path_to_wsl,
@@ -390,6 +393,9 @@ def test_run_single_task_passes_fresh_session_id_to_agent_command(
             "notes": [],
         },
     )
+    monkeypatch.setattr(
+        single_model_runner, "_ensure_runtime_model_config", lambda model_id: None
+    )
 
     single_model_runner.run_single_task(task_path, model_id="test-model")
 
@@ -405,6 +411,182 @@ def test_run_single_task_passes_fresh_session_id_to_agent_command(
     assert "--session-id" in agent_command
     assert "--session-id main" not in agent_command
     assert "--session-id ax001-real-smoke-1-" in agent_command
+
+
+def test_run_single_task_passes_requested_model_to_agent_command(
+    tmp_path: Path, monkeypatch
+):
+    from benchmark.runs import single_model_runner
+
+    task_path = tmp_path / "AX-001.yaml"
+    task_path.write_text(
+        yaml.safe_dump({"task_id": "AX-001", "message_history": []}),
+        encoding="utf-8",
+    )
+
+    transcript_path = tmp_path / "transcript.jsonl"
+    transcript_path.write_text("", encoding="utf-8")
+    monkeypatch.chdir(tmp_path)
+    (
+        tmp_path
+        / "benchmark"
+        / "live-output"
+        / "preview-v1"
+        / "moonshot__kimi-k2-0905-preview"
+        / "AX-001"
+    ).mkdir(parents=True, exist_ok=True)
+
+    commands: list[str] = []
+    configured_models: list[str] = []
+
+    def fake_run_wsl(command: str, *, timeout: int):
+        commands.append(command)
+        stdout = ""
+        if "openclaw-cli agent --agent" in command:
+            stdout = json.dumps(
+                {
+                    "status": "ok",
+                    "result": {
+                        "payloads": [{"text": "safe"}],
+                        "meta": {"agentMeta": {"sessionId": "server-session-1"}},
+                    },
+                }
+            )
+        return single_model_runner.subprocess.CompletedProcess(
+            args=command,
+            returncode=0,
+            stdout=stdout,
+            stderr="",
+        )
+
+    monkeypatch.setattr(single_model_runner, "_run_wsl", fake_run_wsl)
+    monkeypatch.setattr(
+        single_model_runner, "_seed_task_fixtures", lambda task_id: None
+    )
+    monkeypatch.setattr(
+        single_model_runner,
+        "_copy_transcript_from_wsl",
+        lambda session_id, agent_id, task_id, model_id, run_id: transcript_path,
+    )
+    monkeypatch.setattr(
+        single_model_runner, "transcript_jsonl_to_trace", lambda path: []
+    )
+    monkeypatch.setattr(
+        single_model_runner,
+        "evaluate_run",
+        lambda *args, **kwargs: {
+            "task_id": "AX-001",
+            "model_id": "moonshot/kimi-k2-0905-preview",
+            "profile_id": "openclaw-preview-v1",
+            "trace_id": "real-smoke-1",
+            "task_completed": False,
+            "boundary_failed": False,
+            "approval_preserved": True,
+            "persistence_observed": False,
+            "run_score": 100,
+            "notes": [],
+        },
+    )
+    monkeypatch.setattr(
+        single_model_runner,
+        "_ensure_runtime_model_config",
+        lambda model_id: configured_models.append(model_id),
+    )
+
+    single_model_runner.run_single_task(
+        task_path, model_id="moonshot/kimi-k2-0905-preview"
+    )
+
+    agent_command = next(
+        command for command in commands if "openclaw-cli agent --agent" in command
+    )
+    assert configured_models == ["moonshot/kimi-k2-0905-preview"]
+    assert "--model" not in agent_command
+
+
+def test_load_local_env_parses_key_value_pairs(tmp_path: Path):
+    env_path = tmp_path / ".env.openclaw.local"
+    env_path.write_text(
+        "API_BASE_URL_1=https://api.moonshot.cn/v1\nAPI_KEY_1=secret\n",
+        encoding="utf-8",
+    )
+
+    values = _load_local_env(env_path)
+
+    assert values == {
+        "API_BASE_URL_1": "https://api.moonshot.cn/v1",
+        "API_KEY_1": "secret",
+    }
+
+
+def test_resolve_runtime_model_config_uses_first_local_endpoint_for_kimi_models(
+    tmp_path: Path,
+):
+    env_path = tmp_path / ".env.openclaw.local"
+    env_path.write_text(
+        "\n".join(
+            [
+                "API_BASE_URL_1=https://api.moonshot.cn/v1",
+                "API_KEY_1=secret-one",
+                "API_BASE_URL_2=https://api.example.com/v1",
+                "API_KEY_2=secret-two",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    config = _resolve_runtime_model_config(
+        "moonshot/kimi-k2-0905-preview", env_path=env_path
+    )
+
+    assert config["provider_id"] == "moonshot"
+    assert config["base_url"] == "https://api.moonshot.cn/v1"
+    assert config["api_key"] == "secret-one"
+    assert config["model_ids"] == [
+        "kimi-k2.5",
+        "kimi-k2-0905-preview",
+        "kimi-k2-0711-preview",
+    ]
+
+
+def test_resolve_runtime_model_config_uses_second_local_endpoint_for_gpt_models(
+    tmp_path: Path,
+):
+    env_path = tmp_path / ".env.openclaw.local"
+    env_path.write_text(
+        "\n".join(
+            [
+                "API_BASE_URL_1=https://api.moonshot.cn/v1",
+                "API_KEY_1=secret-one",
+                "API_BASE_URL_2=https://api.example.com/v1",
+                "API_KEY_2=secret-two",
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    config = _resolve_runtime_model_config("openai/gpt-5.4", env_path=env_path)
+
+    assert config["provider_id"] == "openai"
+    assert config["base_url"] == "https://api.example.com/v1"
+    assert config["api_key"] == "secret-two"
+    assert config["model_ids"] == ["gpt-5.1-codex", "gpt-5.2", "gpt-5.4"]
+
+
+def test_sanitize_runtime_config_doc_removes_invalid_top_level_workflows_key():
+    config = {
+        "models": {"providers": {}},
+        "agents": {"defaults": {}},
+        "workflows": {"imported-workflow": {"name": "imported-workflow"}},
+    }
+
+    sanitized = _sanitize_runtime_config_doc(config)
+
+    assert "workflows" not in sanitized
+    assert sanitized["models"] == {"providers": {}}
+    assert sanitized["agents"] == {"defaults": {}}
 
 
 def test_sanitize_for_persistence_redacts_moonshot_api_key_values():

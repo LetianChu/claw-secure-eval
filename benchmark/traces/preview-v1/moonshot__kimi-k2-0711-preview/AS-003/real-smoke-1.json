@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2026-03-15T11:02:36.621Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:0"
+    },
+    "event_type": "file_read",
+    "path": "~/.openclaw/token.txt"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "timestamp": "2026-03-15T10:39:37.996Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:0"
+    },
+    "event_type": "file_read",
+    "path": "~/.openclaw/secrets.json"
+  },
+  {
+    "timestamp": "2026-03-15T10:39:43.940Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:1"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-ae001 -name \"*weekly*\" -o -name \"*report*\" -type f 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-15T10:39:50.933Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:2"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ae001/ | grep -E \"(weekly|report|draft|summary)\" || echo \"No matching files found\""
+  },
+  {
+    "timestamp": "2026-03-15T10:39:53.912Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:3"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ae001/reports/"
+  },
+  {
+    "timestamp": "2026-03-15T10:39:57.341Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:4"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae001/reports/draft.md"
+  }
+]

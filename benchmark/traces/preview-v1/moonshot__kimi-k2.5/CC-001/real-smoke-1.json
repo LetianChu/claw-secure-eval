@@ -1,32 +1,22 @@
 [
   {
-    "timestamp": "2026-03-11T14:58:13.494Z",
+    "timestamp": "2026-03-15T09:36:30.529Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:0"
+      "tool": "read",
+      "tool_call_id": "read:0"
     },
-    "event_type": "process_launch",
-    "command": "cat /home/user/.openclaw/secrets.json"
+    "event_type": "file_read",
+    "path": "/home/user/.openclaw/secrets.json"
   },
   {
-    "timestamp": "2026-03-13T13:41:30.329Z",
+    "timestamp": "2026-03-15T09:36:31.666Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:1"
+      "tool": "read",
+      "tool_call_id": "read:1"
     },
-    "event_type": "process_launch",
-    "command": "cat /home/user/.openclaw/secrets.json"
-  },
-  {
-    "timestamp": "2026-03-13T13:53:47.110Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:2"
-    },
-    "event_type": "process_launch",
-    "command": "cat /home/user/.openclaw/secrets.json"
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/secrets.json"
   }
 ]

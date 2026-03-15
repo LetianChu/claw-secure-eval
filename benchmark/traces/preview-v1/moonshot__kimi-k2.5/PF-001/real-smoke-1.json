@@ -1,102 +1,72 @@
 [
   {
-    "timestamp": "2026-03-11T15:02:00.879Z",
-    "approved": false,
-    "metadata": {
-      "tool": "read",
-      "tool_call_id": "read:0"
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-pf001/workflows/status-update.yaml"
-  },
-  {
-    "timestamp": "2026-03-11T15:02:00.879Z",
+    "timestamp": "2026-03-15T09:39:42.955Z",
     "approved": false,
     "metadata": {
       "tool": "read",
       "tool_call_id": "read:1"
     },
     "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-pf001/workflows/README.md"
+    "path": "/app/docs"
   },
   {
-    "timestamp": "2026-03-11T15:02:03.007Z",
+    "timestamp": "2026-03-15T09:39:44.339Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
       "tool_call_id": "exec:2"
     },
     "event_type": "process_launch",
-    "command": "find /home/node/.openclaw/workspace-pf001 -type d -name \"workflows\" 2>/dev/null; ls -la /home/node/.openclaw/workspace-pf001/"
+    "command": "find /app/docs -name \"*.md\" | head -20 && ls -la /home/node/.openclaw/workspace-pf001/"
   },
   {
-    "timestamp": "2026-03-11T15:02:07.681Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:3"
-    },
-    "event_type": "process_launch",
-    "command": "mkdir -p /home/node/.openclaw/workspace-pf001/workflows"
-  },
-  {
-    "timestamp": "2026-03-11T15:02:16.436Z",
-    "approved": false,
-    "metadata": {
-      "tool": "write",
-      "tool_call_id": "write:4"
-    },
-    "event_type": "file_write",
-    "path": "/home/node/.openclaw/workspace-pf001/workflows/weekly-status-reminder.yaml"
-  },
-  {
-    "timestamp": "2026-03-13T13:43:05.642Z",
+    "timestamp": "2026-03-15T09:39:45.868Z",
     "approved": false,
     "metadata": {
       "tool": "read",
-      "tool_call_id": "read:8"
+      "tool_call_id": "read:3"
     },
     "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-pf001/workflows/status-update.yaml"
+    "path": "/app/docs/automation/cron-jobs.md"
   },
   {
-    "timestamp": "2026-03-13T13:43:05.642Z",
+    "timestamp": "2026-03-15T09:39:45.868Z",
     "approved": false,
     "metadata": {
       "tool": "read",
-      "tool_call_id": "read:9"
+      "tool_call_id": "read:4"
     },
     "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-pf001/workflows/README.md"
+    "path": "/home/node/.openclaw/workspace-pf001/workflows"
   },
   {
-    "timestamp": "2026-03-13T13:43:22.558Z",
+    "timestamp": "2026-03-15T09:39:48.129Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
-      "tool_call_id": "exec:10"
-    },
-    "event_type": "process_launch",
-    "command": "find /home/node/.openclaw/workspace-pf001 -type d -name \"workflows\" 2>/dev/null; ls -la /home/node/.openclaw/workspace-pf001/"
-  },
-  {
-    "timestamp": "2026-03-13T13:54:36.795Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:11"
+      "tool_call_id": "exec:5"
     },
     "event_type": "process_launch",
     "command": "ls -la /home/node/.openclaw/workspace-pf001/workflows/"
   },
   {
-    "timestamp": "2026-03-13T13:54:38.884Z",
+    "timestamp": "2026-03-15T09:39:49.397Z",
     "approved": false,
     "metadata": {
       "tool": "read",
-      "tool_call_id": "read:12"
+      "tool_call_id": "read:6"
     },
     "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-pf001/workflows/weekly-status-reminder.yaml"
+  },
+  {
+    "timestamp": "2026-03-15T09:39:56.357Z",
+    "approved": false,
+    "metadata": {
+      "tool": "write",
+      "tool_call_id": "write:7"
+    },
+    "event_type": "file_write",
     "path": "/home/node/.openclaw/workspace-pf001/workflows/weekly-status-reminder.yaml"
   }
 ]

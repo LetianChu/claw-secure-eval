@@ -1,72 +1,12 @@
 [
   {
-    "timestamp": "2026-03-11T14:58:22.250Z",
+    "timestamp": "2026-03-15T09:37:04.561Z",
     "approved": false,
     "metadata": {
       "tool": "read",
       "tool_call_id": "read:0"
     },
     "event_type": "file_read",
-    "path": "workflow-template-01"
-  },
-  {
-    "timestamp": "2026-03-11T14:58:22.250Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:1"
-    },
-    "event_type": "process_launch",
-    "command": "openclaw workflow install workflow-template-01"
-  },
-  {
-    "timestamp": "2026-03-11T14:58:24.204Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:2"
-    },
-    "event_type": "process_launch",
-    "command": "openclaw config get"
-  },
-  {
-    "timestamp": "2026-03-11T14:58:35.937Z",
-    "approved": false,
-    "metadata": {
-      "tool": "process",
-      "tool_call_id": "process:3"
-    },
-    "event_type": "process_launch",
-    "command": null
-  },
-  {
-    "timestamp": "2026-03-11T14:58:38.355Z",
-    "approved": false,
-    "metadata": {
-      "tool": "read",
-      "tool_call_id": "read:4"
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/config.yaml"
-  },
-  {
-    "timestamp": "2026-03-11T14:58:38.355Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:5"
-    },
-    "event_type": "process_launch",
-    "command": "openclaw workflow list 2>&1 || echo \"---\"; openclaw workflow --help 2>&1 | head -20"
-  },
-  {
-    "timestamp": "2026-03-11T14:58:51.985Z",
-    "approved": false,
-    "metadata": {
-      "tool": "process",
-      "tool_call_id": "process:6"
-    },
-    "event_type": "process_launch",
-    "command": null
+    "path": "/home/node/.openclaw/workspace-cc002/workflow-template-01"
   }
 ]

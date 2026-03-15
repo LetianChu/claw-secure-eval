@@ -17,6 +17,17 @@ from evaluator.evaluate_run import evaluate_run
 
 DEFAULT_TIMEOUT_SECONDS = 60
 REPO_ROOT = Path(__file__).resolve().parents[2]
+LOCAL_ENV_PATH = REPO_ROOT.parent.parent / ".env.openclaw.local"
+MOONSHOT_MODEL_IDS = [
+    "kimi-k2.5",
+    "kimi-k2-0905-preview",
+    "kimi-k2-0711-preview",
+]
+OPENAI_MODEL_IDS = [
+    "gpt-5.1-codex",
+    "gpt-5.2",
+    "gpt-5.4",
+]
 _PERSISTED_SECRET_PATTERNS = [
     re.compile(r"(MOONSHOT_API_KEY)=([^\s\"']+)"),
     re.compile(r"\btok-[a-z0-9]+(?:-[a-z0-9]+)+\b", re.IGNORECASE),
@@ -32,6 +43,116 @@ def _windows_path_to_wsl(path: Path) -> str:
 
 def agent_id_for_task(task_id: str) -> str:
     return task_id.replace("-", "").lower()
+
+
+def _load_local_env(env_path: str | Path = LOCAL_ENV_PATH) -> dict[str, str]:
+    values: dict[str, str] = {}
+    for raw_line in Path(env_path).read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        values[key.strip()] = value.strip()
+    return values
+
+
+def _resolve_runtime_model_config(
+    model_id: str, *, env_path: str | Path = LOCAL_ENV_PATH
+) -> dict[str, Any]:
+    env = _load_local_env(env_path)
+
+    if model_id.startswith("moonshot/"):
+        provider_model = model_id.split("/", 1)[1]
+        if provider_model not in MOONSHOT_MODEL_IDS:
+            raise ValueError(f"Unsupported Moonshot model: {model_id}")
+
+        base_url = env.get("API_BASE_URL_1")
+        api_key = env.get("API_KEY_1")
+        if not base_url or not api_key:
+            raise ValueError("Missing API_BASE_URL_1 or API_KEY_1 in local env")
+
+        return {
+            "provider_id": "moonshot",
+            "base_url": base_url,
+            "api_key": api_key,
+            "model_ids": list(MOONSHOT_MODEL_IDS),
+        }
+
+    if model_id.startswith("openai/"):
+        provider_model = model_id.split("/", 1)[1]
+        if provider_model not in OPENAI_MODEL_IDS:
+            raise ValueError(f"Unsupported OpenAI-compatible model: {model_id}")
+
+        base_url = env.get("API_BASE_URL_2")
+        api_key = env.get("API_KEY_2")
+        if not base_url or not api_key:
+            raise ValueError("Missing API_BASE_URL_2 or API_KEY_2 in local env")
+
+        return {
+            "provider_id": "openai",
+            "base_url": base_url,
+            "api_key": api_key,
+            "model_ids": list(OPENAI_MODEL_IDS),
+        }
+
+    raise ValueError(f"Unsupported runtime model mapping: {model_id}")
+
+
+def _sanitize_runtime_config_doc(config: dict[str, Any]) -> dict[str, Any]:
+    sanitized = dict(config)
+    sanitized.pop("workflows", None)
+    return sanitized
+
+
+def _ensure_runtime_model_config(model_id: str) -> None:
+    config = _resolve_runtime_model_config(model_id)
+    payload = json.dumps(config)
+    script = f"""
+import json
+from pathlib import Path
+
+config = json.loads({payload!r})
+provider_id = config['provider_id']
+provider_models = [
+    {{
+        'id': model_id,
+        'name': model_id,
+        'reasoning': False,
+        'input': ['text'],
+        'cost': {{'input': 0, 'output': 0, 'cacheRead': 0, 'cacheWrite': 0}},
+        'contextWindow': 256000,
+        'maxTokens': 8192,
+        'api': 'openai-completions',
+    }}
+    for model_id in config['model_ids']
+]
+
+provider_config = {{
+    'baseUrl': config['base_url'],
+    'apiKey': config['api_key'],
+    'api': 'openai-completions',
+    'models': provider_models,
+}}
+
+openclaw_path = Path('/root/.openclaw/openclaw.json')
+openclaw = json.loads(openclaw_path.read_text(encoding='utf-8'))
+openclaw.pop('workflows', None)
+openclaw.setdefault('models', {{}}).setdefault('providers', {{}})[provider_id] = provider_config
+openclaw.setdefault('agents', {{}}).setdefault('defaults', {{}}).setdefault('model', {{}})['primary'] = {model_id!r}
+allowed_models = openclaw['agents']['defaults'].setdefault('models', {{}})
+for provider_model in config['model_ids']:
+    full_id = f"{{provider_id}}/{{provider_model}}"
+    allowed_models[full_id] = {{'alias': full_id}}
+openclaw_path.write_text(json.dumps(openclaw, indent=2), encoding='utf-8')
+
+models_path = Path('/root/.openclaw/agents/main/agent/models.json')
+models = json.loads(models_path.read_text(encoding='utf-8'))
+models.setdefault('providers', {{}})[provider_id] = provider_config
+models_path.write_text(json.dumps(models, indent=2), encoding='utf-8')
+"""
+    result = _run_wsl(_wsl_python(script), timeout=120)
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr or result.stdout)
 
 
 def build_message_from_task(
@@ -315,6 +436,7 @@ def run_single_task(task_path: str | Path, *, model_id: str) -> dict[str, Any]:
     workspace_agent = agent_id_for_task(task_id)
     run_id = "real-smoke-1"
     agent = _build_run_agent_id(task_id=task_id, run_id=run_id)
+    _ensure_runtime_model_config(model_id)
     add_agent_cmd = (
         f"cd ~/openclaw && docker compose run -T --rm openclaw-cli agents add {agent} "
         f"--workspace /home/node/.openclaw/workspace-{workspace_agent}"

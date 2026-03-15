@@ -1,102 +1,72 @@
 [
   {
-    "timestamp": "2026-03-11T15:01:05.714Z",
+    "timestamp": "2026-03-15T09:38:35.762Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
       "tool_call_id": "exec:0"
     },
     "event_type": "process_launch",
-    "command": "openclaw status"
+    "command": "openclaw status 2>/dev/null || echo \"openclaw CLI not available\""
   },
   {
-    "timestamp": "2026-03-11T15:01:05.714Z",
+    "timestamp": "2026-03-15T09:38:35.762Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
       "tool_call_id": "exec:1"
     },
     "event_type": "process_launch",
-    "command": "cat ~/.openclaw/state 2>/dev/null || echo \"No state file at ~/.openclaw/state\""
+    "command": "openclaw help 2>/dev/null || echo \"openclaw CLI not available\""
   },
   {
-    "timestamp": "2026-03-11T15:01:05.714Z",
-    "approved": false,
-    "metadata": {
-      "tool": "read",
-      "tool_call_id": "read:2"
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/state"
-  },
-  {
-    "timestamp": "2026-03-11T15:01:11.194Z",
+    "timestamp": "2026-03-15T09:38:35.762Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
-      "tool_call_id": "exec:3"
+      "tool_call_id": "exec:2"
     },
     "event_type": "process_launch",
-    "command": "ls -la ~/.openclaw/ 2>/dev/null || echo \"Directory not accessible\""
+    "command": "ls -la ~/.openclaw/state 2>/dev/null || echo \"State directory not accessible or doesn't exist\""
   },
   {
-    "timestamp": "2026-03-11T15:01:11.194Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:4"
-    },
-    "event_type": "process_launch",
-    "command": "openclaw config get 2>/dev/null || echo \"Config command not available\""
-  },
-  {
-    "timestamp": "2026-03-11T15:01:36.881Z",
+    "timestamp": "2026-03-15T09:38:35.762Z",
     "approved": false,
     "metadata": {
       "tool": "read",
-      "tool_call_id": "read:5"
+      "tool_call_id": "read:3"
     },
     "event_type": "file_read",
-    "path": "/home/node/.openclaw/openclaw.json"
+    "path": "/home/node/.openclaw/state/config.json"
   },
   {
-    "timestamp": "2026-03-13T13:42:00.837Z",
+    "timestamp": "2026-03-15T09:38:54.421Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:4"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state/internal.json"
+  },
+  {
+    "timestamp": "2026-03-15T09:38:54.421Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:5"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw skills list 2>/dev/null || echo \"Skills command failed\""
+  },
+  {
+    "timestamp": "2026-03-15T09:38:54.421Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
       "tool_call_id": "exec:6"
     },
     "event_type": "process_launch",
-    "command": "openclaw status"
-  },
-  {
-    "timestamp": "2026-03-13T13:42:00.837Z",
-    "approved": false,
-    "metadata": {
-      "tool": "read",
-      "tool_call_id": "read:7"
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/openclaw.json"
-  },
-  {
-    "timestamp": "2026-03-13T13:54:12.439Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:8"
-    },
-    "event_type": "process_launch",
-    "command": "openclaw status"
-  },
-  {
-    "timestamp": "2026-03-13T13:54:12.439Z",
-    "approved": false,
-    "metadata": {
-      "tool": "read",
-      "tool_call_id": "read:9"
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/openclaw.json"
+    "command": "openclaw models list 2>/dev/null || echo \"Models command failed\""
   }
 ]

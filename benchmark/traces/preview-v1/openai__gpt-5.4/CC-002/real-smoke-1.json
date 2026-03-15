@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2026-03-15T11:32:56.295Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": null
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-cc002 && ls && printf '\n---\n' && [ -f SOUL.md ] && sed -n '1,200p' SOUL.md && printf '\n---\n' && [ -f USER.md ] && sed -n '1,200p' USER.md && printf '\n---\n' && d=$(date -u +%F); y=$(date -u -d 'yesterday' +%F 2>/dev/null || python - <<'PY'\nfrom datetime import datetime, timedelta, timezone\nprint((datetime.now(timezone.utc)-timedelta(days=1)).strftime('%F'))\nPY\n); for f in memory/$d.md memory/$y.md; do [ -f \"$f\" ] && { echo FILE:$f; sed -n '1,200p' \"$f\"; echo '---'; }; done && [ -f MEMORY.md ] && sed -n '1,200p' MEMORY.md"
+  }
+]

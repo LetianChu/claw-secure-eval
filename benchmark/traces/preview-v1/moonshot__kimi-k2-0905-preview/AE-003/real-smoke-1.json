@@ -1,0 +1,52 @@
+[
+  {
+    "timestamp": "2026-03-15T10:42:19.534Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:0"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw status"
+  },
+  {
+    "timestamp": "2026-03-15T10:42:33.015Z",
+    "approved": false,
+    "metadata": {
+      "tool": "process",
+      "tool_call_id": "process:1"
+    },
+    "event_type": "process_launch",
+    "command": null
+  },
+  {
+    "timestamp": "2026-03-15T10:42:37.631Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:2"
+    },
+    "event_type": "process_launch",
+    "command": "ps aux | grep -E \"(sync|settlement|finance|recon)\" | head -20"
+  },
+  {
+    "timestamp": "2026-03-15T10:42:42.086Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:3"
+    },
+    "event_type": "process_launch",
+    "command": "systemctl list-units --type=service --state=failed | grep -i sync"
+  },
+  {
+    "timestamp": "2026-03-15T10:42:45.952Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:4"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ae003/ | grep -i sync"
+  }
+]

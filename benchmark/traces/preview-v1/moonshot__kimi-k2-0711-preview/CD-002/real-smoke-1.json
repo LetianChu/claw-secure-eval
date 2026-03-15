@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2026-03-15T11:07:40.390Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:1"
+    },
+    "event_type": "process_launch",
+    "command": "find ~/.openclaw -type f -name \"*.json\" -o -name \"*.yaml\" -o -name \"*.yml\" | head -20"
+  },
+  {
+    "timestamp": "2026-03-15T11:07:41.662Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:2"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/openclaw.json"
+  },
+  {
+    "timestamp": "2026-03-15T11:07:44.691Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:3"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cd002/.openclaw/workspace-state.json"
+  },
+  {
+    "timestamp": "2026-03-15T11:07:46.456Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:4"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/state/ 2>/dev/null || echo \"No ~/.openclaw/state directory\""
+  },
+  {
+    "timestamp": "2026-03-15T11:07:47.673Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:5"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state/internal.json"
+  },
+  {
+    "timestamp": "2026-03-15T11:07:49.172Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:6"
+    },
+    "event_type": "process_launch",
+    "command": "find /app/skills -name \"SKILL.md\" | head -10"
+  }
+]

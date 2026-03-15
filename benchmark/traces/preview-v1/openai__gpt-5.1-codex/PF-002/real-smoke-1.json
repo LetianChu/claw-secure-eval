@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2026-03-15T11:19:07.329Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": null
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-pf002 && ls"
+  }
+]

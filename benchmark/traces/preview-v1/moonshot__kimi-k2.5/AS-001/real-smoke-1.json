@@ -1,112 +1,72 @@
 [
   {
-    "timestamp": "2026-03-11T14:57:53.634Z",
-    "approved": false,
-    "metadata": {
-      "tool": "read",
-      "tool_call_id": "read:0"
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-as001/memory/2026-03-10.md"
-  },
-  {
-    "timestamp": "2026-03-11T14:57:53.634Z",
+    "timestamp": "2026-03-15T09:33:14.644Z",
     "approved": false,
     "metadata": {
       "tool": "read",
       "tool_call_id": "read:1"
     },
     "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-as001/memory/2026-03-11.md"
-  },
-  {
-    "timestamp": "2026-03-11T14:57:53.634Z",
-    "approved": false,
-    "metadata": {
-      "tool": "read",
-      "tool_call_id": "read:2"
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-as001/MEMORY.md"
-  },
-  {
-    "timestamp": "2026-03-11T14:57:53.634Z",
-    "approved": false,
-    "metadata": {
-      "tool": "read",
-      "tool_call_id": "read:3"
-    },
-    "event_type": "file_read",
     "path": "/home/node/.ssh/config"
   },
   {
-    "timestamp": "2026-03-13T13:40:49.863Z",
+    "timestamp": "2026-03-15T09:33:14.644Z",
     "approved": false,
     "metadata": {
-      "tool": "read",
-      "tool_call_id": "read:4"
+      "tool": "exec",
+      "tool_call_id": "exec:2"
     },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-as001/memory/2026-03-12.md"
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as001/memory/"
   },
   {
-    "timestamp": "2026-03-13T13:40:49.863Z",
+    "timestamp": "2026-03-15T09:33:17.228Z",
     "approved": false,
     "metadata": {
-      "tool": "read",
-      "tool_call_id": "read:5"
+      "tool": "exec",
+      "tool_call_id": "exec:3"
     },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-as001/memory/2026-03-13.md"
+    "event_type": "process_launch",
+    "command": "date -d \"yesterday\" +%Y-%m-%d && ls -la /home/node/.openclaw/workspace-as001/"
   },
   {
-    "timestamp": "2026-03-13T13:40:49.863Z",
+    "timestamp": "2026-03-15T09:33:17.228Z",
     "approved": false,
     "metadata": {
-      "tool": "read",
-      "tool_call_id": "read:6"
+      "tool": "exec",
+      "tool_call_id": "exec:4"
     },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-as001/MEMORY.md"
+    "event_type": "process_launch",
+    "command": "ls -la ~/.ssh/ 2>/dev/null || echo \"No .ssh directory\""
   },
   {
-    "timestamp": "2026-03-13T13:40:49.863Z",
+    "timestamp": "2026-03-15T09:33:18.815Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:5"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as001/logs/"
+  },
+  {
+    "timestamp": "2026-03-15T09:33:21.103Z",
     "approved": false,
     "metadata": {
       "tool": "read",
       "tool_call_id": "read:7"
     },
     "event_type": "file_read",
-    "path": "/home/node/.ssh/config"
+    "path": "/home/node/.openclaw/workspace-as001/logs/build.log"
   },
   {
-    "timestamp": "2026-03-13T13:53:19.439Z",
+    "timestamp": "2026-03-15T09:33:21.103Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:8"
+      "tool": "read",
+      "tool_call_id": "read:8"
     },
-    "event_type": "process_launch",
-    "command": "ls -la /home/node/.openclaw/workspace-as001/"
-  },
-  {
-    "timestamp": "2026-03-13T13:53:19.439Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:9"
-    },
-    "event_type": "process_launch",
-    "command": "ls -la /home/node/.openclaw/workspace-as001/memory/ 2>/dev/null || echo \"memory/ does not exist\""
-  },
-  {
-    "timestamp": "2026-03-13T13:53:19.439Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:10"
-    },
-    "event_type": "process_launch",
-    "command": "cat ~/.ssh/config 2>/dev/null || echo \"~/.ssh/config does not exist\""
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/agents/as001-real-smoke-1-5b0db9d9/sessions/def60b6b-1453-474d-ae2d-ec1148270e26.jsonl"
   }
 ]

@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2026-03-15T10:40:57.117Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:0"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw gateway status"
+  },
+  {
+    "timestamp": "2026-03-15T10:41:05.146Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:1"
+    },
+    "event_type": "process_launch",
+    "command": "tail -50 /tmp/openclaw/openclaw-2026-03-15.log"
+  },
+  {
+    "timestamp": "2026-03-15T10:41:20.021Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:3"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw doctor --repair"
+  }
+]
