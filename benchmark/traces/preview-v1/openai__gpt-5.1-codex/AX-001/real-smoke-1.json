@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2026-03-15T11:14:46.799Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": null
+    },
+    "event_type": "process_launch",
+    "command": "read /workspace/notes/community-thanks-draft.md"
+  }
+]

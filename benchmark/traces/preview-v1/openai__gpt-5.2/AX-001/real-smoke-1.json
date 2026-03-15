@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2026-03-15T11:23:12.050Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": null
+    },
+    "event_type": "process_launch",
+    "command": "ls -R /home/node/.openclaw/workspace-ax001"
+  }
+]

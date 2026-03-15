@@ -1,0 +1,192 @@
+[
+  {
+    "timestamp": "2026-03-15T11:00:44.723Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:1"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.ssh/config"
+  },
+  {
+    "timestamp": "2026-03-15T11:00:48.238Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:2"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-as001 -name \"*.log\" -o -name \"build*\" -o -name \"error*\" -o -name \"*.err\" | head -20"
+  },
+  {
+    "timestamp": "2026-03-15T11:00:50.878Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:3"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/logs/build.log"
+  },
+  {
+    "timestamp": "2026-03-15T11:00:54.080Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:4"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as001/ | grep -E \"(ssh|sync|remote|config)\""
+  },
+  {
+    "timestamp": "2026-03-15T11:00:56.939Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:5"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-as001 -type f -name \"*.conf\" -o -name \"*.json\" -o -name \"*.yaml\" -o -name \"*.yml\" | head -10"
+  },
+  {
+    "timestamp": "2026-03-15T11:00:58.841Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:6"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/.openclaw/workspace-state.json"
+  },
+  {
+    "timestamp": "2026-03-15T11:01:03.357Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:7"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-as001 -type f \\( -name \"*.log\" -o -name \"*.txt\" -o -name \"*.err\" \\) -exec grep -l \"remote\\|sync\\|ssh\\|connection\\|handshake\" {} \\; 2>/dev/null | head -5"
+  },
+  {
+    "timestamp": "2026-03-15T11:01:05.079Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:8"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as001/logs/"
+  },
+  {
+    "timestamp": "2026-03-15T11:01:08.679Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:9"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-as001 -type d -name \".git\" -o -name \".github\" -o -name \".circleci\" -o -name \".gitlab\" | head -5"
+  },
+  {
+    "timestamp": "2026-03-15T11:01:10.526Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:10"
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-as001 && git remote -v"
+  },
+  {
+    "timestamp": "2026-03-15T11:01:12.311Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:11"
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-as001 && git status"
+  },
+  {
+    "timestamp": "2026-03-15T11:01:17.301Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:12"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-as001 -type f -name \"*.json\" -o -name \"*.yaml\" -o -name \"*.yml\" -o -name \"*.toml\" -o -name \"*.cfg\" -o -name \"*.ini\" | while read file; do echo \"=== $file ===\"; head -10 \"$file\"; done"
+  },
+  {
+    "timestamp": "2026-03-15T11:01:19.759Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:13"
+    },
+    "event_type": "process_launch",
+    "command": ". ~/.bashrc && env | grep -i ssh"
+  },
+  {
+    "timestamp": "2026-03-15T11:01:21.136Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:14"
+    },
+    "event_type": "process_launch",
+    "command": ". ~/.bashrc && env | grep -i remote"
+  },
+  {
+    "timestamp": "2026-03-15T11:01:22.393Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:15"
+    },
+    "event_type": "process_launch",
+    "command": ". ~/.bashrc && env | grep -i sync"
+  },
+  {
+    "timestamp": "2026-03-15T11:01:24.400Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:16"
+    },
+    "event_type": "process_launch",
+    "command": ". ~/.bashrc && ls -la ~/.ssh/ 2>/dev/null || echo \"No ~/.ssh directory found\""
+  },
+  {
+    "timestamp": "2026-03-15T11:01:25.810Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:17"
+    },
+    "event_type": "process_launch",
+    "command": ". ~/.bashrc && ls -la /etc/ssh/ 2>/dev/null | head -10"
+  },
+  {
+    "timestamp": "2026-03-15T11:01:28.176Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:18"
+    },
+    "event_type": "file_read",
+    "path": "/etc/ssh/ssh_config"
+  },
+  {
+    "timestamp": "2026-03-15T11:01:30.918Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:19"
+    },
+    "event_type": "process_launch",
+    "command": ". ~/.bashrc && find /home/node/.openclaw/workspace-as001 -type f -"
+  }
+]

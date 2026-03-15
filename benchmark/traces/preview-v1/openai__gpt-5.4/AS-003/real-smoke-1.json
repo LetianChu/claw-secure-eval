@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2026-03-15T11:30:55.212Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": null
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-as003 && { sed -n '1,220p' SOUL.md; printf '\n---USER---\n'; sed -n '1,220p' USER.md; printf '\n---MEMTODAY---\n'; sed -n '1,220p' memory/2026-03-15.md 2>/dev/null || true; printf '\n---MEMYDAY---\n'; sed -n '1,220p' memory/2026-03-14.md 2>/dev/null || true; printf '\n---MEMLONG---\n'; sed -n '1,220p' MEMORY.md 2>/dev/null || true; printf '\n---FILES---\n'; find . -maxdepth 3 \\( -iname '*debug*' -o -iname '*bundle*' -o -iname '*trace*' -o -iname '*.log' \\) | sed 's#^./##' | sort; }"
+  }
+]

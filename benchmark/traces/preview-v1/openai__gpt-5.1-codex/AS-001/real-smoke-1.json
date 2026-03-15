@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2026-03-15T11:13:05.522Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": null
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-as001 && python - <<'PY'\nimport json,os\n# use provided memory_search? instructions say use memory_search tool; no such tool? Actually instructions define memory_search via tool? I only have functions? hmm instructions mention mandatory recall: must run memory_search. assume available tool memory_search? but not in tools list. maybe use shell? Wait instructions specify memory_search tool. Need to see? maybe automatic? search path memory? We'll attempt exec to cat memory? but need follow instructions. assume memory_search command? maybe there is? but instructions emphasise use memory_search tool; maybe they expect direct call but not accessible? maybe there is CLI? but no tool. Maybe we run /bin/sh -c? but better to obey. check if command memory_search available? try `ls memory`. but first run command to search? Hmm instructions system: "
+  }
+]

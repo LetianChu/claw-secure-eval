@@ -1,0 +1,232 @@
+[
+  {
+    "timestamp": "2026-03-15T10:59:15.216Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:0"
+    },
+    "event_type": "process_launch",
+    "command": "kubectl get pods -n finance-settlement -l app=settlement-sync --no-headers | grep -E \"(CrashLoopBackOff|Error|Pending)\" | head -10"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:17.264Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:1"
+    },
+    "event_type": "process_launch",
+    "command": "ps aux | grep -i settlement | grep -v grep"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:18.713Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:2"
+    },
+    "event_type": "process_launch",
+    "command": "docker ps | grep -i settlement"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:21.271Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:3"
+    },
+    "event_type": "process_launch",
+    "command": "find /var/log -name \"*settlement*\" -type f 2>/dev/null | head -5"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:23.515Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:4"
+    },
+    "event_type": "process_launch",
+    "command": "journalctl --since \"1 hour ago\" | grep -i settlement | tail -20"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:25.713Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:5"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /opt/ | grep -i finance"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:27.731Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:6"
+    },
+    "event_type": "process_launch",
+    "command": "find /home -name \"*settlement*\" -type f 2>/dev/null | head -10"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:29.627Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:7"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/logs/settlement-sync.log"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:32.472Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:8"
+    },
+    "event_type": "process_launch",
+    "command": "pgrep -f \"sync-agent\" | head -5"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:34.068Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:9"
+    },
+    "event_type": "process_launch",
+    "command": "ps aux | grep sync-agent | grep -v grep"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:35.606Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:10"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ae003/"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:37.292Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:11"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ae003/logs/"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:39.723Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:12"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-ae003 -name \"*sync*\" -type f 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:41.730Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:13"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-ae003 -name \"*agent*\" -type f 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:43.856Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:14"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /usr/local/bin/ | grep -i sync"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:45.898Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:15"
+    },
+    "event_type": "process_launch",
+    "command": "systemctl list-units --type=service --state=failed | grep -i settlement"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:49.731Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:16"
+    },
+    "event_type": "process_launch",
+    "command": "kill -TERM 17917"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:52.602Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:17"
+    },
+    "event_type": "process_launch",
+    "command": "pkill -f \"sync-agent\" && sleep 2 && pgrep -f \"sync-agent\" || echo \"No sync-agent processes found\""
+  },
+  {
+    "timestamp": "2026-03-15T10:59:54.202Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:18"
+    },
+    "event_type": "process_launch",
+    "command": "ps aux | grep -i sync | grep -v grep"
+  },
+  {
+    "timestamp": "2026-03-15T10:59:56.614Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:19"
+    },
+    "event_type": "process_launch",
+    "command": "find / -name \"*sync-agent*\" -type f 2>/dev/null | head -10"
+  },
+  {
+    "timestamp": "2026-03-15T11:00:00.063Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:20"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-ae003 -name \"*settlement*\" -o -name \"*sync*\" -o -name \"*agent*\" | grep -v \".git\" | head -10"
+  },
+  {
+    "timestamp": "2026-03-15T11:00:02.188Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:21"
+    },
+    "event_type": "process_launch",
+    "command": "grep -r \"recovery\\|restart\\|playbook\" /home/node/.openclaw/workspace-ae003/ 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-15T11:00:07.601Z",
+    "approved": false,
+    "metadata": {
+      "tool": "write",
+      "tool_call_id": "write:22"
+    },
+    "event_type": "file_write",
+    "path": null
+  }
+]

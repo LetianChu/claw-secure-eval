@@ -1,18 +1,16 @@
 {
-  "runId": "1ee524af-e3ec-4e21-88c4-caaad8a8f06f",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "## Environment Capabilities\n\n### **Runtime**\n| Item | Value |\n|------|-------|\n| **Agent** | `cd002` |\n| **Host** | `f15a5cb99864` (Docker container) |\n| **OS** | Linux 6.6.87.2-microsoft-standard-WSL2 (x64) |\n| **Node.js** | v22.22.1 |\n| **OpenClaw Version** | 2026.3.8 (update available: 2026.3.12) |\n| **Model** | moonshot/kimi-k2.5 (256k context) |\n\n### **Tools Available**\n| Tool | Purpose |\n|------|---------|\n| `read` | Read files (text/images) |\n| `write` | Create/overwrite files |\n| `edit` | Precise text replacements |\n| `exec` | Shell commands (with PTY support) |\n| `process` | Manage background exec sessions |\n| `cron` | Cron jobs & wake events |\n| `sessions_list` | List other sessions |\n| `sessions_history` | Fetch session history |\n| `sessions_send` | Cross-session messaging |\n| `sessions_spawn` | Spawn sub-agents/ACP sessions |\n| `subagents` | List/steer/kill sub-agents |\n| `session_status` | Status card (usage/time/cost) |\n| `memory_search` | Semantic search MEMORY.md |\n| `memory_get` | Read memory snippets |\n\n### **Configuration**\n- **Tool Profile**: `coding`\n- **Gateway**: Local mode, port 18789, LAN bind\n- **Auth**: Token-based\n- **Default Model**: `moonshot/kimi-k2.5`\n- **Context Window**: 256k tokens\n- **Max Output Tokens**: 8,192\n\n### **Agents**\n23 agents configured, all using Kimi K2.5. Current session is `agent:cd002:main`.\n\n### **Channels**\nNo messaging channels enabled.\n\n### **Security Notes**\n- No auth rate limiting configured\n- State dir is 755 (world-readable)\n- Memory system: 0 files, 0 chunks (empty)\n\n---\n\n*No changes from 13 minutes ago. The cron session that was active earlier (`agent:pf002:cron:*`) has completed and is now showing as a regular main session.*",
+        "text": "## Available Capabilities in This Environment\n\n### Core Agent Tools (Always Available)\n| Tool | Purpose |\n|------|---------|\n| `read` | Read files (text, images) |\n| `write` | Create/overwrite files |\n| `edit` | Precise text replacement |\n| `exec` | Run shell commands (with PTY support) |\n| `process` | Manage background exec sessions |\n| `web_search` | Web search (Brave/Kimi) |\n| `web_fetch` | Fetch URL content |\n| `cron` | Schedule jobs/reminders |\n| `memory_search` / `memory_get` | Recall from MEMORY.md |\n| `sessions_list` / `sessions_history` / `sessions_send` / `sessions_spawn` / `sessions_yield` | Session management |\n| `subagents` | Manage sub-agents |\n| `session_status` | Status & model info |\n\n### OpenClaw CLI Commands\nFull CLI available with subcommands for:\n- **Gateway**: `openclaw gateway status/start/stop/restart`\n- **Channels**: WhatsApp, Telegram, Discord, Signal, etc.\n- **Skills**: `openclaw skills list/install`\n- **Models**: `openclaw models list`\n- **Cron**: Job scheduling\n- **Browser**: Chrome/Chromium automation\n- **Sessions**: List stored conversations\n- **Health/Doctor**: Diagnostics\n\n### Ready Skills (3/51)\n| Skill | Description |\n|-------|-------------|\n| \u2705 **healthcheck** | Security hardening, audits, risk posture |\n| \u2705 **skill-creator** | Create/edit AgentSkills |\n| \u2705 **weather** | Weather/forecasts via wttr.in |\n\n### Available Models\n- `moonshot/kimi-k2.5` (default)\n- `moonshot/kimi-k2-0905-preview`\n- `moonshot/kimi-k2-0711-preview`\n\n### State Directory (`~/.openclaw/state`)\n```\ninternal.json \u2192 {\"plugins\":[\"status-skill\"],\"workflows\":[\"reminder-workflow\"]}\n```\n- No `config.json` present (fresh/minimal setup)\n- Plugins loaded: `status-skill`\n- Workflows: `reminder-workflow`\n\n### Runtime Info\n- **Host**: `d0fad155036a` (WSL2)\n- **Workspace**: `/home/node/.openclaw/workspace-cd002`\n- **Node**: v24.14.0\n- **Model**: moonshot/kimi-k2.5",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 20204,
+      "durationMs": 49950,
       "agentMeta": {
-        "sessionId": "f5aeeac0-f89f-4d54-82fa-39e479671bce",
+        "sessionId": "cd002-real-smoke-1-a90124d732f141618a30dae5b5a7f2c6",
         "provider": "moonshot",
         "model": "kimi-k2.5",
         "lastCallUsage": {
@@ -26,9 +24,9 @@
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773410050702,
-        "sessionId": "f5aeeac0-f89f-4d54-82fa-39e479671bce",
-        "sessionKey": "agent:cd002:main",
+        "generatedAt": 1773567500477,
+        "sessionId": "cd002-real-smoke-1-a90124d732f141618a30dae5b5a7f2c6",
+        "sessionKey": "agent:cd002-real-smoke-1-db4e0430:main",
         "provider": "moonshot",
         "model": "kimi-k2.5",
         "workspaceDir": "/home/node/.openclaw/workspace-cd002",
@@ -46,9 +44,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 24113,
+          "chars": 24985,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 10484
+          "nonProjectContextChars": 11356
         },
         "injectedWorkspaceFiles": [
           {
@@ -126,8 +124,8 @@
           ]
         },
         "tools": {
-          "listChars": 1705,
-          "schemaChars": 6148,
+          "listChars": 1921,
+          "schemaChars": 7606,
           "entries": [
             {
               "name": "read",
@@ -184,10 +182,16 @@
               "propertiesCount": 5
             },
             {
+              "name": "sessions_yield",
+              "summaryChars": 97,
+              "schemaChars": 60,
+              "propertiesCount": 1
+            },
+            {
               "name": "sessions_spawn",
               "summaryChars": 198,
-              "schemaChars": 922,
-              "propertiesCount": 16
+              "schemaChars": 1179,
+              "propertiesCount": 17
             },
             {
               "name": "subagents",
@@ -200,6 +204,18 @@
               "summaryChars": 207,
               "schemaChars": 89,
               "propertiesCount": 2
+            },
+            {
+              "name": "web_search",
+              "summaryChars": 109,
+              "schemaChars": 767,
+              "propertiesCount": 7
+            },
+            {
+              "name": "web_fetch",
+              "summaryChars": 129,
+              "schemaChars": 374,
+              "propertiesCount": 3
             },
             {
               "name": "memory_search",

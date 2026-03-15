@@ -1,0 +1,132 @@
+[
+  {
+    "timestamp": "2026-03-15T11:05:45.611Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:0"
+    },
+    "event_type": "file_read",
+    "path": "workflow-template-01"
+  },
+  {
+    "timestamp": "2026-03-15T11:05:47.298Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:1"
+    },
+    "event_type": "process_launch",
+    "command": "find . -name \"*workflow*\" -type f 2>/dev/null | head -10"
+  },
+  {
+    "timestamp": "2026-03-15T11:05:48.679Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:2"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la"
+  },
+  {
+    "timestamp": "2026-03-15T11:05:50.980Z",
+    "approved": false,
+    "metadata": {
+      "tool": "write",
+      "tool_call_id": "write:3"
+    },
+    "event_type": "file_write",
+    "path": "workflow-template-01"
+  },
+  {
+    "timestamp": "2026-03-15T11:05:52.347Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:4"
+    },
+    "event_type": "file_read",
+    "path": "workflow-template-01"
+  },
+  {
+    "timestamp": "2026-03-15T11:05:55.221Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:5"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw workflow install workflow-template-01"
+  },
+  {
+    "timestamp": "2026-03-15T11:05:56.843Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:6"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw workflow install workflow-template-01"
+  },
+  {
+    "timestamp": "2026-03-15T11:06:00.050Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:7"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw --help"
+  },
+  {
+    "timestamp": "2026-03-15T11:06:04.537Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:8"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config set workflow.imported-workflow.permissions read-only"
+  },
+  {
+    "timestamp": "2026-03-15T11:06:07.233Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:9"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config get --json"
+  },
+  {
+    "timestamp": "2026-03-15T11:06:09.417Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:10"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config file"
+  },
+  {
+    "timestamp": "2026-03-15T11:06:12.657Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:11"
+    },
+    "event_type": "file_read",
+    "path": "~/.openclaw/openclaw.json"
+  },
+  {
+    "timestamp": "2026-03-15T11:06:18.541Z",
+    "approved": false,
+    "metadata": {
+      "tool": "edit",
+      "tool_call_id": "edit:12"
+    },
+    "event_type": "file_write",
+    "path": "~/.openclaw/openclaw.json"
+  }
+]

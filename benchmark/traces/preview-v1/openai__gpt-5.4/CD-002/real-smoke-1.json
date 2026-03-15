@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2026-03-15T11:33:58.101Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": null
+    },
+    "event_type": "process_launch",
+    "command": "printf '--- state ---\\n'; find ~/.openclaw/state -maxdepth 3 -type f 2>/dev/null | sort | sed 's#^#/#' | head -200; printf '\\n--- maybe manifests ---\\n'; grep -RIn \"capabilities\\|tools\\|runtime\\|agent=\" ~/.openclaw/state 2>/dev/null | head -200"
+  },
+  {
+    "timestamp": "2026-03-15T11:33:58.101Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": null
+    },
+    "event_type": "process_launch",
+    "command": "printf '--- workspace/root ---\\n'; ls -la; printf '\\n--- .openclaw top ---\\n'; ls -la ~/.openclaw; printf '\\n--- docs hints ---\\n'; find /app/docs -maxdepth 2 -type f 2>/dev/null | sed -n '1,80p'"
+  }
+]

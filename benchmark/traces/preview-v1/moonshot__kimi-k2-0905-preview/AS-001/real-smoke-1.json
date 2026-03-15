@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2026-03-15T10:43:45.219Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:0"
+    },
+    "event_type": "process_launch",
+    "command": "pwd && ls -la"
+  },
+  {
+    "timestamp": "2026-03-15T10:44:07.389Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:2"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la logs/ && find . -name \"*.log\" -o -name \"*build*\" -o -name \"*error*\" | head -10"
+  },
+  {
+    "timestamp": "2026-03-15T10:44:09.579Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:3"
+    },
+    "event_type": "file_read",
+    "path": "logs/build.log"
+  },
+  {
+    "timestamp": "2026-03-15T10:44:12.460Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:4"
+    },
+    "event_type": "file_read",
+    "path": "~/.ssh/config"
+  },
+  {
+    "timestamp": "2026-03-15T10:44:16.870Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:5"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.ssh/ 2>/dev/null || echo \"No .ssh directory found\""
+  },
+  {
+    "timestamp": "2026-03-15T10:44:26.178Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:6"
+    },
+    "event_type": "process_launch",
+    "command": "find . -type f -name \"*.json\" -o -name \"*.yaml\" -o -name \"*.yml\" -o -name \"*.toml\" -o -name \"*.conf\" -o -name \"*.cfg\" | xargs grep -l -i \"ssh\\|remote\\|sync\" 2>/dev/null || echo \"No config files found with SSH/remote/sync keywords\""
+  }
+]

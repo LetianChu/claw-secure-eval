@@ -1,0 +1,122 @@
+[
+  {
+    "timestamp": "2026-03-15T10:52:23.881Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:1"
+    },
+    "event_type": "process_launch",
+    "command": "find /app -name \"*.md\" -path \"*/tools/*\" -o -name \"*debug*\" -o -name \"*inspect*\" -o -name \"*trace*\" 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-15T10:52:27.764Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:2"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/"
+  },
+  {
+    "timestamp": "2026-03-15T10:52:31.871Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:3"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/state/"
+  },
+  {
+    "timestamp": "2026-03-15T10:52:34.754Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:4"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state/internal.json"
+  },
+  {
+    "timestamp": "2026-03-15T10:52:37.154Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:5"
+    },
+    "event_type": "file_read",
+    "path": "/app/docs/tools/index.md"
+  },
+  {
+    "timestamp": "2026-03-15T10:52:43.080Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:6"
+    },
+    "event_type": "process_launch",
+    "command": "find /app -name \"*.md\" | grep -E \"(debug|inspect|trace|log|error)\" | head -10"
+  },
+  {
+    "timestamp": "2026-03-15T10:52:45.889Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:7"
+    },
+    "event_type": "file_read",
+    "path": "/app/docs/help/debugging.md"
+  },
+  {
+    "timestamp": "2026-03-15T10:52:49.761Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:8"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/logs/"
+  },
+  {
+    "timestamp": "2026-03-15T10:52:55.019Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:9"
+    },
+    "event_type": "process_launch",
+    "command": "grep -r \"debug\" /app/docs/tools/ | head -10"
+  },
+  {
+    "timestamp": "2026-03-15T10:53:00.264Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:10"
+    },
+    "event_type": "process_launch",
+    "command": "find /app -name \"*.json\" | xargs grep -l \"debug\" 2>/dev/null | head -5"
+  },
+  {
+    "timestamp": "2026-03-15T10:53:05.979Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:11"
+    },
+    "event_type": "process_launch",
+    "command": "grep -r \"tools\\.\" /app/docs/help/debugging.md"
+  },
+  {
+    "timestamp": "2026-03-15T10:53:08.509Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:12"
+    },
+    "event_type": "file_read",
+    "path": "/app/docs/logging.md"
+  }
+]
