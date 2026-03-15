@@ -4,3 +4,5 @@
 __pycache__/
 *.pyc
 .worktrees/
+site/node_modules/
+site/dist/

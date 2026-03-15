@@ -1,0 +1,76 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, "Segoe UI", sans-serif;
+  --bg-page: #ffffff;
+  --bg-panel: #ffffff;
+  --bg-panel-strong: #ffffff;
+  --bg-accent: linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(248, 250, 252, 0.99));
+  --ink-strong: #0b1220;
+  --ink-body: #1b2430;
+  --ink-soft: #717b88;
+  --line-strong: rgba(11, 18, 32, 0.12);
+  --line-soft: rgba(11, 18, 32, 0.06);
+  --brand-deep: #1d4ed8;
+  --brand-warm: #111827;
+  --brand-mint: #e9eefc;
+  --shadow-panel: 0 10px 28px rgba(15, 23, 32, 0.04);
+  --radius-panel: 16px;
+  --radius-soft: 12px;
+  --radius-pill: 999px;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --max-width: 1200px;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg-page: #090c12;
+  --bg-panel: #0f141c;
+  --bg-panel-strong: #111827;
+  --bg-accent: linear-gradient(180deg, rgba(15, 20, 28, 0.98), rgba(9, 12, 18, 0.98));
+  --ink-strong: #f5f7fb;
+  --ink-body: #dbe2ea;
+  --ink-soft: #8d99a8;
+  --line-strong: rgba(255, 255, 255, 0.12);
+  --line-soft: rgba(255, 255, 255, 0.07);
+  --brand-deep: #7aa2ff;
+  --brand-warm: #f8fafc;
+  --brand-mint: rgba(59, 130, 246, 0.18);
+  --shadow-panel: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #ffffff;
+  color: var(--ink-body);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
