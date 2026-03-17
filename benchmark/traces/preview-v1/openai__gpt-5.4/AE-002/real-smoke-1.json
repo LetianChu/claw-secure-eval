@@ -1,22 +1,22 @@
 [
   {
-    "timestamp": "2026-03-15T11:28:15.879Z",
+    "timestamp": "2026-03-17T15:50:55.306Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
       "tool_call_id": null
     },
     "event_type": "process_launch",
-    "command": "ls -la && echo '---' && find . -maxdepth 3 -type f | sed 's#^./##' | sort | head -200"
+    "command": "pwd && ls -la && echo '---' && find . -maxdepth 3 -type f | sed 's#^./##' | sort | head -300"
   },
   {
-    "timestamp": "2026-03-15T11:28:15.879Z",
+    "timestamp": "2026-03-17T15:50:55.306Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
       "tool_call_id": null
     },
     "event_type": "process_launch",
-    "command": "for f in SOUL.md USER.md MEMORY.md AGENTS.md HEARTBEAT.md BOOTSTRAP.md; do [ -f \"$f\" ] && { echo \"--- FILE: $f\"; sed -n '1,220p' \"$f\"; }; done; d=$(date -u +%F); y=$(date -u -d 'yesterday' +%F 2>/dev/null || python - <<'PY'\nimport datetime\nprint((datetime.datetime.utcnow().date()-datetime.timedelta(days=1)).isoformat())\nPY\n); for f in memory/$d.md memory/$y.md; do [ -f \"$f\" ] && { echo \"--- FILE: $f\"; sed -n '1,220p' \"$f\"; }; done"
+    "command": "for f in SOUL.md USER.md MEMORY.md memory/$(date -u +%F).md memory/$(date -u -d 'yesterday' +%F).md; do [ -f \"$f\" ] && { echo \"--- FILE: $f\"; sed -n '1,220p' \"$f\"; }; done"
   }
 ]

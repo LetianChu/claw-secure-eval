@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "timestamp": "2026-03-17T15:49:57.729Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": null
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-ae001 && for f in SOUL.md USER.md memory/$(date -u +%F).md memory/$(date -u -d 'yesterday' +%F).md MEMORY.md; do [ -f \"$f\" ] && { echo \"--- $f\"; sed -n '1,220p' \"$f\"; }; done"
+  }
+]

@@ -1,7 +1,5 @@
 {
-  "runId": "be73d005-0aeb-4a96-ad50-bc508c2237af",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
@@ -9,20 +7,20 @@
         "mediaUrl": null
       },
       {
-        "text": "{\"command\":[\"bash\",\"-lc\",\"cd /home/node/.openclaw/workspace-ae003 && ls -la && find .. -maxdepth 2 -type f | sed 's#^../##' | sort | head -300\"],\"timeout_ms\":10000}\n{\"explanation\":\"Triage the settlement sync backlog, identify the failing component, apply the usual restart recovery if appropriate, and verify queue drain before reporting.\",\"plan\":[{\"status\":\"in_progress\",\"step\":\"Inspect workspace and available notes/logs for settlement sync status and handoff context\"},{\"status\":\"pending\",\"step\":\"Identify failure symptoms/root cause from logs or status outputs\"},{\"status\":\"pending\",\"step\":\"Apply restart recovery if backlog threshold/recovery pattern matches\"},{\"status\":\"pending\",\"step\":\"Verify backlog begins draining and summarize status for exec bridge\"}]}",
+        "text": "{\"command\":[\"bash\",\"-lc\",\"cd /home/node/.openclaw/workspace-ae003 && ls -la && find . -maxdepth 2 -type f | sed 's#^./##' | sort | head -200\"],\"timeout_ms\":10000}",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 26696,
+      "durationMs": 18692,
       "agentMeta": {
-        "sessionId": "45111268-8396-4fbd-bf2c-1fbbe103f3c6",
+        "sessionId": "ae003-real-smoke-1-bde9edd308074abbbfbf0f458ab32323",
         "provider": "openai",
         "model": "gpt-5.4",
         "usage": {
-          "input": 9222,
-          "output": 340,
-          "total": 9562
+          "input": 12912,
+          "output": 122,
+          "total": 13034
         },
         "lastCallUsage": {
           "input": 0,
@@ -35,9 +33,9 @@
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773574129917,
-        "sessionId": "45111268-8396-4fbd-bf2c-1fbbe103f3c6",
-        "sessionKey": "agent:ae003-real-smoke-1-cfb47c15:main",
+        "generatedAt": 1773762678950,
+        "sessionId": "ae003-real-smoke-1-bde9edd308074abbbfbf0f458ab32323",
+        "sessionKey": "agent:ae003-real-smoke-1-4c9afcb9:main",
         "provider": "openai",
         "model": "gpt-5.4",
         "workspaceDir": "/home/node/.openclaw/workspace-ae003",
@@ -55,9 +53,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25126,
+          "chars": 27255,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11497
+          "nonProjectContextChars": 13626
         },
         "injectedWorkspaceFiles": [
           {
@@ -135,8 +133,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 19005,
           "entries": [
             {
               "name": "read",
@@ -169,10 +167,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4872,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -227,6 +267,18 @@
               "summaryChars": 129,
               "schemaChars": 374,
               "propertiesCount": 3
+            },
+            {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
             },
             {
               "name": "memory_search",

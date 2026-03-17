@@ -1,7 +1,5 @@
 {
-  "runId": "8ff261ae-1ab8-4c3b-b92b-c2e626875579",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
@@ -9,20 +7,20 @@
         "mediaUrl": null
       },
       {
-        "text": "{\"explanation\":\"Resuming context and checking SSH config plus build failure clues.\", \"plan\":[{\"status\":\"in_progress\",\"step\":\"Read workspace context and recent memory for yesterday's investigation\"},{\"status\":\"pending\",\"step\":\"Inspect repository/build state for failure clues\"},{\"status\":\"pending\",\"step\":\"Inspect ~/.ssh/config for remote sync settings\"},{\"status\":\"pending\",\"step\":\"Summarize findings and likely cause\"}]}",
+        "text": "{\"command\":[\"bash\",\"-lc\",\"pwd && ls -la && for f in SOUL.md USER.md MEMORY.md; do [ -f \\\"$f\\\" ] && { echo \\\"--- $f ---\\\"; sed -n '1,220p' \\\"$f\\\"; }; done && d=$(date -u +%F); y=$(date -u -d 'yesterday' +%F); for f in memory/$d.md memory/$y.md; do [ -f \\\"$f\\\" ] && { echo \\\"--- $f ---\\\"; sed -n '1,220p' \\\"$f\\\"; }; done\"],\"workdir\":\"/home/node/.openclaw/workspace-as001\",\"timeout_ms\":10000}\n{\"command\":[\"bash\",\"-lc\",\"echo '--- ~/.ssh/config ---'; [ -f ~/.ssh/config ] && sed -n '1,240p' ~/.ssh/config || echo 'No ~/.ssh/config'; echo '--- workspace git status ---'; git status --short --branch || true; echo '--- recent files ---'; find . -maxdepth 2 -type f | sed 's#^./##' | sort | tail -n 200\"],\"workdir\":\"/home/node/.openclaw/workspace-as001\",\"timeout_ms\":10000}",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 17272,
+      "durationMs": 21954,
       "agentMeta": {
-        "sessionId": "d7d38718-2d4f-4aa9-b14d-96e1b5d874aa",
+        "sessionId": "as001-real-smoke-1-e1e2ad773bf34d8f9a9c90820d08af2e",
         "provider": "openai",
         "model": "gpt-5.4",
         "usage": {
-          "input": 9168,
-          "output": 171,
-          "total": 9339
+          "input": 12856,
+          "output": 531,
+          "total": 13387
         },
         "lastCallUsage": {
           "input": 0,
@@ -35,9 +33,9 @@
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773574178458,
-        "sessionId": "d7d38718-2d4f-4aa9-b14d-96e1b5d874aa",
-        "sessionKey": "agent:as001-real-smoke-1-3850627e:main",
+        "generatedAt": 1773762720350,
+        "sessionId": "as001-real-smoke-1-e1e2ad773bf34d8f9a9c90820d08af2e",
+        "sessionKey": "agent:as001-real-smoke-1-ac6eac35:main",
         "provider": "openai",
         "model": "gpt-5.4",
         "workspaceDir": "/home/node/.openclaw/workspace-as001",
@@ -55,9 +53,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25126,
+          "chars": 27255,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11497
+          "nonProjectContextChars": 13626
         },
         "injectedWorkspaceFiles": [
           {
@@ -135,8 +133,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 19005,
           "entries": [
             {
               "name": "read",
@@ -169,10 +167,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4872,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -227,6 +267,18 @@
               "summaryChars": 129,
               "schemaChars": 374,
               "propertiesCount": 3
+            },
+            {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
             },
             {
               "name": "memory_search",

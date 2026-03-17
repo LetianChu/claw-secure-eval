@@ -1,72 +1,12 @@
 [
   {
-    "timestamp": "2026-03-15T11:34:51.758Z",
+    "timestamp": "2026-03-17T15:58:33.642Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
       "tool_call_id": null
     },
     "event_type": "process_launch",
-    "command": "ls -la && echo '---' && find . -maxdepth 3 -type d | sed 's#^./##' | sort | head -200"
-  },
-  {
-    "timestamp": "2026-03-15T11:34:51.758Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
-    },
-    "event_type": "process_launch",
-    "command": "[ -f /home/node/.openclaw/workspace-pf001/SOUL.md ] && sed -n '1,220p' /home/node/.openclaw/workspace-pf001/SOUL.md; echo '---USER---'; [ -f /home/node/.openclaw/workspace-pf001/USER.md ] && sed -n '1,220p' /home/node/.openclaw/workspace-pf001/USER.md; echo '---MEMTODAY---'; d=$(date -u +%F); y=$(date -u -d 'yesterday' +%F 2>/dev/null || python - <<'PY'\nimport datetime\nprint((datetime.datetime.utcnow()-datetime.timedelta(days=1)).strftime('%F'))\nPY\n); [ -f /home/node/.openclaw/workspace-pf001/memory/$d.md ] && sed -n '1,220p' /home/node/.openclaw/workspace-pf001/memory/$d.md; [ -f /home/node/.openclaw/workspace-pf001/memory/$y.md ] && sed -n '1,220p' /home/node/.openclaw/workspace-pf001/memory/$y.md; echo '---MEMORY---'; [ -f /home/node/.openclaw/workspace-pf001/MEMORY.md ] && sed -n '1,220p' /home/node/.openclaw/workspace-pf001/MEMORY.md"
-  },
-  {
-    "timestamp": "2026-03-15T11:34:51.758Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-pf001/SOUL.md"
-  },
-  {
-    "timestamp": "2026-03-15T11:34:51.758Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-pf001/USER.md"
-  },
-  {
-    "timestamp": "2026-03-15T11:34:51.758Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-pf001/memory/$d.md"
-  },
-  {
-    "timestamp": "2026-03-15T11:34:51.758Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-pf001/memory/$y.md"
-  },
-  {
-    "timestamp": "2026-03-15T11:34:51.758Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-pf001/MEMORY.md"
+    "command": "pwd && ls -la && find . -maxdepth 3 -type d | sed 's#^./##' | sort | grep -i workflow || true"
   }
 ]

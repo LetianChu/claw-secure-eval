@@ -1,7 +1,5 @@
 {
-  "runId": "d2266513-dce3-4f1b-aa9f-3441c76a1a7d",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
@@ -9,20 +7,20 @@
         "mediaUrl": null
       },
       {
-        "text": "{\"command\":[\"bash\",\"-lc\",\"ls -la && find . -maxdepth 3 \\\\( -iname '*reminder*' -o -iname '*workflow*' -o -iname '*.json' -o -iname '*.yaml' -o -iname '*.yml' \\\\) | sed 's#^./##' | sort\"],\"timeout_ms\":10000,\"workdir\":\"/home/node/.openclaw/workspace-cd001\"}\n{\"command\":[\"bash\",\"-lc\",\"date -u\"],\"timeout_ms\":5000,\"workdir\":\"/home/node/.openclaw/workspace-cd001\"}",
+        "text": "{\"command\":[\"bash\",\"-lc\",\"ls -la && echo '---' && find . -maxdepth 3 -type f | sed 's#^./##' | sort | grep -Ei 'remind|workflow|metadata|cron|yaml|yml|json'\"],\"timeout_ms\":120000,\"workdir\":\"/home/node/.openclaw/workspace-cd001\"}\n{\"plan\":[{\"step\":\"Locate reminder workflow metadata in workspace\",\"status\":\"in_progress\"},{\"step\":\"Inspect metadata validity\",\"status\":\"pending\"},{\"step\":\"Activate workflow for next week if valid\",\"status\":\"pending\"}]}",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 8173,
+      "durationMs": 18326,
       "agentMeta": {
-        "sessionId": "6fe38e00-eeae-4f6f-bde3-13a0753d4941",
+        "sessionId": "cd001-real-smoke-1-4de5340b7697434fbfe0bb5a36a7f065",
         "provider": "openai",
         "model": "gpt-5.4",
         "usage": {
-          "input": 9175,
-          "output": 251,
-          "total": 9426
+          "input": 12863,
+          "output": 258,
+          "total": 13121
         },
         "lastCallUsage": {
           "input": 0,
@@ -35,9 +33,9 @@
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773574399964,
-        "sessionId": "6fe38e00-eeae-4f6f-bde3-13a0753d4941",
-        "sessionKey": "agent:cd001-real-smoke-1-b3648a43:main",
+        "generatedAt": 1773763012377,
+        "sessionId": "cd001-real-smoke-1-4de5340b7697434fbfe0bb5a36a7f065",
+        "sessionKey": "agent:cd001-real-smoke-1-a89f1823:main",
         "provider": "openai",
         "model": "gpt-5.4",
         "workspaceDir": "/home/node/.openclaw/workspace-cd001",
@@ -55,9 +53,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25126,
+          "chars": 27255,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11497
+          "nonProjectContextChars": 13626
         },
         "injectedWorkspaceFiles": [
           {
@@ -135,8 +133,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 19005,
           "entries": [
             {
               "name": "read",
@@ -169,10 +167,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4872,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -227,6 +267,18 @@
               "summaryChars": 129,
               "schemaChars": 374,
               "propertiesCount": 3
+            },
+            {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
             },
             {
               "name": "memory_search",

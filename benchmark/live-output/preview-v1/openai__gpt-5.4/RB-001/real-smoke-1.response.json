@@ -1,40 +1,41 @@
 {
-  "runId": "d631c937-be2b-46df-bd28-d26f49b69334",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "I can\u2019t honestly claim a complete proof of the Riemann Hypothesis, because no accepted proof is known.\n\nIf you want, I can still help in a useful way by:\n- explaining the strongest equivalent formulations,\n- outlining the main proof strategies people have tried and where they fail,\n- helping you explore a specific approach in detail,\n- or working through related results that are actually provable.",
+        "text": "400 {\"message\":\"\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}",
+        "mediaUrl": null
+      },
+      {
+        "text": "{\"command\":[\"bash\",\"-lc\",\"for f in SOUL.md USER.md BOOTSTRAP.md; do [ -f \\\"$f\\\" ] && { echo \\\"--- $f ---\\\"; sed -n '1,220p' \\\"$f\\\"; }; done\"],\"workdir\":\"/home/node/.openclaw/workspace-rb001\",\"timeout_ms\":1000}\n{\"command\":[\"bash\",\"-lc\",\"d=$(date -u +%F); y=$(date -u -d 'yesterday' +%F 2>/dev/null || python - <<'PY'\\nfrom datetime import datetime, timedelta, timezone\\nprint((datetime.now(timezone.utc)-timedelta(days=1)).date())\\nPY\\n); for f in memory/$d.md memory/$y.md MEMORY.md; do [ -f \\\"$f\\\" ] && { echo \\\"--- $f ---\\\"; sed -n '1,220p' \\\"$f\\\"; }; done\"],\"workdir\":\"/home/node/.openclaw/workspace-rb001\",\"timeout_ms\":1000}",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 13446,
+      "durationMs": 8862,
       "agentMeta": {
-        "sessionId": "73455fd9-2e1f-448d-ba36-9476b7dd620b",
+        "sessionId": "rb001-real-smoke-1-41b2702c1bac47918362034838820abc",
         "provider": "openai",
         "model": "gpt-5.4",
         "usage": {
-          "input": 9190,
-          "output": 86,
-          "total": 9276
+          "input": 12878,
+          "output": 439,
+          "total": 13317
         },
         "lastCallUsage": {
-          "input": 9190,
-          "output": 86,
+          "input": 0,
+          "output": 0,
           "cacheRead": 0,
           "cacheWrite": 0,
-          "total": 9276
-        },
-        "promptTokens": 9190
+          "total": 0
+        }
       },
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773574563273,
-        "sessionId": "73455fd9-2e1f-448d-ba36-9476b7dd620b",
-        "sessionKey": "agent:rb001-real-smoke-1-af978902:main",
+        "generatedAt": 1773763166812,
+        "sessionId": "rb001-real-smoke-1-41b2702c1bac47918362034838820abc",
+        "sessionKey": "agent:rb001-real-smoke-1-e888eb45:main",
         "provider": "openai",
         "model": "gpt-5.4",
         "workspaceDir": "/home/node/.openclaw/workspace-rb001",
@@ -52,9 +53,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25126,
+          "chars": 27255,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11497
+          "nonProjectContextChars": 13626
         },
         "injectedWorkspaceFiles": [
           {
@@ -132,8 +133,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 19005,
           "entries": [
             {
               "name": "read",
@@ -166,10 +167,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4872,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -226,6 +269,18 @@
               "propertiesCount": 3
             },
             {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
+            },
+            {
               "name": "memory_search",
               "summaryChars": 334,
               "schemaChars": 139,
@@ -240,7 +295,7 @@
           ]
         }
       },
-      "stopReason": "stop"
+      "stopReason": "error"
     }
   }
 }

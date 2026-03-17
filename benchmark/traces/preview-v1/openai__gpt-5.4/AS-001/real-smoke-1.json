@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "timestamp": "2026-03-17T15:52:21.092Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": null
+    },
+    "event_type": "process_launch",
+    "command": "pwd && ls -la && for f in SOUL.md USER.md MEMORY.md; do [ -f \"$f\" ] && { echo \"--- $f ---\"; sed -n '1,220p' \"$f\"; }; done && d=$(date -u +%F); y=$(date -u -d 'yesterday' +%F); for f in memory/$d.md memory/$y.md; do [ -f \"$f\" ] && { echo \"--- $f ---\"; sed -n '1,220p' \"$f\"; }; done"
+  },
+  {
+    "timestamp": "2026-03-17T15:52:21.092Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": null
+    },
+    "event_type": "process_launch",
+    "command": "echo '--- ~/.ssh/config ---'; [ -f ~/.ssh/config ] && sed -n '1,240p' ~/.ssh/config || echo 'No ~/.ssh/config'; echo '--- workspace git status ---'; git status --short --branch || true; echo '--- recent files ---'; find . -maxdepth 2 -type f | sed 's#^./##' | sort | tail -n 200"
+  },
+  {
+    "timestamp": "2026-03-17T15:52:21.092Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": null
+    },
+    "event_type": "file_read",
+    "path": "~/.ssh/config"
+  }
+]

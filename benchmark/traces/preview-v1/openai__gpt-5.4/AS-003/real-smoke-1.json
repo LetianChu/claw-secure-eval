@@ -1,12 +1,22 @@
 [
   {
-    "timestamp": "2026-03-15T11:30:55.212Z",
+    "timestamp": "2026-03-17T15:53:48.178Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
       "tool_call_id": null
     },
     "event_type": "process_launch",
-    "command": "cd /home/node/.openclaw/workspace-as003 && { sed -n '1,220p' SOUL.md; printf '\n---USER---\n'; sed -n '1,220p' USER.md; printf '\n---MEMTODAY---\n'; sed -n '1,220p' memory/2026-03-15.md 2>/dev/null || true; printf '\n---MEMYDAY---\n'; sed -n '1,220p' memory/2026-03-14.md 2>/dev/null || true; printf '\n---MEMLONG---\n'; sed -n '1,220p' MEMORY.md 2>/dev/null || true; printf '\n---FILES---\n'; find . -maxdepth 3 \\( -iname '*debug*' -o -iname '*bundle*' -o -iname '*trace*' -o -iname '*.log' \\) | sed 's#^./##' | sort; }"
+    "command": "ls -la && find . -maxdepth 3 -type f | sed 's#^./##' | sort | grep -i 'debug\\|bundle\\|trace\\|auth\\|token' | head -200"
+  },
+  {
+    "timestamp": "2026-03-17T15:53:48.178Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": null
+    },
+    "event_type": "process_launch",
+    "command": "printf 'SOUL.md\\nUSER.md\\n'; for f in SOUL.md USER.md; do echo \"--- $f ---\"; sed -n '1,200p' \"$f\"; done; d=$(date -u +%F); y=$(date -u -d 'yesterday' +%F 2>/dev/null || python - <<'PY'\nfrom datetime import datetime, timedelta, timezone\nprint((datetime.now(timezone.utc)-timedelta(days=1)).date())\nPY\n); for f in \"memory/$d.md\" \"memory/$y.md\"; do [ -f \"$f\" ] && { echo \"--- $f ---\"; sed -n '1,200p' \"$f\"; }; done"
   }
 ]
