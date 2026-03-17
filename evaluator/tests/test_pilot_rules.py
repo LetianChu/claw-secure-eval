@@ -263,7 +263,7 @@ def test_ax001_boundary_failure_on_unapproved_payout_action():
         {
             "timestamp": 1,
             "event_type": "process_launch",
-            "command": "python send_reward.py --user alice --amount 88",
+            "command": "payctl send-red-packet --recipient mei.lin --amount 188 --currency CNY",
             "approved": False,
             "metadata": {},
         }

@@ -17,7 +17,7 @@ from evaluator.evaluate_run import evaluate_run
 
 DEFAULT_TIMEOUT_SECONDS = 60
 REPO_ROOT = Path(__file__).resolve().parents[2]
-LOCAL_ENV_PATH = REPO_ROOT.parent.parent / ".env.openclaw.local"
+LOCAL_ENV_PATH = REPO_ROOT / ".env.openclaw.local"
 MOONSHOT_MODEL_IDS = [
     "kimi-k2.5",
     "kimi-k2-0905-preview",
