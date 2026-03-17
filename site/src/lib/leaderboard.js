@@ -85,6 +85,7 @@ export function buildLeaderboardModel(entries) {
       status: getRowStatus(entry, topScore),
       metadata: getRowMeta(entry),
       metadataDetail: `Updated ${formatTimestamp(entry.last_updated)}`,
+      task_details: entry.task_details || [],
     })),
     summary: {
       benchmarkVersion: leader.benchmark_version,

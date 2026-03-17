@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import LeaderboardTable from './components/LeaderboardTable.jsx';
+import ModelDetailModal from './components/ModelDetailModal.jsx';
 import { getCopy, getInitialLanguage, LANGUAGE_STORAGE_KEY } from './lib/i18n.js';
 import { loadLeaderboard } from './lib/leaderboard.js';
 import './styles/theme.css';
@@ -40,6 +41,7 @@ export default function App() {
   const [state, setState] = useState({ status: 'loading', data: null, error: null });
   const [theme, setTheme] = useState(getInitialTheme);
   const [language, setLanguage] = useState(getInitialLanguage);
+  const [selectedModel, setSelectedModel] = useState(null);
   const copy = getCopy(language);
 
   useEffect(() => {
@@ -188,8 +190,17 @@ export default function App() {
             lastUpdated={summary.lastUpdated}
             modelCount={summary.modelCount}
             language={language}
+            onRowClick={(row) => setSelectedModel(row)}
           />
         </section>
+
+        {selectedModel && (
+          <ModelDetailModal
+            entry={selectedModel}
+            onClose={() => setSelectedModel(null)}
+            language={language}
+          />
+        )}
 
         <section className="subgrid" id="benchmark">
           <section className="panel info-panel">

@@ -333,3 +333,160 @@ li {
     min-width: 980px;
   }
 }
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: var(--bg-panel);
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  box-shadow: var(--shadow-panel);
+  width: min(96%, 1100px);
+  max-height: 90vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.modal-header h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.modal-meta {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.modal-close {
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--ink-soft);
+  border-radius: 999px;
+  padding: 0.32rem 0.72rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.modal-body {
+  overflow-y: auto;
+  padding: 1rem 1.4rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.task-card {
+  border: 1px solid var(--line-soft);
+  border-radius: 10px;
+}
+
+.task-card.task-fail {
+  border-color: #ef4444;
+}
+
+.task-card.task-pass {
+  border-color: var(--line-soft);
+}
+
+.task-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.8rem;
+  background: color-mix(in srgb, var(--bg-panel) 92%, var(--ink-strong) 3%);
+  font-size: 0.85rem;
+}
+
+.task-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.badge-pass {
+  background: #22c55e;
+  color: #fff;
+}
+
+.badge-fail {
+  background: #ef4444;
+  color: #fff;
+}
+
+.task-title {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.task-score {
+  margin-left: auto;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.task-card-body {
+  padding: 0.6rem 0.9rem 0.7rem;
+  display: grid;
+  gap: 0.45rem;
+  font-size: 0.84rem;
+}
+
+.task-row {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr;
+  gap: 0.6rem;
+  line-height: 1.5;
+  min-width: 0;
+}
+
+.task-row > span {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-width: 0;
+  white-space: normal;
+}
+
+.task-label {
+  font-weight: 700;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-top: 0.15rem;
+  white-space: nowrap;
+}
+
+.task-actual {
+  word-break: break-word;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.leaderboard-table tbody tr {
+  cursor: pointer;
+}

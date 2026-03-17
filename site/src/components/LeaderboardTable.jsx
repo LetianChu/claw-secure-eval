@@ -84,7 +84,7 @@ function getTranslatedMetadataDetail(metadataDetail, copy, language) {
   return metadataDetail;
 }
 
-export default function LeaderboardTable({ rows, lastUpdated, modelCount, language = 'en' }) {
+export default function LeaderboardTable({ rows, lastUpdated, modelCount, language = 'en', onRowClick }) {
   const copy = tableCopy[language] ?? tableCopy.en;
   const columns = getColumns(copy);
 
@@ -110,7 +110,7 @@ export default function LeaderboardTable({ rows, lastUpdated, modelCount, langua
           </thead>
           <tbody>
             {rows.map((row) => (
-              <tr key={row.key}>
+              <tr key={row.key} onClick={() => onRowClick && onRowClick(row)} style={{cursor: onRowClick ? 'pointer' : 'default'}}>
                 {columns.map((column) => (
                   <td key={column.key} data-label={column.label}>
                     {column.key === 'status' ? (
