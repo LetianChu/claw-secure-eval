@@ -15,7 +15,7 @@ from benchmark.runs.openclaw_transcript_trace import transcript_jsonl_to_trace
 from evaluator.evaluate_run import evaluate_run
 
 
-DEFAULT_TIMEOUT_SECONDS = 60
+DEFAULT_TIMEOUT_SECONDS = 180
 REPO_ROOT = Path(__file__).resolve().parents[2]
 LOCAL_ENV_PATH = REPO_ROOT / ".env.openclaw.local"
 MOONSHOT_MODEL_IDS = [
@@ -98,15 +98,17 @@ def _resolve_runtime_model_config(
         if provider_model not in OPENAI_MODEL_IDS:
             raise ValueError(f"Unsupported OpenAI-compatible model: {model_id}")
 
-        base_url = env.get("API_BASE_URL_2")
-        api_key = env.get("API_KEY_2")
+        base_url = env.get("API_BASE_URL_3", env.get("API_BASE_URL_2"))
+        api_key = env.get("API_KEY_3", env.get("API_KEY_2"))
         if not base_url or not api_key:
-            raise ValueError("Missing API_BASE_URL_2 or API_KEY_2 in local env")
+            raise ValueError(
+                "Missing API_BASE_URL_3/API_KEY_3 (or fallback API_BASE_URL_2/API_KEY_2) in local env"
+            )
 
         return {
             "provider_id": "openai",
-            "base_url": base_url,
-            "api_key": api_key,
+            "base_url": base_url.strip(),
+            "api_key": api_key.strip(),
             "model_ids": list(OPENAI_MODEL_IDS),
             "allowed_model_ids": list(OPENAI_COMPATIBLE_ALLOWED_MODEL_IDS),
         }
@@ -509,15 +511,31 @@ def run_single_task(task_path: str | Path, *, model_id: str) -> dict[str, Any]:
     message = build_message_from_task(task, attachment_contents=attachment_contents)
     quoted_message = shlex.quote(message)
     session_id = _build_run_session_id(task_id=task_id, run_id=run_id)
+    container_timeout = options["timeout_seconds"] + 30
     agent_cmd = (
-        f"cd ~/openclaw && docker compose run -T --rm openclaw-cli agent --agent {agent} "
+        f"cd ~/openclaw && timeout {container_timeout} "
+        f"docker compose run -T --rm openclaw-cli agent --agent {agent} "
         f"--session-id {session_id} --timeout {options['timeout_seconds']} "
         f"--message {quoted_message} --json"
     )
-    result = _run_wsl(agent_cmd, timeout=options["timeout_seconds"] + 120)
+    result = _run_wsl(agent_cmd, timeout=options["timeout_seconds"] + 60)
+    # Allow non-zero exit from `timeout` command or agent timeout —
+    # try to extract JSON from stdout/stderr before giving up.
+    combined_output = (result.stdout or "") + (result.stderr or "")
     if result.returncode != 0:
-        raise RuntimeError(result.stderr or result.stdout)
-    payload = _normalize_agent_payload(_extract_json(result.stdout))
+        if "{" not in combined_output:
+            raise RuntimeError(result.stderr or result.stdout)
+    try:
+        payload = _normalize_agent_payload(_extract_json(result.stdout))
+    except (ValueError, json.JSONDecodeError):
+        # JSON may have been written to stderr when timeout killed the process
+        try:
+            payload = _normalize_agent_payload(_extract_json(combined_output))
+        except (ValueError, json.JSONDecodeError):
+            raise RuntimeError(
+                f"Failed to extract JSON (exit={result.returncode}): "
+                f"{combined_output[-500:]}"
+            )
     session_id = payload["result"]["meta"]["agentMeta"]["sessionId"]
     transcript_path = _copy_transcript_from_wsl(
         session_id, agent, task_id, model_id, run_id
