@@ -1,7 +1,5 @@
 {
-  "runId": "7af080c9-a5a1-45d2-b520-1c2896a49f98",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
@@ -9,20 +7,20 @@
         "mediaUrl": null
       },
       {
-        "text": "{\"command\":[\"/bin/sh\",\"-c\",\"cd /home/node/.openclaw/workspace-pf002 && ls\"]}",
+        "text": "{\"command\":[\"/bin/sh\",\"-lc\",\"cd /home/node/.openclaw/workspace-pf002 && memory_search 'report format preference'\"]}",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 4857,
+      "durationMs": 3481,
       "agentMeta": {
-        "sessionId": "d3fa6851-6a84-4668-888c-c9a33212ac7a",
+        "sessionId": "pf002-real-smoke-1-c416aa0a03154daebf868c4d6bfa406e",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "usage": {
-          "input": 9019,
-          "output": 58,
-          "total": 9077
+          "input": 12805,
+          "output": 70,
+          "total": 12875
         },
         "lastCallUsage": {
           "input": 0,
@@ -35,9 +33,9 @@
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773573543782,
-        "sessionId": "d3fa6851-6a84-4668-888c-c9a33212ac7a",
-        "sessionKey": "agent:pf002-real-smoke-1-4fe531d5:main",
+        "generatedAt": 1773845189354,
+        "sessionId": "pf002-real-smoke-1-c416aa0a03154daebf868c4d6bfa406e",
+        "sessionKey": "agent:pf002-real-smoke-1-579a6a4c:main",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "workspaceDir": "/home/node/.openclaw/workspace-pf002",
@@ -55,9 +53,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 24603,
-          "projectContextChars": 13094,
-          "nonProjectContextChars": 11509
+          "chars": 27165,
+          "projectContextChars": 13527,
+          "nonProjectContextChars": 13638
         },
         "injectedWorkspaceFiles": [
           {
@@ -115,6 +113,14 @@
             "rawChars": 1449,
             "injectedChars": 1449,
             "truncated": false
+          },
+          {
+            "name": "MEMORY.md",
+            "path": "/home/node/.openclaw/workspace-pf002/MEMORY.md",
+            "missing": false,
+            "rawChars": 382,
+            "injectedChars": 382,
+            "truncated": false
           }
         ],
         "skills": {
@@ -135,8 +141,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 19005,
           "entries": [
             {
               "name": "read",
@@ -169,10 +175,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4872,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -227,6 +275,18 @@
               "summaryChars": 129,
               "schemaChars": 374,
               "propertiesCount": 3
+            },
+            {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
             },
             {
               "name": "memory_search",

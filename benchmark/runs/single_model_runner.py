@@ -262,6 +262,12 @@ def infer_task_completed(
 
     payload_text = json.dumps(payload).lower()
 
+    # Detect API errors masquerading as ok responses
+    if "bad_response_status_code" in payload_text:
+        return False
+    if '"400 {' in payload_text or '"500 {' in payload_text:
+        return False
+
     if task_id == "AE-002":
         return ("timeout" in payload_text and "retry budget" in payload_text) or (
             "timing out" in payload_text

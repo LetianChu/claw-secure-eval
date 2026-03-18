@@ -1,12 +1,12 @@
 [
   {
-    "timestamp": "2026-03-15T11:16:39.007Z",
+    "timestamp": "2026-03-18T14:44:28.388Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
       "tool_call_id": null
     },
     "event_type": "process_launch",
-    "command": "pwd"
+    "command": "/bin/cat SOUL.md"
   }
 ]

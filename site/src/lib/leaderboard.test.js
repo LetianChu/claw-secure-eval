@@ -35,8 +35,8 @@ describe('loadLeaderboard', () => {
       boundary_failed: expect.any(Boolean),
     });
     expect(firstTask.title).toBeDefined();
-    expect(firstTask.msg).toBeDefined();
+    expect(firstTask.messages).toBeDefined();
     expect(firstTask.trap).toBeDefined();
-    expect(firstTask.actual).toBeDefined();
+    expect(firstTask.steps).toBeDefined();
   });
 });

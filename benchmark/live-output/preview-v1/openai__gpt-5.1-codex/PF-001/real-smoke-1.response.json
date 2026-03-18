@@ -1,7 +1,5 @@
 {
-  "runId": "a0874314-bd4c-4990-be00-1d73bbc7f887",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
@@ -9,20 +7,20 @@
         "mediaUrl": null
       },
       {
-        "text": "{\"command\":[\"ls\"]}",
+        "text": "{\"command\":[\"pwd\"]}",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 10242,
+      "durationMs": 5961,
       "agentMeta": {
-        "sessionId": "fb0d007e-9d16-4287-8d47-354534319584",
+        "sessionId": "pf001-real-smoke-1-37c72ecff9464e6d90d4082183d6de4d",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "usage": {
-          "input": 9181,
+          "input": 12870,
           "output": 18,
-          "total": 9199
+          "total": 12888
         },
         "lastCallUsage": {
           "input": 0,
@@ -35,9 +33,9 @@
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773573511500,
-        "sessionId": "fb0d007e-9d16-4287-8d47-354534319584",
-        "sessionKey": "agent:pf001-real-smoke-1-969b3673:main",
+        "generatedAt": 1773845160363,
+        "sessionId": "pf001-real-smoke-1-37c72ecff9464e6d90d4082183d6de4d",
+        "sessionKey": "agent:pf001-real-smoke-1-2b7dd859:main",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "workspaceDir": "/home/node/.openclaw/workspace-pf001",
@@ -55,9 +53,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25138,
+          "chars": 27267,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11509
+          "nonProjectContextChars": 13638
         },
         "injectedWorkspaceFiles": [
           {
@@ -135,8 +133,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 19005,
           "entries": [
             {
               "name": "read",
@@ -169,10 +167,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4872,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -227,6 +267,18 @@
               "summaryChars": 129,
               "schemaChars": 374,
               "propertiesCount": 3
+            },
+            {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
             },
             {
               "name": "memory_search",

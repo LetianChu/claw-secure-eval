@@ -230,31 +230,46 @@ def _render_markdown(
     return "\n".join(lines) + "\n"
 
 
-def _describe_trace(trace: list[dict[str, Any]]) -> dict[str, str]:
+def _load_task_messages() -> dict[str, Any]:
+    msg_path = Path(__file__).parent / "_task_messages.json"
+    if msg_path.exists():
+        return json.loads(msg_path.read_text(encoding="utf-8"))
+    return {}
+
+
+_TASK_MESSAGES: dict[str, Any] | None = None
+
+
+def _get_task_messages() -> dict[str, Any]:
+    global _TASK_MESSAGES
+    if _TASK_MESSAGES is None:
+        _TASK_MESSAGES = _load_task_messages()
+    return _TASK_MESSAGES
+
+
+def _describe_trace(
+    trace: list[dict[str, Any]], danger_keywords: list[str] | None = None
+) -> list[dict[str, Any]]:
     if not trace:
-        return {
-            "en": "No tool use - pure text response.",
-            "zh": "未使用工具，纯文本回复。",
-        }
-    parts_en: list[str] = []
-    parts_zh: list[str] = []
+        return [{"action": "No tool use - pure text response", "danger": False}]
+    kw = [k.lower() for k in (danger_keywords or [])]
+    steps: list[dict[str, Any]] = []
     for event in trace:
         et = event.get("event_type", "")
         if et == "process_launch":
             cmd = str(event.get("command", ""))
-            short = (cmd[:100] + "...") if len(cmd) > 100 else cmd
-            parts_en.append(f"Ran: {short}")
-            parts_zh.append(f"执行: {short}")
+            short = (cmd[:140] + "...") if len(cmd) > 140 else cmd
+            is_danger = any(k in cmd.lower() for k in kw) if kw else False
+            steps.append({"action": f"Ran: {short}", "danger": is_danger})
         elif et == "file_read":
-            parts_en.append(f"Read: {event.get('path', '')}")
-            parts_zh.append(f"读取: {event.get('path', '')}")
+            path = str(event.get("path", ""))
+            is_danger = any(k in path.lower() for k in kw) if kw else False
+            steps.append({"action": f"Read: {path}", "danger": is_danger})
         elif et == "file_write":
-            parts_en.append(f"Wrote: {event.get('path', '')}")
-            parts_zh.append(f"写入: {event.get('path', '')}")
-    return {
-        "en": " | ".join(parts_en) or "No events.",
-        "zh": " | ".join(parts_zh) or "无事件。",
-    }
+            path = str(event.get("path", ""))
+            is_danger = any(k in path.lower() for k in kw) if kw else False
+            steps.append({"action": f"Wrote: {path}", "danger": is_danger})
+    return steps or [{"action": "No recognized events", "danger": False}]
 
 
 def _build_task_details(
@@ -265,6 +280,7 @@ def _build_task_details(
 ) -> list[dict[str, Any]]:
     run_dir = run_results_root / model_slug
     trace_dir = traces_root / model_slug
+    task_msgs = _get_task_messages()
     tasks: list[dict[str, Any]] = []
     if not run_dir.is_dir():
         return tasks
@@ -281,13 +297,15 @@ def _build_task_details(
         if tf.exists():
             trace = json.loads(tf.read_text(encoding="utf-8"))
         copy = TASK_COPY.get(task_id, {})
+        msg_data = task_msgs.get(task_id, {})
+        danger_kw = msg_data.get("danger_keywords", [])
         tasks.append(
             {
                 "task_id": task_id,
                 "title": copy.get("title", {"en": task_id, "zh": task_id}),
-                "msg": copy.get("msg", {"en": "", "zh": ""}),
                 "trap": copy.get("trap", {"en": "", "zh": ""}),
-                "actual": _describe_trace(trace),
+                "messages": msg_data.get("messages", []),
+                "steps": _describe_trace(trace, danger_kw),
                 "score": rr.get("run_score", 0),
                 "boundary_failed": rr.get("boundary_failed", False),
                 "task_completed": rr.get("task_completed", False),

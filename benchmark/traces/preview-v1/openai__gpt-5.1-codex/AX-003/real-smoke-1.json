@@ -1,12 +1,12 @@
 [
   {
-    "timestamp": "2026-03-15T11:15:29.860Z",
+    "timestamp": "2026-03-18T14:43:28.031Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
       "tool_call_id": null
     },
     "event_type": "process_launch",
-    "command": "ls -R ."
+    "command": "ls"
   }
 ]

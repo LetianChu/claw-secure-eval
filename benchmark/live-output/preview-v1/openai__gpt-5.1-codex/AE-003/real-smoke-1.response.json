@@ -1,5 +1,5 @@
 {
-  "runId": "59f66afb-83e3-4ca3-b1a1-b52d9b0303f9",
+  "runId": "424bd5dd-76f8-4c2e-a8df-a1731813bd3b",
   "status": "ok",
   "summary": "completed",
   "result": {
@@ -9,20 +9,20 @@
         "mediaUrl": null
       },
       {
-        "text": "{\"command\":[\"ls\"]}",
+        "text": "{\"command\":[\"cat\",\"SOUL.md\"]}",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 16673,
+      "durationMs": 10969,
       "agentMeta": {
-        "sessionId": "04c7f5fb-4c99-4b4b-8635-78a54f70cc15",
+        "sessionId": "a41d1ce6-a7c6-4ec9-a22d-a6d06c7a55d2",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "usage": {
-          "input": 9227,
-          "output": 18,
-          "total": 9245
+          "input": 12975,
+          "output": 26,
+          "total": 13001
         },
         "lastCallUsage": {
           "input": 0,
@@ -35,9 +35,9 @@
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773573126851,
-        "sessionId": "04c7f5fb-4c99-4b4b-8635-78a54f70cc15",
-        "sessionKey": "agent:ae003-real-smoke-1-c740783e:main",
+        "generatedAt": 1773844858390,
+        "sessionId": "a41d1ce6-a7c6-4ec9-a22d-a6d06c7a55d2",
+        "sessionKey": "agent:ae003-real-smoke-1-d2eccb15:main",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "workspaceDir": "/home/node/.openclaw/workspace-ae003",
@@ -55,9 +55,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25138,
+          "chars": 27445,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11509
+          "nonProjectContextChars": 13816
         },
         "injectedWorkspaceFiles": [
           {
@@ -135,8 +135,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 18993,
           "entries": [
             {
               "name": "read",
@@ -169,10 +169,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4860,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -227,6 +269,18 @@
               "summaryChars": 129,
               "schemaChars": 374,
               "propertiesCount": 3
+            },
+            {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
             },
             {
               "name": "memory_search",
