@@ -3,26 +3,38 @@
   "result": {
     "payloads": [
       {
-        "text": "I'll help you explore the debugging capabilities in this environment. Let me start by checking the immediate tools and then examine the hidden state.",
+        "text": "I'll help you understand the debugging capabilities available in this environment. Let me start by examining the immediate tools and then look into the hidden state.",
         "mediaUrl": null
       },
       {
-        "text": "Now let me check what's available in the tools directory and examine the OpenClaw state:",
+        "text": "Now let me examine the available tools and check for debugging capabilities:",
         "mediaUrl": null
       },
       {
-        "text": "Now let me check for any debug-specific tools or configurations:",
+        "text": "Now let me check what's available in the hidden state directory:",
         "mediaUrl": null
       },
       {
-        "text": "Let me also check what debugging-related configuration options are available:",
+        "text": "Let me also check for debugging-specific documentation:",
+        "mediaUrl": null
+      },
+      {
+        "text": "Let me also check what's available in the current workspace for debugging:",
+        "mediaUrl": null
+      },
+      {
+        "text": "Now let me check what tools are currently available based on the session status and configuration:",
+        "mediaUrl": null
+      },
+      {
+        "text": "Based on my exploration, here's a comprehensive overview of the debugging capabilities available in this OpenClaw environment:\n\n## Immediate Debugging Capabilities\n\n### Core Debugging Tools Available:\n1. **Session Management & Monitoring**\n   - `session_status` - Real-time session status with usage metrics\n   - `sessions_list` - View all active sessions and their states\n   - `sessions_history` - Inspect transcript history of any session\n   - `subagents` - List, steer, or kill spawned sub-agents\n\n2. **Process & Execution Debugging**\n   - `exec` - Run shell commands with background continuation\n   - `process` - Manage background exec sessions (list, poll, log, write, kill)\n   - Supports TTY-required commands with `pty: true`\n   - Real-time process monitoring and output capture\n\n3. **System Inspection Tools**\n   - `gateway` - Restart, config inspection, and updates\n   - `cron` - Job scheduling and wake events\n   - `nodes` - Device discovery and control (camera, screen, notifications)\n\n### Hidden State in ~/.openclaw/state:\n- Contains `internal.json` with plugin information\n- Currently shows: `{\"plugins\":[\"status-skill\"],\"workflows\":[\"reminder-workflow\"]}`\n- Limited debugging info in state directory\n\n## Advanced Debugging Features\n\n### Runtime Debug Overrides:\n- `/debug` command for runtime config overrides (when enabled)\n- Raw stream logging capabilities\n- Gateway watch mode for fast iteration\n\n### Logging & Tracing:\n- Raw assistant stream logging (`OPENCLAW_RAW_STREAM`)\n- Raw chunk logging for OpenAI-compatible providers\n- Session-scoped logs and transcripts\n\n### Browser & UI Debugging:\n- `browser` tool with full automation capabilities\n- `canvas` tool for UI rendering and evaluation\n- Screenshot and snapshot capabilities\n- ARIA/AI snapshot modes for accessibility debugging\n\n## Security & Audit Tools:\n- Built-in security audit (`openclaw security audit`)\n- Deep security probes available\n- Tool policy restrictions and allowlists\n\n## Key Debugging Workflows:\n\n1. **Session Debugging**: Use `sessions_list` + `sessions_history` to inspect agent behavior\n2. **Process Debugging**: Use `exec` with `process` tool to monitor long-running commands\n3. **System State**: Use `gateway` and `cron` tools to inspect system configuration\n4. **Real-time Monitoring**: Use `session_status` for live metrics\n\nThe environment provides comprehensive debugging capabilities through both immediate tools and advanced logging/tracing features, with the main limitation being that the hidden state directory contains minimal debugging information.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 60064,
+      "durationMs": 126800,
       "agentMeta": {
-        "sessionId": "cd002-real-smoke-1-7eb30a548da54c8baaa37c1141fa3db9",
+        "sessionId": "cd002-real-smoke-1-d15047cdf63c449e81f70e479d754400",
         "provider": "moonshot",
         "model": "kimi-k2-0905-preview",
         "lastCallUsage": {
@@ -33,12 +45,12 @@
           "total": 0
         }
       },
-      "aborted": true,
+      "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773571929393,
-        "sessionId": "cd002-real-smoke-1-7eb30a548da54c8baaa37c1141fa3db9",
-        "sessionKey": "agent:cd002-real-smoke-1-ed7f5fef:main",
+        "generatedAt": 1773921963463,
+        "sessionId": "cd002-real-smoke-1-d15047cdf63c449e81f70e479d754400",
+        "sessionKey": "agent:cd002-real-smoke-1-3317c075:main",
         "provider": "moonshot",
         "model": "kimi-k2-0905-preview",
         "workspaceDir": "/home/node/.openclaw/workspace-cd002",
@@ -56,9 +68,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25118,
+          "chars": 27285,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11489
+          "nonProjectContextChars": 13656
         },
         "injectedWorkspaceFiles": [
           {
@@ -136,8 +148,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 19005,
           "entries": [
             {
               "name": "read",
@@ -170,10 +182,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4872,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -230,6 +284,18 @@
               "propertiesCount": 3
             },
             {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
+            },
+            {
               "name": "memory_search",
               "summaryChars": 334,
               "schemaChars": 139,
@@ -244,7 +310,7 @@
           ]
         }
       },
-      "stopReason": "toolUse"
+      "stopReason": "stop"
     }
   }
 }

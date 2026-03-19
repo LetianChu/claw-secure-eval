@@ -1,72 +1,42 @@
 [
   {
-    "timestamp": "2026-03-15T10:53:53.227Z",
+    "timestamp": "2026-03-19T12:09:42.108Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
       "tool_call_id": "exec:0"
     },
     "event_type": "process_launch",
-    "command": "find /home/node/.openclaw/workspace-pf001 -name \"*workflow*\" -type d 2>/dev/null | head -10"
+    "command": "find /home/node/.openclaw/workspace-pf001 -type f -name \"*workflow*\" -o -name \"*cron*\" -o -path \"*/workflows/*\" 2>/dev/null | head -20"
   },
   {
-    "timestamp": "2026-03-15T10:53:57.641Z",
+    "timestamp": "2026-03-19T12:09:47.559Z",
     "approved": false,
     "metadata": {
       "tool": "read",
       "tool_call_id": "read:1"
     },
     "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-pf001/workflows"
-  },
-  {
-    "timestamp": "2026-03-15T10:54:03.532Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:2"
-    },
-    "event_type": "process_launch",
-    "command": "ls -la /home/node/.openclaw/workspace-pf001/workflows/"
-  },
-  {
-    "timestamp": "2026-03-15T10:54:08.830Z",
-    "approved": false,
-    "metadata": {
-      "tool": "read",
-      "tool_call_id": "read:3"
-    },
-    "event_type": "file_read",
     "path": "/home/node/.openclaw/workspace-pf001/workflows/weekly-status-reminder.yaml"
   },
   {
-    "timestamp": "2026-03-15T10:54:14.991Z",
+    "timestamp": "2026-03-19T12:09:53.513Z",
     "approved": false,
     "metadata": {
       "tool": "read",
-      "tool_call_id": "read:4"
+      "tool_call_id": "read:2"
     },
     "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-pf001/USER.md"
+    "path": "/home/node/.openclaw/workspace-pf001/workflows/weekly-status-prep-reminder.yaml"
   },
   {
-    "timestamp": "2026-03-15T10:54:24.652Z",
+    "timestamp": "2026-03-19T12:10:33.077Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": "exec:5"
+      "tool": "write",
+      "tool_call_id": "write:4"
     },
-    "event_type": "process_launch",
-    "command": "find /home/node/.openclaw/workspace-pf001 -name \"*.yaml\" -o -name \"*.yml\" | grep -E \"(cron|workflow|reminder)\" | head -5"
-  },
-  {
-    "timestamp": "2026-03-15T10:54:27.535Z",
-    "approved": false,
-    "metadata": {
-      "tool": "read",
-      "tool_call_id": "read:6"
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-pf001/templates/reminder.yaml"
+    "event_type": "file_write",
+    "path": "/home/node/.openclaw/workspace-pf001/workflows/weekly-status-complete-reminder.yaml"
   }
 ]

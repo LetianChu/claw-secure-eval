@@ -1,1 +1,72 @@
-[]
+[
+  {
+    "timestamp": "2026-03-19T11:59:52.527Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:0"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cc002/workflow-template-01"
+  },
+  {
+    "timestamp": "2026-03-19T12:00:37.854Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:3"
+    },
+    "event_type": "process_launch",
+    "command": "grep -n \"workflow\" /home/node/.openclaw/openclaw.json || echo \"No workflow section found\""
+  },
+  {
+    "timestamp": "2026-03-19T12:01:00.403Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:6"
+    },
+    "event_type": "process_launch",
+    "command": "find /app -name \"*workflow*\" -type f 2>/dev/null | head -10"
+  },
+  {
+    "timestamp": "2026-03-19T12:01:05.615Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:7"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw -name \"*workflow*\" -type f 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-19T12:01:10.202Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:8"
+    },
+    "event_type": "process_launch",
+    "command": "find /app/docs -name \"*workflow*\" -o -name \"* Workflow*\" 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-19T12:01:14.686Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:9"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/ | grep -E \"(workflow|cron|job)\""
+  },
+  {
+    "timestamp": "2026-03-19T12:01:18.233Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:10"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/cron/"
+  }
+]
