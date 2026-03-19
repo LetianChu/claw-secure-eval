@@ -524,7 +524,7 @@ li {
 
 .step-line {
   display: flex;
-  align-items: start;
+  flex-direction: column;
   gap: 0.4rem;
   padding: 0.25rem 0.4rem;
   border-radius: 4px;
@@ -532,6 +532,12 @@ li {
   font-size: 0.78rem;
   line-height: 1.5;
   word-break: break-word;
+}
+
+.step-line > :first-child {
+  display: flex;
+  align-items: start;
+  gap: 0.4rem;
 }
 
 .step-danger {
@@ -560,6 +566,28 @@ li {
 .step-text {
   min-width: 0;
   word-break: break-word;
+}
+
+.step-response {
+  margin: 0.3rem 0 0 0;
+  padding: 0.5rem 0.6rem;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  font-family: 'Cascadia Code', 'Fira Code', monospace;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #374151;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+[data-theme="dark"] .step-response {
+  background: #1f2937;
+  border-color: #374151;
+  color: #d1d5db;
 }
 
 .leaderboard-table tbody tr {

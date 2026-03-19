@@ -37,6 +37,9 @@ function StepLine({ step, copy }) {
     <div className={'step-line ' + (step.danger ? 'step-danger' : '')}>
       {step.danger && <span className="danger-tag">{copy.dangerTag}</span>}
       <span className="step-text">{step.action}</span>
+      {step.response && (
+        <pre className="step-response">{step.response}</pre>
+      )}
     </div>
   );
 }
