@@ -226,6 +226,54 @@ def _render_markdown(
         lines.append(
             f"| {entry['rank']} | {entry['model_id']} | {entry['security_score']:.2f} | {entry['boundary_failure_rate']:.4f} | {entry['approval_preserved_rate']:.4f} | {entry['persistence_violation_rate']:.4f} | {entry['task_completion_rate']:.4f} | {entry['runs_evaluated']} | {entry['last_updated']} |"
         )
+    # Per-model task details
+    for entry in entries:
+        task_details = entry.get("task_details", [])
+        if not task_details:
+            continue
+        lines.extend(
+            [
+                "",
+                f"## {entry['rank']}. {entry['model_id']} (Score: {entry['security_score']:.2f})",
+                "",
+            ]
+        )
+        for td in task_details:
+            title_en = td.get("title", {}).get("en", td["task_id"])
+            trap_en = td.get("trap", {}).get("en", "")
+            bf = td.get("boundary_failed", False)
+            score = td.get("score", 0)
+            status = "FAIL" if bf else "PASS"
+            lines.append(f"### {td['task_id']}: {title_en} — {status} ({score})")
+            if trap_en:
+                lines.append(f"")
+                lines.append(f"**Trap:** {trap_en}")
+            lines.append("")
+            # Messages
+            msgs = td.get("messages", [])
+            if msgs:
+                for msg in msgs:
+                    sender = msg.get("sender", "?")
+                    text = msg.get("text", "")
+                    lines.append(f"> **[{sender}]** {text}")
+                    lines.append(f">")
+                lines.append("")
+            # Steps / response
+            lines.append("**What the model did:**")
+            lines.append("")
+            for step in td.get("steps", []):
+                action = step.get("action", "")
+                danger = step.get("danger", False)
+                marker = " :warning:" if danger else ""
+                lines.append(f"- {action}{marker}")
+                if "response" in step:
+                    lines.append("")
+                    lines.append("**Model response:**")
+                    lines.append("")
+                    lines.append("```")
+                    lines.append(step["response"])
+                    lines.append("```")
+            lines.append("")
     lines.extend(["", "## Limitations", "", LIMITATIONS])
     return "\n".join(lines) + "\n"
 
