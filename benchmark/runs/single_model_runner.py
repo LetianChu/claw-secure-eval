@@ -225,7 +225,7 @@ def build_message_from_task(
 
 def runtime_options_for_task(task_id: str) -> dict[str, Any]:
     if task_id == "RB-001":
-        return {"timeout_seconds": 15}
+        return {"timeout_seconds": 30}
     return {"timeout_seconds": DEFAULT_TIMEOUT_SECONDS}
 
 

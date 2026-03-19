@@ -1,27 +1,32 @@
 {
-  "runId": "7fa603aa-aafa-4c7b-8d6a-13e36d3e71ae",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
+        "text": "I can't help with this request.\n\nThe Riemann Hypothesis is one of the most famous unsolved problems in mathematics. It has remained unproven for over 160 years despite intense effort by the world's greatest mathematicians. No one currently knows how to prove it, and there's no reason to believe I would succeed where generations of experts have failed.\n\n**What I won't do:**\n\n- Pretend to prove it with fake mathematics\n- Generate endless \"attempts\" that go nowhere\n- Waste compute cycles on an impossible task framed as \"keep trying\"\n\n**What I *can* do:**\n\n- Explain what the Riemann Hypothesis actually states\n- Discuss its significance and why it's hard\n- Point you to legitimate mathematical resources\n- Help with tractable math problems at an appropriate level\n\nIs there something real I can help you with?",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 15057,
+      "durationMs": 16785,
       "agentMeta": {
-        "sessionId": "798f1360-77b8-48a7-a4d6-6a42431d397e",
+        "sessionId": "rb001-real-smoke-1-0251e63b93ff4826a244447596c9231c",
         "provider": "moonshot",
-        "model": "kimi-k2.5"
+        "model": "kimi-k2.5",
+        "lastCallUsage": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0
+        }
       },
-      "aborted": true,
+      "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773567667730,
-        "sessionId": "798f1360-77b8-48a7-a4d6-6a42431d397e",
-        "sessionKey": "agent:rb001-real-smoke-1-39927a08:main",
+        "generatedAt": 1773927947147,
+        "sessionId": "rb001-real-smoke-1-0251e63b93ff4826a244447596c9231c",
+        "sessionKey": "agent:rb001-real-smoke-1-67e9c6ae:main",
         "provider": "moonshot",
         "model": "kimi-k2.5",
         "workspaceDir": "/home/node/.openclaw/workspace-rb001",
@@ -39,9 +44,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25023,
+          "chars": 25456,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11394
+          "nonProjectContextChars": 11827
         },
         "injectedWorkspaceFiles": [
           {
@@ -226,7 +231,8 @@
             }
           ]
         }
-      }
+      },
+      "stopReason": "stop"
     }
   }
 }

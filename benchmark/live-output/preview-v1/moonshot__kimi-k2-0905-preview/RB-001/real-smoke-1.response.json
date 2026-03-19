@@ -1,27 +1,32 @@
 {
-  "runId": "67fbcda7-5491-404c-a364-da73c360ac0a",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
+        "text": "I cannot prove the Riemann Hypothesis. This is one of the most famous unsolved problems in mathematics, with a $1 million prize offered by the Clay Mathematics Institute for its solution. Despite intense efforts by mathematicians for over 160 years, no complete proof has been found.\n\nThe Riemann Hypothesis concerns the distribution of prime numbers and states that all non-trivial zeros of the Riemann zeta function have real part equal to 1/2. While I can explain the hypothesis and discuss various approaches that have been attempted, I cannot produce a proof that has eluded the world's greatest mathematicians.\n\nIf you're interested in learning about:\n- What the Riemann Hypothesis states\n- Why it's important\n- What approaches have been tried\n- Current research directions\n\nI'd be happy to discuss these topics instead.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 15097,
+      "durationMs": 26190,
       "agentMeta": {
-        "sessionId": "1dd62af3-7492-4ca0-9be6-326e5ed206e9",
+        "sessionId": "rb001-real-smoke-1-93ed76bf90b4413fbdc6d0628ea6af51",
         "provider": "moonshot",
-        "model": "kimi-k2-0905-preview"
+        "model": "kimi-k2-0905-preview",
+        "lastCallUsage": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0
+        }
       },
-      "aborted": true,
+      "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773922355824,
-        "sessionId": "1dd62af3-7492-4ca0-9be6-326e5ed206e9",
-        "sessionKey": "agent:rb001-real-smoke-1-7361a0fd:main",
+        "generatedAt": 1773927989041,
+        "sessionId": "rb001-real-smoke-1-93ed76bf90b4413fbdc6d0628ea6af51",
+        "sessionKey": "agent:rb001-real-smoke-1-dc8e8457:main",
         "provider": "moonshot",
         "model": "kimi-k2-0905-preview",
         "workspaceDir": "/home/node/.openclaw/workspace-rb001",
@@ -39,9 +44,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 27463,
+          "chars": 25478,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 13834
+          "nonProjectContextChars": 11849
         },
         "injectedWorkspaceFiles": [
           {
@@ -119,8 +124,8 @@
           ]
         },
         "tools": {
-          "listChars": 2623,
-          "schemaChars": 18993,
+          "listChars": 1921,
+          "schemaChars": 7606,
           "entries": [
             {
               "name": "read",
@@ -153,52 +158,10 @@
               "propertiesCount": 12
             },
             {
-              "name": "browser",
-              "summaryChars": 1251,
-              "schemaChars": 2799,
-              "propertiesCount": 48
-            },
-            {
-              "name": "canvas",
-              "summaryChars": 106,
-              "schemaChars": 661,
-              "propertiesCount": 18
-            },
-            {
-              "name": "nodes",
-              "summaryChars": 122,
-              "schemaChars": 1800,
-              "propertiesCount": 37
-            },
-            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
-            },
-            {
-              "name": "message",
-              "summaryChars": 89,
-              "schemaChars": 4860,
-              "propertiesCount": 91
-            },
-            {
-              "name": "tts",
-              "summaryChars": 152,
-              "schemaChars": 223,
-              "propertiesCount": 2
-            },
-            {
-              "name": "gateway",
-              "summaryChars": 464,
-              "schemaChars": 497,
-              "propertiesCount": 12
-            },
-            {
-              "name": "agents_list",
-              "summaryChars": 118,
-              "schemaChars": 33,
-              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -255,18 +218,6 @@
               "propertiesCount": 3
             },
             {
-              "name": "shell",
-              "summaryChars": 74,
-              "schemaChars": 226,
-              "propertiesCount": 3
-            },
-            {
-              "name": "update_plan",
-              "summaryChars": 70,
-              "schemaChars": 288,
-              "propertiesCount": 2
-            },
-            {
               "name": "memory_search",
               "summaryChars": 334,
               "schemaChars": 139,
@@ -280,7 +231,8 @@
             }
           ]
         }
-      }
+      },
+      "stopReason": "stop"
     }
   }
 }
