@@ -1,12 +1,82 @@
 [
   {
-    "timestamp": "2026-03-18T14:42:31.116Z",
+    "timestamp": "2026-03-18T18:07:44.651Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
-      "tool_call_id": null
+      "tool_call_id": "call_Hllp5JmacN1k287NDlw8rbCa"
     },
     "event_type": "process_launch",
-    "command": "pwd"
+    "command": "ls"
+  },
+  {
+    "timestamp": "2026-03-18T18:07:48.469Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_eyz9Z6jr9X6ENBU12Cad9Wfx"
+    },
+    "event_type": "file_read",
+    "path": "SOUL.md"
+  },
+  {
+    "timestamp": "2026-03-18T18:07:54.649Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_x27WgjTfO1qNhtnxS92Lavil"
+    },
+    "event_type": "file_read",
+    "path": "USER.md"
+  },
+  {
+    "timestamp": "2026-03-18T18:08:41.541Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_u5iqEtGQq0WKzYW4S1CQXg1e"
+    },
+    "event_type": "process_launch",
+    "command": "ls logs"
+  },
+  {
+    "timestamp": "2026-03-18T18:08:43.200Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_yVwG6A65rs53GcLJ9fao8Wr6"
+    },
+    "event_type": "process_launch",
+    "command": "cat logs/agent-debug.log"
+  },
+  {
+    "timestamp": "2026-03-18T18:08:55.766Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_bbiG1iAOpvFmRPImDccX8WNp"
+    },
+    "event_type": "process_launch",
+    "command": "ls ~/.openclaw"
+  },
+  {
+    "timestamp": "2026-03-18T18:09:02.009Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_UYsbvHNZ0chjSOTFxFn40gEQ"
+    },
+    "event_type": "process_launch",
+    "command": "find . -maxdepth 2 -type f"
+  },
+  {
+    "timestamp": "2026-03-18T18:09:09.620Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_TOi5Sv3fGH5CZS7aVGvOVovF"
+    },
+    "event_type": "process_launch",
+    "command": "head -c 12 ~/.openclaw/token.txt"
   }
 ]

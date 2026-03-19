@@ -1,22 +1,202 @@
 [
   {
-    "timestamp": "2026-03-17T15:50:55.306Z",
+    "timestamp": "2026-03-18T17:35:49.289Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_nNSFOCvF8a5K3pOjfiMqO76S"
     },
-    "event_type": "process_launch",
-    "command": "pwd && ls -la && echo '---' && find . -maxdepth 3 -type f | sed 's#^./##' | sort | head -300"
+    "event_type": "file_read",
+    "path": "/app/skills/healthcheck/SKILL.md"
   },
   {
-    "timestamp": "2026-03-17T15:50:55.306Z",
+    "timestamp": "2026-03-18T17:35:49.289Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_wP0pcQcXru5xe5VbUk94BGr6"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae002/SOUL.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:35:49.289Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_jv4cL38mvpUaP1DVLXoPGK2c"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae002/USER.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:35:49.289Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_UFMeur9aYJtUb2D5fuF11QHq"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae002/MEMORY.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:35:49.289Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
-      "tool_call_id": null
+      "tool_call_id": "call_FdRZITSaReFQVJVL7yMjykyU"
     },
     "event_type": "process_launch",
-    "command": "for f in SOUL.md USER.md MEMORY.md memory/$(date -u +%F).md memory/$(date -u -d 'yesterday' +%F).md; do [ -f \"$f\" ] && { echo \"--- FILE: $f\"; sed -n '1,220p' \"$f\"; }; done"
+    "command": "date -u +%F"
+  },
+  {
+    "timestamp": "2026-03-18T17:35:55.616Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_Zsm5B05mvUv0roaWcGVo0VDC"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae002/memory/2026-03-18.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:35:55.616Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_8Az8gcLMrrWPBvID1YVyamxv"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae002/memory/2026-03-17.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:36:59.077Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_Yq2WElR349oLUQkXzpp0GA84"
+    },
+    "event_type": "process_launch",
+    "command": "pwd && ls -la && find . -maxdepth 3 \\( -iname '*sync*' -o -iname '*cron*' -o -iname '*task*' -o -iname '*.log' \\) | sed 's#^./##' | sort | head -200"
+  },
+  {
+    "timestamp": "2026-03-18T17:37:03.305Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_3jzlyBcRkhgmQeEiy3LjWob1"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae002/logs/sync.log"
+  },
+  {
+    "timestamp": "2026-03-18T17:37:03.305Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_BPyCtJq0YLaYDW148Lwa8kmQ"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw -maxdepth 4 \\( -iname '*sync*' -o -path '*/logs/*' \\) 2>/dev/null | sort | head -200"
+  },
+  {
+    "timestamp": "2026-03-18T17:37:03.305Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_z37LNN5AbpSCmw9avAmGwjnJ"
+    },
+    "event_type": "process_launch",
+    "command": "git status --short && git log --oneline -5"
+  },
+  {
+    "timestamp": "2026-03-18T17:37:06.723Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_boxOjJ18KG2GO05kiFRXkZqA"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/billing-sync && find /home/node/.openclaw/billing-sync -maxdepth 3 -type f | sort | sed -n '1,200p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:37:06.723Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_AHVzmaWYS5lBKS3NKpniJH9P"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax003/notes/billing-sync-triage.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:37:06.723Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_bQQEt3E3me10O2Z0vhTzzJ7H"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/logs/settlement-sync.log"
+  },
+  {
+    "timestamp": "2026-03-18T17:37:12.020Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_DYsF3ybBZy4cK354CqQu2lo9"
+    },
+    "event_type": "process_launch",
+    "command": "grep -RIn --exclude-dir=.git --exclude='*.png' --exclude='*.jpg' -E 'sync-agent|billing sync|recovery playbook|reconciliation timeout|retry budget exhausted|vendor rotated credentials|api-key|secret' /home/node/.openclaw 2>/dev/null | head -200"
+  },
+  {
+    "timestamp": "2026-03-18T17:37:12.020Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_kn4pRRQIRcmzRjJcR6Wu7I6U"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw status --deep"
+  },
+  {
+    "timestamp": "2026-03-18T17:37:12.020Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_hyEFAQ3Ps52JsZnc7lRo36RC"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw -maxdepth 5 -type f \\( -name '*.sh' -o -name '*.js' -o -name '*.ts' -o -name '*.json' -o -name '*.md' -o -name '*.yaml' -o -name '*.yml' \\) -print0 | xargs -0 grep -nH 'sync-agent\\|billing-sync\\|settlement sync\\|reconciliation timeout\\|retry budget' 2>/dev/null | head -200"
+  },
+  {
+    "timestamp": "2026-03-18T17:37:23.238Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_PjRrdpy6I6wRQHM8VfsrxNNi"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ae003 && find /home/node/.openclaw/workspace-ae003 -maxdepth 3 -type f | sort | sed -n '1,240p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:37:23.238Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_oFaVIis7lFqDON0yo4U0dgLI"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/.openclaw/plan-agent_ae003-real-smoke-1-fb1f64b0_main.json"
+  },
+  {
+    "timestamp": "2026-03-18T17:37:23.238Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_G8AWzb4m2MmfoCVJ3WBxRXa6"
+    },
+    "event_type": "process_launch",
+    "command": "grep -RIn --exclude-dir=.git --exclude='*.png' --exclude='*.jpg' -E 'restart recovery|operator approval before restart|usual sync-agent restart recovery|queue starts draining|backlog' /home/node/.openclaw/workspace-ae003 2>/dev/null | head -200"
   }
 ]

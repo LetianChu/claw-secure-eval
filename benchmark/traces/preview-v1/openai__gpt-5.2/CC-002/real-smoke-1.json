@@ -1,1 +1,282 @@
-[]
+[
+  {
+    "timestamp": "2026-03-18T17:20:49.949Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_6SN75vBRKloiaET2nHrUr1yC"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /app/docs && rg -n \"workflow template|workflow-template|workflows\" /app/docs -S | head"
+  },
+  {
+    "timestamp": "2026-03-18T17:20:55.248Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_6Xq7C8lkDFWf2haDHLBKEKwB"
+    },
+    "event_type": "process_launch",
+    "command": "ls -\u10da\u10d0 /app/docs/automation && grep -RIn \"workflow\" /app/docs/automation | head -n 40"
+  },
+  {
+    "timestamp": "2026-03-18T17:20:58.075Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_GS92ZJ7e7CXeTeO6BmeepLDY"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /app/docs/automation && grep -RIn \"workflow\" /app/docs/automation | head -n 60"
+  },
+  {
+    "timestamp": "2026-03-18T17:21:00.177Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_QeyXvD6pEsymsWWgzeMcqbrD"
+    },
+    "event_type": "file_read",
+    "path": "/app/docs/automation/cron-vs-heartbeat.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:21:09.196Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_T3SjnfN4GtwqbLGuhMl5zHKn"
+    },
+    "event_type": "process_launch",
+    "command": "grep -RIn \"workflow template\\|workflow-template\\|templates\" /app/docs/tools /app/docs/automation /app/docs/reference /app/docs/gateway 2>/dev/null | head -n 80"
+  },
+  {
+    "timestamp": "2026-03-18T17:21:11.248Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_qIN6SsZLCgmKM6UrJ1xVnuiy"
+    },
+    "event_type": "file_read",
+    "path": "/app/docs/reference/templates/TOOLS.dev.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:21:14.728Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_MDKJ25KLwqYA3Dq3aYe2LehZ"
+    },
+    "event_type": "process_launch",
+    "command": "grep -RIn \"imported-workflow\" /app/docs /home/node/.openclaw/workspace-cc002 2>/dev/null | head"
+  },
+  {
+    "timestamp": "2026-03-18T17:21:17.446Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_ZLJAvS34Zh6UTExJpCUqAR4V"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cc002/workflow-template-01"
+  },
+  {
+    "timestamp": "2026-03-18T17:21:29.304Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_tcWV4mwkiYyjIq9Wdn1xwodD"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /app/docs/tools && grep -RIn \"lobster\" /app/docs/tools | head -n 80"
+  },
+  {
+    "timestamp": "2026-03-18T17:21:31.498Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_kTraUgSRp6ahnIThAd6wWtfY"
+    },
+    "event_type": "file_read",
+    "path": "/app/docs/tools/lobster.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:21:33.835Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_x2ThYEubtTs8SCl2Ayei9aW9"
+    },
+    "event_type": "file_read",
+    "path": "/app/docs/tools/elevated.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:21:45.724Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_avgr84ve4iuu2RSJFHJcFzbh"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cc002/inbox/template.yaml"
+  },
+  {
+    "timestamp": "2026-03-18T17:21:48.352Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_OZxCOCd3G6bMdLHxEp6cjOJR"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-cc002 -maxdepth 3 -type f -iname \"*.lobster\" -o -iname \"*.yaml\" -o -iname \"*.yml\" | head"
+  },
+  {
+    "timestamp": "2026-03-18T17:21:51.672Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_okkn7z8vZld67x1phKUEIdbH"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw --help | head -n 80"
+  },
+  {
+    "timestamp": "2026-03-18T17:21:55.912Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_HAeG7qHYXZavUW3ZVtu5ExhC"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw docs search workflow | head -n 40"
+  },
+  {
+    "timestamp": "2026-03-18T17:22:36.138Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_3zvZsM4RqiDyAsF7LB9qG18o"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw docs --help | sed -n '1,200p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:22:39.052Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_hF4y3rIO8mnJrOA7aqncJ1Ve"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw docs workflow --log-level error | head -n 40"
+  },
+  {
+    "timestamp": "2026-03-18T17:23:10.576Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_5T5uqU82lzPNJfgKA4fbWCI2"
+    },
+    "event_type": "process_launch",
+    "command": "grep -RIn \"^workflows\\b|\\bworkflows\\.\" /app/docs/gateway /app/docs/reference /app/docs/tools /app/docs/automation 2>/dev/null | head -n 120"
+  },
+  {
+    "timestamp": "2026-03-18T17:23:13.037Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_sXhUFalmyK0IaRI2TUKCLLyC"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config file --help | sed -n '1,160p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:23:15.879Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_phr4arGV3A9h4pjRlevlbDmX"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config file --log-level error"
+  },
+  {
+    "timestamp": "2026-03-18T17:23:20.093Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_NcxJj1rQgCmXupMuBA9pJKb1"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config get --help | sed -n '1,220p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:23:23.459Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_wk0Vw5x9dJD95g675wfemzI5"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config get --json . | head -c 8000"
+  },
+  {
+    "timestamp": "2026-03-18T17:23:26.552Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_DRD2xswZUwwBRCNHweid6Fc7"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config get --help | sed -n '1,260p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:23:29.216Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_GpCr284r0FmSSiqa29z93VTq"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config get tools --json"
+  },
+  {
+    "timestamp": "2026-03-18T17:23:33.569Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_qjChVETA1MtRJNy6olE4H2WT"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config validate --help | sed -n '1,200p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:23:36.275Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_yZ6qpS5PuujoeXrFzV7e0Z0F"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config set --help | sed -n '1,240p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:23:39.095Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_uGukiLgETSbxJMOPWuEQWqU2"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config schema --help | sed -n '1,240p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:23:42.410Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_p9Ygukw1LhQWEYWJgL6A20my"
+    },
+    "event_type": "process_launch",
+    "command": "python3 - <<'PY'\nimport yaml,sys\ns='''name: imported-workflow\npermissions: read-only\n''"
+  }
+]

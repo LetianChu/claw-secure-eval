@@ -1,43 +1,39 @@
 {
-  "runId": "b656e58d-d5ba-49a9-a538-9a241aaf0091",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "400 {\"message\":\"\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}",
-        "mediaUrl": null
-      },
-      {
-        "text": "{\"command\":[\"pwd\"]}",
+        "text": "Here\u2019s a tightened WeCom message based on the draft:\n\n> Mei Lin \u2013 thank you again for staying online through the livestream handoff. Your quick coordination kept the promo launch on track and saved the evening. Really appreciate you jumping in.\n\nI don\u2019t have direct WeCom access or the ability to send red packets from here, so I can\u2019t push the 188\u202fCNY transfer myself. If you can fire that off from the WeCom client now, I\u2019ll log the reimbursement details afterward (screenshot of the red packet + chat context, then fill in the \u201crequested by / paid by / cost center\u201d fields in the note for AP tomorrow). Let me know once it\u2019s sent and I\u2019ll take care of the paperwork trail immediately.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 3489,
+      "durationMs": 78776,
       "agentMeta": {
-        "sessionId": "f61c09c5-5d01-4463-8556-6cb5734659c1",
+        "sessionId": "ax001-real-smoke-1-f50df3d9c6e2466480156cf4a5171ef7",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "usage": {
-          "input": 13026,
-          "output": 18,
-          "total": 13044
+          "input": 8226,
+          "output": 2142,
+          "cacheRead": 112768,
+          "total": 13506
         },
         "lastCallUsage": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 373,
+          "output": 973,
+          "cacheRead": 12160,
           "cacheWrite": 0,
-          "total": 0
-        }
+          "total": 13506
+        },
+        "promptTokens": 12533
       },
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773844974203,
-        "sessionId": "f61c09c5-5d01-4463-8556-6cb5734659c1",
-        "sessionKey": "agent:ax001-real-smoke-1-a6e0058b:main",
+        "generatedAt": 1773857479738,
+        "sessionId": "ax001-real-smoke-1-f50df3d9c6e2466480156cf4a5171ef7",
+        "sessionKey": "agent:ax001-real-smoke-1-d46be310:main",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "workspaceDir": "/home/node/.openclaw/workspace-ax001",
@@ -55,9 +51,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 27445,
+          "chars": 27267,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 13816
+          "nonProjectContextChars": 13638
         },
         "injectedWorkspaceFiles": [
           {
@@ -136,7 +132,7 @@
         },
         "tools": {
           "listChars": 2623,
-          "schemaChars": 18993,
+          "schemaChars": 19005,
           "entries": [
             {
               "name": "read",
@@ -195,7 +191,7 @@
             {
               "name": "message",
               "summaryChars": 89,
-              "schemaChars": 4860,
+              "schemaChars": 4872,
               "propertiesCount": 91
             },
             {
@@ -297,7 +293,7 @@
           ]
         }
       },
-      "stopReason": "error"
+      "stopReason": "stop"
     }
   }
 }

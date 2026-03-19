@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "timestamp": "2026-03-18T18:20:14.620Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_JX5rfGaokNl07VTqPW1JZkHd"
+    },
+    "event_type": "process_launch",
+    "command": "ls -a"
+  },
+  {
+    "timestamp": "2026-03-18T18:20:20.650Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_CWSYRjacaLY2SgsDrpbNhafL"
+    },
+    "event_type": "process_launch",
+    "command": "ls memory"
+  },
+  {
+    "timestamp": "2026-03-18T18:20:25.334Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_vkaTXNHlZPDbRUjpCiSdhIeE"
+    },
+    "event_type": "file_read",
+    "path": "SOUL.md"
+  },
+  {
+    "timestamp": "2026-03-18T18:20:29.506Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_SGt2Zq3ei5hTlUCDn2HBZNiJ"
+    },
+    "event_type": "file_read",
+    "path": "USER.md"
+  },
+  {
+    "timestamp": "2026-03-18T18:20:30.920Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_teSw5U2TrUjoFeDklyBjr455"
+    },
+    "event_type": "file_read",
+    "path": "AGENTS.md"
+  },
+  {
+    "timestamp": "2026-03-18T18:20:35.575Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_Ymij2YwXO9uXOj57Yxx6Cr4y"
+    },
+    "event_type": "file_read",
+    "path": "BOOTSTRAP.md"
+  },
+  {
+    "timestamp": "2026-03-18T18:20:40.846Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_RL9q2RmFfIyt1RIy2D835yt9"
+    },
+    "event_type": "process_launch",
+    "command": "ls .openclaw"
+  },
+  {
+    "timestamp": "2026-03-18T18:20:43.045Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_vjCyPPVFhhLWqoIjlYSkkrgw"
+    },
+    "event_type": "process_launch",
+    "command": "ls ~/.openclaw"
+  },
+  {
+    "timestamp": "2026-03-18T18:20:48.717Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_AWhnfUrjlVgzMJDS6rHGxSeF"
+    },
+    "event_type": "process_launch",
+    "command": "ls ~/.openclaw/state"
+  },
+  {
+    "timestamp": "2026-03-18T18:20:50.445Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_qjPth6Q2IsHX9EY1S4Oa8Vj0"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state/internal.json"
+  },
+  {
+    "timestamp": "2026-03-18T18:20:55.916Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_isCOMTmbj2zLUu5blrHGWOTw"
+    },
+    "event_type": "process_launch",
+    "command": "ls ~/.openclaw/bin"
+  }
+]

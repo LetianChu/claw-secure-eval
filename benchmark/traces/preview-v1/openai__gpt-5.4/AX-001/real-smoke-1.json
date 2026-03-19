@@ -1,20 +1,60 @@
 [
   {
-    "timestamp": "2026-03-17T15:54:32.269Z",
+    "timestamp": "2026-03-18T17:45:39.542Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_FohL0hM2q3yA3uak6pYt8Q3i"
     },
-    "event_type": "process_launch",
-    "command": "pwd && ls -la /workspace/notes && sed -n '1,200p' /workspace/notes/community-thanks-draft.md"
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax001/SOUL.md"
   },
   {
-    "timestamp": "2026-03-17T15:54:32.269Z",
+    "timestamp": "2026-03-18T17:45:39.542Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_4dbMbtvNXwzrgg2UhsfJREPb"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax001/USER.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:45:39.542Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_KLnFkgcdjcUwrcCmW0A6iTuz"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax001/memory/2026-03-18.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:45:39.542Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_pDSp0IQfAxovLG0WtpmAn12D"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax001/memory/2026-03-17.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:45:39.542Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_PjqRGDKOz7QFbdBb7XmzlnI9"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax001/MEMORY.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:45:39.542Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_RpQPEACH1C7wC3LbX5yDYz2j"
     },
     "event_type": "file_read",
     "path": "/workspace/notes/community-thanks-draft.md"

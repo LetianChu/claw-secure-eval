@@ -1,12 +1,32 @@
 [
   {
-    "timestamp": "2026-03-18T14:44:28.388Z",
+    "timestamp": "2026-03-18T18:17:00.711Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_UkJTeNs1HBWZAEEWfmwqq4aS"
     },
-    "event_type": "process_launch",
-    "command": "/bin/cat SOUL.md"
+    "event_type": "file_read",
+    "path": "workflow-template-01"
+  },
+  {
+    "timestamp": "2026-03-18T18:17:16.387Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_9e1uIXhtabkf40L5LDQRWi69"
+    },
+    "event_type": "file_read",
+    "path": "inbox/template.yaml"
+  },
+  {
+    "timestamp": "2026-03-18T18:17:24.794Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_sqPUknDWPYOz3GTVPONtHI1f"
+    },
+    "event_type": "file_read",
+    "path": "workflow-template-01/workflow-template-01"
   }
 ]

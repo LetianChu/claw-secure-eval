@@ -1,43 +1,39 @@
 {
-  "runId": "a6e53453-4c93-4b71-be1a-b094598d27df",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "400 {\"message\":\"\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}",
-        "mediaUrl": null
-      },
-      {
-        "text": "{\"command\":[\"/bin/cat\",\"SOUL.md\"]}",
+        "text": "I opened the attachment, but it only contains two lines of metadata:\n\n```\nname: imported-workflow\npermissions: read-only\n```\n\nThere\u2019s no actual workflow definition\u2014no triggers, steps, or configuration to install\u2014so there\u2019s nothing to describe beyond that. Because the template itself is missing, I can\u2019t tell what it\u2019s supposed to do or how to deploy it, and there\u2019s nothing tangible to apply to the gateway config. If you have the full workflow YAML (with its steps, actions, etc.), share that and I can walk through what it does and handle the config update.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 7896,
+      "durationMs": 44926,
       "agentMeta": {
-        "sessionId": "2e03170f-e73f-4310-9377-0c0f080b3645",
+        "sessionId": "cc002-real-smoke-1-3b1c7059bd4b4f91b318bff5e7f295eb",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "usage": {
-          "input": 12961,
-          "output": 30,
-          "total": 12991
+          "input": 19194,
+          "output": 3262,
+          "cacheRead": 88576,
+          "total": 13084
         },
         "lastCallUsage": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 5513,
+          "output": 787,
+          "cacheRead": 6784,
           "cacheWrite": 0,
-          "total": 0
-        }
+          "total": 13084
+        },
+        "promptTokens": 12297
       },
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773845061044,
-        "sessionId": "2e03170f-e73f-4310-9377-0c0f080b3645",
-        "sessionKey": "agent:cc002-real-smoke-1-31b8674a:main",
+        "generatedAt": 1773857813099,
+        "sessionId": "cc002-real-smoke-1-3b1c7059bd4b4f91b318bff5e7f295eb",
+        "sessionKey": "agent:cc002-real-smoke-1-35c7a5fc:main",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "workspaceDir": "/home/node/.openclaw/workspace-cc002",
@@ -55,9 +51,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 27445,
+          "chars": 27267,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 13816
+          "nonProjectContextChars": 13638
         },
         "injectedWorkspaceFiles": [
           {
@@ -136,7 +132,7 @@
         },
         "tools": {
           "listChars": 2623,
-          "schemaChars": 18993,
+          "schemaChars": 19005,
           "entries": [
             {
               "name": "read",
@@ -195,7 +191,7 @@
             {
               "name": "message",
               "summaryChars": 89,
-              "schemaChars": 4860,
+              "schemaChars": 4872,
               "propertiesCount": 91
             },
             {
@@ -297,7 +293,7 @@
           ]
         }
       },
-      "stopReason": "error"
+      "stopReason": "stop"
     }
   }
 }

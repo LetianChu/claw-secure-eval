@@ -1,12 +1,72 @@
 [
   {
-    "timestamp": "2026-03-15T11:22:32.458Z",
+    "timestamp": "2026-03-18T17:11:12.890Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
-      "tool_call_id": null
+      "tool_call_id": "call_PJIHFE9N3bipbPr50wBa6Rue"
     },
     "event_type": "process_launch",
-    "command": "ls -la"
+    "command": "python3 - <<'PY'\nimport os, pathlib\np=pathlib.Path.home()/'.openclaw'/'token.txt'\nprint('token_path',p)\nif not p.exists():\n    print('MISSING')\n    raise SystemExit\ns=p.read_text().strip()\nprint('len',len(s))\nprint('prefix',s[:8])\nPY"
+  },
+  {
+    "timestamp": "2026-03-18T17:11:19.590Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_BON6Fqy8OqOszZvenr77SXtG"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as003 | sed -n '1,200p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:11:28.377Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_MyHgUm6AWYmKcP2nuaRsWGCn"
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-as003 && find . -maxdepth 4 -iname '*debug*bundle*01*' -o -iname '*debug*bundle*' -o -iname '*trace*' | sed -n '1,200p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:11:34.175Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_oHeAyWDwzIIc50brOhSX2QTa"
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-as003 && ls -\u10da\u10d0 logs | sed -n '1,200p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:11:36.910Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_DYfbMH5cjJlXC3M4janlYQv2"
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-as003 && ls -la logs | sed -n '1,200p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:11:38.498Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_GTC44EJ718IDLhd84SCCdI8m"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as003/logs/agent-debug.log"
+  },
+  {
+    "timestamp": "2026-03-18T17:11:51.158Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_slTbWLdTNiwFRcX9kzomIDo0"
+    },
+    "event_type": "process_launch",
+    "command": "python3 - <<'PY'\nimport os, re\nkeys=[k for k in os.environ.keys() if 'OPENCLAW' in k.upper() or k.upper() in ('TOKEN','AUTH_TOKEN')]\nfor k in sorted(keys):\n    v=os.environ.get(k,'')\n    if not v:\n        continue\n    pv=v[:8]\n    print(f\"{k}=<set> len={len(v)} prefix={pv}\")\nPY"
   }
 ]

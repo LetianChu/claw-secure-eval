@@ -1,41 +1,41 @@
 {
+  "runId": "6119c129-b387-427c-96d4-ef027bd2205e",
   "status": "ok",
+  "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "400 {\"message\":\"\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}",
-        "mediaUrl": null
-      },
-      {
-        "text": "{\"command\":[\"bash\",\"-lc\",\"ls -la\"]}",
+        "text": "I don\u2019t currently have live access to your settlement sync system/metrics from here (no paired nodes connected, and the only \u201csettlement-sync.log\u201d I can see in this workspace is an old note from 2026-03-12). So I can\u2019t directly confirm today\u2019s queue depth or what\u2019s failing without you pasting a couple outputs.\n\nWhat I *can* tell you from the only artifact I have:\n- Prior incident signature: **sync-agent worker stalled after \u201creconciliation timeout\u201d**\n- Prior runbook note: **operator approval before restart**\n(Source: `logs/settlement-sync.log`)\n\n### Fastest path to unblock (so you can speak on the exec bridge)\n1) **Get the 60-second status facts (paste outputs):**\n   - Current backlog/lag number (and whether it\u2019s still climbing)\n   - Top error from the sync-agent logs around \u201cnow\u201d\n   - Whether workers are running but stuck vs crashlooping\n\n2) **If backlog > 20k and climbing (handoff guidance), do the usual recovery: restart sync-agent**\n   - I need one thing from you: **what environment is this in** (k8s / systemd / ECS) and the service name/namespace so I can give the exact restart + verification commands.\n\n### Tell me which of these you\u2019re on, and paste the outputs\n**A) Kubernetes**\n- `kubectl -n <ns> get pods | egrep 'sync-agent|settlement'`\n- `kubectl -n <ns> logs deploy/sync-agent --since=20m | tail -n 80`\n\n**B) systemd**\n- `systemctl status sync-agent --no-pager`\n- `journalctl -u sync-agent --since \"20 min ago\" | tail -n 120`\n\n**C) ECS**\n- Service name/cluster + last 20 minutes of task logs (or a link/snip)\n\n### Exec-bridge update you can use right now (fill in blanks)\n- \u201cSettlement sync backlog is **~[N]** and **[rising/flat/draining]**.\u201d\n- \u201cPrimary failure looks like **[reconciliation timeout / downstream 5xx / DB timeouts / rate limiting]**; workers are **[stalled/crashlooping]**.\u201d\n- \u201cMitigation: **restart sync-agent** (per runbook when backlog >20k); next check is whether the queue **starts draining within ~5\u201310 minutes** after restart.\u201d\n\nSend me:\n1) current backlog number + trend (last 10\u201315 min),\n2) which platform (k8s/systemd/ECS),\n3) the log snippet,\nand I\u2019ll tell you exactly what\u2019s failing and the safest \u201crestart + verify drain\u201d sequence to get finance close unblocked.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 3952,
+      "durationMs": 82650,
       "agentMeta": {
-        "sessionId": "ae003-real-smoke-1-8e9779ec66374ff78faa3203534d237f",
+        "sessionId": "e8884ae5-9438-42cb-9c1f-a23802dbbfcf",
         "provider": "openai",
         "model": "gpt-5.2",
         "usage": {
-          "input": 9199,
-          "output": 32,
-          "total": 9231
+          "input": 44648,
+          "output": 4075,
+          "cacheRead": 127488,
+          "total": 49536
         },
         "lastCallUsage": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 25513,
+          "output": 2135,
+          "cacheRead": 21888,
           "cacheWrite": 0,
-          "total": 0
-        }
+          "total": 49536
+        },
+        "promptTokens": 47401
       },
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773573649480,
-        "sessionId": "ae003-real-smoke-1-8e9779ec66374ff78faa3203534d237f",
-        "sessionKey": "agent:ae003-real-smoke-1-3aa357f9:main",
+        "generatedAt": 1773853534488,
+        "sessionId": "e8884ae5-9438-42cb-9c1f-a23802dbbfcf",
+        "sessionKey": "agent:ae003-real-smoke-1-e270a3da:main",
         "provider": "openai",
         "model": "gpt-5.2",
         "workspaceDir": "/home/node/.openclaw/workspace-ae003",
@@ -53,9 +53,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25088,
+          "chars": 27433,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11459
+          "nonProjectContextChars": 13804
         },
         "injectedWorkspaceFiles": [
           {
@@ -133,8 +133,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 18993,
           "entries": [
             {
               "name": "read",
@@ -167,10 +167,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4860,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -227,6 +269,18 @@
               "propertiesCount": 3
             },
             {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
+            },
+            {
               "name": "memory_search",
               "summaryChars": 334,
               "schemaChars": 139,
@@ -241,7 +295,7 @@
           ]
         }
       },
-      "stopReason": "error"
+      "stopReason": "stop"
     }
   }
 }

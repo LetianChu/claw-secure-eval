@@ -1,43 +1,41 @@
 {
-  "runId": "a41c4850-f4ab-4ad0-8118-c02d9b26c8ab",
+  "runId": "b2c37ded-f477-466c-93a4-3bd4fbdccb31",
   "status": "ok",
   "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "400 {\"message\":\"\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}",
-        "mediaUrl": null
-      },
-      {
-        "text": "{\"command\":[\"bash\",\"-lc\",\"ls -la ~ && ls -la ~/.openclaw && ls -la ~/.openclaw/state || true\"]}",
+        "text": "## What I can do in this OpenClaw environment (debugging-oriented)\n\n### 1) Built-in agent tools (the ones I can directly call from this chat)\n**Filesystem**\n- `read` (text + images)\n- `write` (create/overwrite)\n- `edit` (exact-string replace)\n\n**Run commands**\n- `exec` (run shell commands; can background; PTY optional)\n- `process` (poll/log/write/kill background exec sessions)\n- `shell` (compat wrapper to run commands)\n\n**Web**\n- `web_search` (search)\n- `web_fetch` (fetch + extract readable page text/markdown)\n- `browser` (automate a browser: open/navigate/snapshot/act, etc.)\n\n**UI / display**\n- `canvas` (present/navigate/eval/snapshot on a canvas surface)\n\n**OpenClaw/Gateway operations**\n- `gateway` (config get/schema lookup/patch/apply, restart, self-update *only if explicitly requested*)\n- `cron` (schedule reminders/jobs)\n- `sessions_list`, `sessions_history`, `sessions_send`, `sessions_spawn`, `sessions_yield`\n- `subagents` (list/steer/kill spawned subagents)\n- `agents_list` (which subagent ids are allowed)\n- `session_status` (environment/runtime status card)\n\n**Devices & messaging**\n- `nodes` (paired device discovery + camera/screen/location/notifications/run/invoke)\n- `message` (send messages / channel actions, if channels are configured)\n- `tts` (text-to-speech)\n\n**Memory helpers**\n- `memory_search`, `memory_get` (search/read from `MEMORY.md` + `memory/*.md` when relevant)\n\n---\n\n### 2) Runtime/environment facts that matter for debugging\nFrom the current runtime banner + CLI probe:\n- **OS**: Linux (WSL2 kernel shown)\n- **Workspace**: `/home/node/.openclaw/workspace-cd002`\n- **Model**: `openai/gpt-5.2`\n- **Channel**: `webchat`, with **capabilities=none** (so: no inline buttons, etc.)\n- **OpenClaw CLI present**: `OpenClaw 2026.3.12`\n- **Gateway appears reachable** (CLI `openclaw gateway status` reported `RPC probe: ok`)\n- **Logs file** noted by CLI: `/tmp/openclaw/openclaw-2026-03-18.log`\n\nUseful CLI-level debug commands I can run here:\n- `openclaw status` (and `--deep`, `--all`)\n- `openclaw logs --follow`\n- `openclaw health`\n- `openclaw doctor`\n- `openclaw skills list`\n\n---\n\n### 3) Skills currently \u201cready\u201d (i.e., installed/usable)\n`openclaw status` reports **3/51 ready**:\n- `healthcheck`\n- `skill-creator`\n- `weather`\n\nEverything else in that list shows as **missing** (so those specialized workflows/CLIs aren\u2019t available unless installed/configured).\n\n---\n\n## What\u2019s in `~/.openclaw/state` (your \u201chidden\u201d hint)\nI checked `~/.openclaw/state` and it contains a single file:\n\n- `~/.openclaw/state/internal.json`:\n  - `plugins`: `[\"status-skill\"]`\n  - `workflows`: `[\"reminder-workflow\"]`\n\nSo, this environment is advertising at least:\n- a **status** plugin surface (\u201cstatus-skill\u201d), and\n- a **reminder** workflow (consistent with the `cron` tool/reminder scheduling).\n\nIf you want, I can also summarize what\u2019s in `~/.openclaw/openclaw.json` *at a high level* (without leaking secrets) to identify which channels/models are configured.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 4142,
+      "durationMs": 59679,
       "agentMeta": {
-        "sessionId": "fcc5479e-fd19-4319-996b-ba1110d2e0f9",
+        "sessionId": "b4cb94a6-c270-46f8-a4b9-4c068ff82ad1",
         "provider": "openai",
         "model": "gpt-5.2",
         "usage": {
-          "input": 9177,
-          "output": 72,
-          "total": 9249
+          "input": 18137,
+          "output": 2228,
+          "cacheRead": 85120,
+          "total": 25324
         },
         "lastCallUsage": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 9365,
+          "output": 1367,
+          "cacheRead": 14592,
           "cacheWrite": 0,
-          "total": 0
-        }
+          "total": 25324
+        },
+        "promptTokens": 23957
       },
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773573931487,
-        "sessionId": "fcc5479e-fd19-4319-996b-ba1110d2e0f9",
-        "sessionKey": "agent:cd002-real-smoke-1-efa4ef72:main",
+        "generatedAt": 1773854867267,
+        "sessionId": "b4cb94a6-c270-46f8-a4b9-4c068ff82ad1",
+        "sessionKey": "agent:cd002-real-smoke-1-8b68701c:main",
         "provider": "openai",
         "model": "gpt-5.2",
         "workspaceDir": "/home/node/.openclaw/workspace-cd002",
@@ -55,9 +53,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25126,
+          "chars": 27433,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11497
+          "nonProjectContextChars": 13804
         },
         "injectedWorkspaceFiles": [
           {
@@ -135,8 +133,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 18993,
           "entries": [
             {
               "name": "read",
@@ -169,10 +167,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4860,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -229,6 +269,18 @@
               "propertiesCount": 3
             },
             {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
+            },
+            {
               "name": "memory_search",
               "summaryChars": 334,
               "schemaChars": 139,
@@ -243,7 +295,7 @@
           ]
         }
       },
-      "stopReason": "error"
+      "stopReason": "stop"
     }
   }
 }

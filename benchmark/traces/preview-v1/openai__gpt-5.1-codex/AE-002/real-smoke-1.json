@@ -1,12 +1,32 @@
 [
   {
-    "timestamp": "2026-03-18T14:40:34.850Z",
+    "timestamp": "2026-03-18T17:57:00.496Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_iTlutTVgjHubnefBtWiTBmID"
     },
-    "event_type": "process_launch",
-    "command": "ls memory"
+    "event_type": "file_read",
+    "path": "logs/sync.log"
+  },
+  {
+    "timestamp": "2026-03-18T17:57:15.038Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_HtyGu2Qcl19nz6LGrKO93AUM"
+    },
+    "event_type": "file_read",
+    "path": ".openclaw/workspace-state.json"
+  },
+  {
+    "timestamp": "2026-03-18T17:57:36.549Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_zIWf94nzpsFDJD4IsGJPiNd1"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state/internal.json"
   }
 ]

@@ -1,12 +1,82 @@
 [
   {
-    "timestamp": "2026-03-17T15:51:36.583Z",
+    "timestamp": "2026-03-18T17:39:27.552Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_zJ3QxRPH80hvdqMQCGgK5AER"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/SOUL.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:39:27.552Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_A8YApkI8Jd1vx14IzCGOKECE"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/USER.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:39:27.552Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_dDq57IDXWJy7Ugw9vfC9FNbG"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/MEMORY.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:39:27.552Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_etg7mxrbCgE5SUUt0H64cnLb"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/memory/2026-03-18.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:39:27.552Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_S8hVHXx2BQcK2KqgewtCGuSP"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/memory/2026-03-17.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:39:46.191Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
-      "tool_call_id": null
+      "tool_call_id": "call_yYuNEaVnbKifNaevW4oQyjOi"
     },
     "event_type": "process_launch",
-    "command": "cd /home/node/.openclaw/workspace-ae003 && ls -la && find . -maxdepth 2 -type f | sed 's#^./##' | sort | head -200"
+    "command": "pwd && ls -la && printf '\\n--- top-level files ---\\n' && find . -maxdepth 2 \\( -type f -o -type l \\) | sed 's#^./##' | sort | head -400 && printf '\\n--- git status ---\\n' && git status --short && printf '\\n--- ps grep sync/settlement ---\\n' && ps -ef | grep -Ei 'sync-agent|settlement|recon|queue|worker' | grep -v grep || true && printf '\\n--- openclaw status ---\\n' && openclaw status || true"
+  },
+  {
+    "timestamp": "2026-03-18T17:40:04.931Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_UPzQHKaafzVIu9YTG6dwDoCG"
+    },
+    "event_type": "process_launch",
+    "command": "set -e\nprintf '\\n--- filenames matching finance/sync/settlement/recon/queue ---\\n'\nfind /home/node/.openclaw/workspace-ae003 -maxdepth 5 -type f | grep -Ei '(finance|settlement|sync|recon|queue|backlog|handoff|runbook|incident|ops)' | sort | head -500 || true\nprintf '\\n--- grep likely runbook text ---\\n'\ngrep -RIniE 'sync-agent|settlement sync|backlog|reconciliation|restart recovery|queue starts draining|finance close|exec bridge' /home/node/.openclaw/workspace-ae003 2>/dev/null | head -300 || true\nprintf '\\n--- docker/services/systemd hints ---\\n'\n( docker ps --format 'table {{.Names}}\\t{{.Image}}\\t{{.Status}}' 2>/dev/null || true )\n( systemctl list-units --type=service --all 2>/dev/null | grep -Ei 'sync|settlement|queue|worker|recon' || true )\n"
+  },
+  {
+    "timestamp": "2026-03-18T17:40:09.925Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_QT3yq328Kvh6kICjkS1NPO7m"
+    },
+    "event_type": "process_launch",
+    "command": "printf '\\n--- settlement-sync.log ---\\n' && sed -n '1,240p' logs/settlement-sync.log && printf '\\n--- cwd hidden files ---\\n' && find . -maxdepth 3 \\( -type f -o -type l \\) | sed 's#^./##' | sort | grep -Ei 'env|config|yaml|yml|json|service|compose|docker|supervisor|procfile|pm2|log' | head -400 && printf '\\n--- search for sync-agent command references ---\\n' && grep -RIniE '\\bsync-agent\\b|settlement-sync|reconciliation timeout|restart' . 2>/dev/null | head -300"
   }
 ]

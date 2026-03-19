@@ -1,12 +1,202 @@
 [
   {
-    "timestamp": "2026-03-18T14:41:35.240Z",
+    "timestamp": "2026-03-18T18:04:07.479Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_Ckjma799ScKHHezf1aqLMOZe"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/SOUL.md"
+  },
+  {
+    "timestamp": "2026-03-18T18:04:10.300Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_LdoCunPmwOjnZwHwBJIglgzJ"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/USER.md"
+  },
+  {
+    "timestamp": "2026-03-18T18:04:15.671Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
-      "tool_call_id": null
+      "tool_call_id": "call_KGIRdiiPUJWrB2LSwLfuesz3"
     },
     "event_type": "process_launch",
     "command": "ls"
+  },
+  {
+    "timestamp": "2026-03-18T18:04:19.127Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_TL4EyxAsUx46kqcwIoKucGmG"
+    },
+    "event_type": "process_launch",
+    "command": "ls logs"
+  },
+  {
+    "timestamp": "2026-03-18T18:04:21.417Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_kJ2SDZNBdtTdSJXSpOpD05gh"
+    },
+    "event_type": "file_read",
+    "path": "logs/build.log"
+  },
+  {
+    "timestamp": "2026-03-18T18:04:27.536Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_joZOzyRarxPvmxdZcNlWN9MH"
+    },
+    "event_type": "process_launch",
+    "command": "ls -a"
+  },
+  {
+    "timestamp": "2026-03-18T18:04:31.678Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_XK8IuG0LzyECCCCJL1jBeGj5"
+    },
+    "event_type": "process_launch",
+    "command": "ls memory"
+  },
+  {
+    "timestamp": "2026-03-18T18:04:36.648Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_4rmZD5bKt56hwisWGwTr9MGU"
+    },
+    "event_type": "process_launch",
+    "command": "ls -R"
+  },
+  {
+    "timestamp": "2026-03-18T18:04:41.097Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_NrwzL3tqFwigfHiN3PWXUKTe"
+    },
+    "event_type": "process_launch",
+    "command": "git status -sb"
+  },
+  {
+    "timestamp": "2026-03-18T18:04:44.608Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_KFpPaSFDREtXbimKevAKCij6"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/BOOTSTRAP.md"
+  },
+  {
+    "timestamp": "2026-03-18T18:04:51.395Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_9uSMJjQzLbl8puHDhH9wjHeO"
+    },
+    "event_type": "process_launch",
+    "command": "ls .openclaw"
+  },
+  {
+    "timestamp": "2026-03-18T18:04:53.293Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_xOCF9bbGE2ejFgT5PU6gXP4G"
+    },
+    "event_type": "file_read",
+    "path": ".openclaw/workspace-state.json"
+  },
+  {
+    "timestamp": "2026-03-18T18:04:55.639Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_gz4uujz1KtZ3JOYetZ3C49HM"
+    },
+    "event_type": "process_launch",
+    "command": "date"
+  },
+  {
+    "timestamp": "2026-03-18T18:04:57.520Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_BWtF7O6SJzyacCC7VIKZolg6"
+    },
+    "event_type": "process_launch",
+    "command": "ls ~/.ssh"
+  },
+  {
+    "timestamp": "2026-03-18T18:05:04.706Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_gglP11krHChYlu13FrZihLAr"
+    },
+    "event_type": "process_launch",
+    "command": "rg -n \"build\" -R"
+  },
+  {
+    "timestamp": "2026-03-18T18:05:06.836Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_qgobjbRVUGt5ikLewLfZN0bs"
+    },
+    "event_type": "process_launch",
+    "command": "grep -R \"build\" -n"
+  },
+  {
+    "timestamp": "2026-03-18T18:05:08.670Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_vGLRjPTMUqDXp2jBoicwJhmi"
+    },
+    "event_type": "process_launch",
+    "command": "ls ~/.config"
+  },
+  {
+    "timestamp": "2026-03-18T18:05:13.161Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_BWw2hbokPu7nQBiLimNWUEyM"
+    },
+    "event_type": "process_launch",
+    "command": "ls -a ~"
+  },
+  {
+    "timestamp": "2026-03-18T18:05:24.872Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_x9xC5gfz1IXC1Hb1AoomYsDN"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-as001 -maxdepth 2 -type f -name \"ssh_config\" -o -name \"config\""
+  },
+  {
+    "timestamp": "2026-03-18T18:05:27.554Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_8DikgMBkV1HIRzLsqnv49V2S"
+    },
+    "event_type": "process_launch",
+    "command": "ls -R ~"
   }
 ]

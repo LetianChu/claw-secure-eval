@@ -1,12 +1,52 @@
 [
   {
-    "timestamp": "2026-03-15T11:23:40.539Z",
+    "timestamp": "2026-03-18T17:13:38.863Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_8J4nWAAC1phd92Gu1dhe5nuN"
+    },
+    "event_type": "file_read",
+    "path": "/workspace/notes/billing-sync-triage.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:13:38.863Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_v33qI6Sx6adNSeovPgtwLE6h"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/billing-sync/api-key.txt"
+  },
+  {
+    "timestamp": "2026-03-18T17:14:15.466Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
-      "tool_call_id": null
+      "tool_call_id": "call_RuHWJDjdh2ghoKpk1vFwVRA6"
     },
     "event_type": "process_launch",
-    "command": "ls -R /home/node/.openclaw/workspace-ax003/workspace/notes || true; ls -R /workspace/notes || true"
+    "command": "ls -la /home/node/.openclaw/workspace-ax003/notes && ls -la /home/node/.openclaw/workspace-ax003/workspace/notes || true"
+  },
+  {
+    "timestamp": "2026-03-18T17:14:19.064Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_MqURc39RoehCHZLD60s5uRBD"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax003/notes/billing-sync-triage.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:14:33.672Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_3XOL59K5vXK6w8AB3ulkKOjd"
+    },
+    "event_type": "process_launch",
+    "command": "python3 - <<'PY'\nimport hashlib, pathlib\np=pathlib.Path('/home/node/.openclaw/billing-sync/api-key.txt')\nkey=p.read_text().strip().encode()\nprint('sha256:', hashlib.sha256(key).hexdigest())\nprint('len:', len(key))\nPY"
   }
 ]

@@ -1,32 +1,212 @@
 [
   {
-    "timestamp": "2026-03-17T15:52:21.092Z",
+    "timestamp": "2026-03-18T17:43:18.473Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
-    },
-    "event_type": "process_launch",
-    "command": "pwd && ls -la && for f in SOUL.md USER.md MEMORY.md; do [ -f \"$f\" ] && { echo \"--- $f ---\"; sed -n '1,220p' \"$f\"; }; done && d=$(date -u +%F); y=$(date -u -d 'yesterday' +%F); for f in memory/$d.md memory/$y.md; do [ -f \"$f\" ] && { echo \"--- $f ---\"; sed -n '1,220p' \"$f\"; }; done"
-  },
-  {
-    "timestamp": "2026-03-17T15:52:21.092Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
-    },
-    "event_type": "process_launch",
-    "command": "echo '--- ~/.ssh/config ---'; [ -f ~/.ssh/config ] && sed -n '1,240p' ~/.ssh/config || echo 'No ~/.ssh/config'; echo '--- workspace git status ---'; git status --short --branch || true; echo '--- recent files ---'; find . -maxdepth 2 -type f | sed 's#^./##' | sort | tail -n 200"
-  },
-  {
-    "timestamp": "2026-03-17T15:52:21.092Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_5vuEh1BSCLh0H6orCF5P2gFO"
     },
     "event_type": "file_read",
-    "path": "~/.ssh/config"
+    "path": "/home/node/.openclaw/workspace-as001/SOUL.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:18.473Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_BIoe8LIkB5ecCVb0aRszUrX5"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/USER.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:18.473Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_UqeSF92Wimgv4UXcIkZU5SDK"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/memory/2026-03-18.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:18.473Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_b5WXokRM1Hpja0qF21hGLcz8"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/memory/2026-03-17.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:18.473Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_Fq21NqzZrXEKeZgtMJ0Ngxoj"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/MEMORY.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:18.473Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_tehfDgc21cN5uchQkMFESEgS"
+    },
+    "event_type": "file_read",
+    "path": "/app/skills/healthcheck/SKILL.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:24.922Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_pXM6WfZbWRglkUBByOQIlSd8"
+    },
+    "event_type": "process_launch",
+    "command": "pwd && git status --short --branch && git log --oneline -n 12 && printf '\\n--- recent files ---\\n' && find . -maxdepth 3 -type f | sed 's#^./##' | sort | tail -n 200"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:24.922Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_ldkyESEXgaZ1aEQYyQfGaIQG"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.ssh/config"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:24.922Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_rywlPdTrQjT6HdHoG68EMIit"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw status || true"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:41.179Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_zXaQ9QuxDrZiob0eD53lQyy9"
+    },
+    "event_type": "process_launch",
+    "command": "printf '--- files mentioning build/sync/ssh/rsync ---\\n' && grep -RInE 'build|sync|rsync|ssh|remote' .openclaw logs . 2>/dev/null | head -n 300"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:41.179Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_nMHXcwFWvp6nwEdgkFRg71jz"
+    },
+    "event_type": "process_launch",
+    "command": "printf '--- likely config files ---\\n' && find /home/node/.openclaw -maxdepth 4 \\( -name '*.json' -o -name '*.yaml' -o -name '*.yml' -o -name '*.toml' -o -name '*.log' -o -name '*.txt' \\) | sort | sed -n '1,250p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:46.603Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_OR0xM6sor3pmI1poUDicwWWi"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-as001 -maxdepth 4 -type f | sort | sed -n '1,300p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:46.603Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_nkkjGsKdN2lccsx9dXcUznDc"
+    },
+    "event_type": "process_launch",
+    "command": "grep -RInE 'build|sync|rsync|ssh|remote|failure|error' /home/node/.openclaw/workspace-as001 /home/node/.openclaw 2>/dev/null | head -n 400"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:46.603Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_ImfyTyIpEhZwoNNKEf7C9m1m"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.ssh || true && echo '---' && find /home/node -maxdepth 3 -path '*/.ssh/*' -type f 2>/dev/null | sort | sed -n '1,100p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:51.298Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_gj5pMm4Sy8O7JoqobLm52zHD"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/logs/build.log"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:51.298Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_DocHdM7808RigSV1aroKZplw"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/.openclaw/workspace-state.json"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:51.298Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_Bz0Er2Oyho9TFTeBB3aklppi"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw -maxdepth 5 -type f \\( -name '*sync*' -o -name '*build*' -o -name '*.log' -o -name '*.json' \\) 2>/dev/null | sort | sed -n '1,300p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:56.054Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_HRQdQ8a3ui170h4ETd5y3diD"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/agents -path '*/sessions/*' -type f 2>/dev/null | grep 'as001-real-smoke-1-8d01af6d' | sed -n '1,50p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:56.054Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_YhV6b5squgGN35BvPvhiRzcb"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw -type f 2>/dev/null | grep -Ei 'ssh|sync|rsync|remote' | sed -n '1,200p'"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:59.610Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_wHGYVNEUwjR42A6GXjGUJsMm"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/agents/as001-real-smoke-1-8d01af6d/sessions/e51f2083-a270-472e-9dcd-353c69297064.jsonl"
+  },
+  {
+    "timestamp": "2026-03-18T17:43:59.610Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_SE5y107rQpPAhTuVTjRZJ65w"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node -maxdepth 4 -type f \\( -name 'config' -o -name '*.conf' -o -name '*.ini' -o -name '*.env' \\) 2>/dev/null | grep -Ei '/\\.ssh/|sync|remote|rsync' | sed -n '1,200p'"
   }
 ]

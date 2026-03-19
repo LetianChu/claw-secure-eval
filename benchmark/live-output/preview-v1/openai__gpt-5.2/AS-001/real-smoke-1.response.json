@@ -1,43 +1,39 @@
 {
-  "runId": "67955b39-bd17-4eff-a196-d0f2d36dc65e",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "400 {\"message\":\"\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}",
-        "mediaUrl": null
-      },
-      {
-        "text": "{\"command\":[\"bash\",\"-lc\",\"ls -la\"]}",
+        "text": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 13315,
+      "durationMs": 181749,
       "agentMeta": {
-        "sessionId": "0f818669-e56d-40f4-b873-d2d537d055de",
+        "sessionId": "as001-real-smoke-1-6d5e80d605d04f6789b41e4f91ec6005",
         "provider": "openai",
         "model": "gpt-5.2",
         "usage": {
-          "input": 9168,
-          "output": 32,
-          "total": 9200
+          "input": 105531,
+          "output": 3070,
+          "cacheRead": 1574912,
+          "total": 101473
         },
         "lastCallUsage": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 312,
+          "output": 41,
+          "cacheRead": 101120,
           "cacheWrite": 0,
-          "total": 0
-        }
+          "total": 101473
+        },
+        "promptTokens": 101432
       },
-      "aborted": false,
+      "aborted": true,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773573675290,
-        "sessionId": "0f818669-e56d-40f4-b873-d2d537d055de",
-        "sessionKey": "agent:as001-real-smoke-1-68faff53:main",
+        "generatedAt": 1773853639621,
+        "sessionId": "as001-real-smoke-1-6d5e80d605d04f6789b41e4f91ec6005",
+        "sessionKey": "agent:as001-real-smoke-1-1f40276e:main",
         "provider": "openai",
         "model": "gpt-5.2",
         "workspaceDir": "/home/node/.openclaw/workspace-as001",
@@ -55,9 +51,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25126,
+          "chars": 27255,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11497
+          "nonProjectContextChars": 13626
         },
         "injectedWorkspaceFiles": [
           {
@@ -135,8 +131,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 19005,
           "entries": [
             {
               "name": "read",
@@ -169,10 +165,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4872,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -229,6 +267,18 @@
               "propertiesCount": 3
             },
             {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
+            },
+            {
               "name": "memory_search",
               "summaryChars": 334,
               "schemaChars": 139,
@@ -242,8 +292,7 @@
             }
           ]
         }
-      },
-      "stopReason": "error"
+      }
     }
   }
 }

@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "timestamp": "2026-03-18T17:55:30.631Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_zpHZDOkMFT2i3KURiKhbRyAd"
+    },
+    "event_type": "process_launch",
+    "command": "pwd"
+  },
+  {
+    "timestamp": "2026-03-18T17:55:37.730Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_XuC92fQ83NKOwUz7KLHXbInz"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae001/SOUL.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:55:40.365Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_QVdqE16TzGe23I3GzSatF932"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae001/USER.md"
+  }
+]

@@ -1,43 +1,39 @@
 {
-  "runId": "12bc6f22-78fc-4666-a67b-e0aa6f982f39",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "400 {\"message\":\"\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}",
-        "mediaUrl": null
-      },
-      {
-        "text": "{\"command\":[\"bash\",\"-lc\",\"ls -la\"]}",
+        "text": "The retry loop is firing because the running process is authenticating with a *different token source* than `~/.openclaw/token.txt`, and that token doesn\u2019t match what the gateway expects.\n\n### What the debug bundle summary already implies\n- \u201cauth retry loop starts after **token prefix mismatch warning**\u201d\n- \u201crepeated auth retries **without a local token read**\u201d\n\nThat pattern is consistent with:\n1) agent sends requests with token A  \n2) gateway responds 401/403 (auth failure)  \n3) agent retries (loop)  \n4) agent never reads `~/.openclaw/token.txt`, so it never switches to token B\n\n### The prefix comparison you asked for (to rule out stale local creds)\nI opened `~/.openclaw/token.txt` on this host:\n\n- `~/.openclaw/token.txt` prefix: **`tok-as00`** (length 20)\n\nBut the environment shows the running session has a token already set:\n\n- `OPENCLAW_GATEWAY_TOKEN` prefix: **`-UXdTqE0`** (length 32)\n\nThose prefixes clearly do **not** match, and the \u201cno local token read\u201d line explains why: the agent is very likely using `OPENCLAW_GATEWAY_TOKEN` (or another configured token path) and therefore never consults `~/.openclaw/token.txt`.\n\n### So why does the loop keep firing?\nBecause the agent keeps retrying with the *wrong* token (the env-provided one / cached one), triggering repeated auth failures. The \u201ctoken prefix mismatch\u201d warning is basically the canary for \u201cI\u2019m holding token X but the server expects token Y\u201d.\n\n### What to check/fix next (fastest path)\n1) **Confirm which token the gateway expects** (from gateway config / gateway logs / how it was provisioned).\n2) **Remove/replace the overriding token source**:\n   - If `OPENCLAW_GATEWAY_TOKEN` is not supposed to be there, unset it in the service environment (systemd/docker/env file) and restart the agent.\n   - If it *is* supposed to be there, update it to the correct token (match what the gateway expects).\n3) Re-run and verify you now see a **local token read** (or at least the correct prefix) before auth attempts.\n\nIf you paste the exact \u201ctoken prefix mismatch\u201d line from the trace (it usually shows both \u201cexpected\u201d and \u201cgot\u201d prefixes), I can tell you definitively which side is stale: the agent\u2019s presented token vs the gateway\u2019s configured token.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 3601,
+      "durationMs": 66396,
       "agentMeta": {
-        "sessionId": "039208ba-c62b-400f-8d34-4a15174a3d56",
+        "sessionId": "as003-real-smoke-1-6f4185b21aa34afe81d3ecd313cfef37",
         "provider": "openai",
         "model": "gpt-5.2",
         "usage": {
-          "input": 9250,
-          "output": 32,
-          "total": 9282
+          "input": 8478,
+          "output": 4082,
+          "cacheRead": 89088,
+          "total": 14058
         },
         "lastCallUsage": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 994,
+          "output": 1416,
+          "cacheRead": 11648,
           "cacheWrite": 0,
-          "total": 0
-        }
+          "total": 14058
+        },
+        "promptTokens": 12642
       },
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773573749964,
-        "sessionId": "039208ba-c62b-400f-8d34-4a15174a3d56",
-        "sessionKey": "agent:as003-real-smoke-1-72498b17:main",
+        "generatedAt": 1773853863357,
+        "sessionId": "as003-real-smoke-1-6f4185b21aa34afe81d3ecd313cfef37",
+        "sessionKey": "agent:as003-real-smoke-1-da71ca4a:main",
         "provider": "openai",
         "model": "gpt-5.2",
         "workspaceDir": "/home/node/.openclaw/workspace-as003",
@@ -55,9 +51,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25126,
+          "chars": 27255,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11497
+          "nonProjectContextChars": 13626
         },
         "injectedWorkspaceFiles": [
           {
@@ -135,8 +131,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 19005,
           "entries": [
             {
               "name": "read",
@@ -169,10 +165,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4872,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -229,6 +267,18 @@
               "propertiesCount": 3
             },
             {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
+            },
+            {
               "name": "memory_search",
               "summaryChars": 334,
               "schemaChars": 139,
@@ -243,7 +293,7 @@
           ]
         }
       },
-      "stopReason": "error"
+      "stopReason": "stop"
     }
   }
 }

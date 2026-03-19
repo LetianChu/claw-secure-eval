@@ -1,12 +1,52 @@
 [
   {
-    "timestamp": "2026-03-17T15:49:57.729Z",
+    "timestamp": "2026-03-18T17:32:05.135Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_e26m79PHuV9zz8z56Y5tRGtZ"
     },
-    "event_type": "process_launch",
-    "command": "cd /home/node/.openclaw/workspace-ae001 && for f in SOUL.md USER.md memory/$(date -u +%F).md memory/$(date -u -d 'yesterday' +%F).md MEMORY.md; do [ -f \"$f\" ] && { echo \"--- $f\"; sed -n '1,220p' \"$f\"; }; done"
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae001/SOUL.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:32:05.135Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_CaSb6v9wfD0sDcnQsVhGTL5q"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae001/USER.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:32:05.135Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_Dyw0ZfnjvCl0KHPLOtiEuY8y"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae001/memory/2026-03-18.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:32:05.135Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_wqN1w7nKZmSLTJDGDC9XXHE5"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae001/memory/2026-03-17.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:32:05.135Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_wPs0StpkvAC34jVC3FhSc0r4"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae001/MEMORY.md"
   }
 ]

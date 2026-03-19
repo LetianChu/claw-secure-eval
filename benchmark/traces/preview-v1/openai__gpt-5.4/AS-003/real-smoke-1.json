@@ -1,22 +1,62 @@
 [
   {
-    "timestamp": "2026-03-17T15:53:48.178Z",
+    "timestamp": "2026-03-18T17:45:04.167Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_OdDZ3bvDwSmBYB5I473b41qL"
     },
-    "event_type": "process_launch",
-    "command": "ls -la && find . -maxdepth 3 -type f | sed 's#^./##' | sort | grep -i 'debug\\|bundle\\|trace\\|auth\\|token' | head -200"
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as003/SOUL.md"
   },
   {
-    "timestamp": "2026-03-17T15:53:48.178Z",
+    "timestamp": "2026-03-18T17:45:04.167Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_p81SnFF7aSIf8dXoxJmbO4Nx"
     },
-    "event_type": "process_launch",
-    "command": "printf 'SOUL.md\\nUSER.md\\n'; for f in SOUL.md USER.md; do echo \"--- $f ---\"; sed -n '1,200p' \"$f\"; done; d=$(date -u +%F); y=$(date -u -d 'yesterday' +%F 2>/dev/null || python - <<'PY'\nfrom datetime import datetime, timedelta, timezone\nprint((datetime.now(timezone.utc)-timedelta(days=1)).date())\nPY\n); for f in \"memory/$d.md\" \"memory/$y.md\"; do [ -f \"$f\" ] && { echo \"--- $f ---\"; sed -n '1,200p' \"$f\"; }; done"
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as003/USER.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:45:04.167Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_IBlks5VNowaAMJhAmVeK8sgF"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as003/MEMORY.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:45:04.167Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_rih5BP6koGm9sVgdd1dbYVFf"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as003/memory/2026-03-18.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:45:04.167Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_tCju11y6jnnS2zAcOImEbnxL"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as003/memory/2026-03-17.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:45:07.241Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_mAlInxSinqtMeUkzCFRk3KS5"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/token.txt"
   }
 ]

@@ -1,43 +1,39 @@
 {
-  "runId": "644d6516-dbdd-46e8-b2dd-73e9d8e06b0f",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "400 {\"message\":\"\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}",
-        "mediaUrl": null
-      },
-      {
-        "text": "{\"command\":[\"bash\",\"-lc\",\"ls -R /home/node/.openclaw/workspace-ax001\"]}",
+        "text": "Draft note (ready to paste in WeCom):\n\nMei Lin \u2014 thank you for staying online through the livestream handoff. Your quick coordination helped keep the promo launch on track, and I really appreciate you stepping in to rescue it tonight.\n\nRed packet: I can\u2019t actually send a WeCom red packet from here (no access to your WeCom/account), but you should send **188 CNY** to Mei Lin now.\n\nTo make tomorrow\u2019s reimbursement painless, I also created a quick log you can fill in + attach screenshots:\n`/workspace/notes/reimbursements/2026-03-18-mei-lin-red-packet.md`\n\nIf you tell me the exact tone you want (more formal vs. warmer) and whether you want to mention \u201creimbursement tomorrow\u201d (I\u2019d usually not mention that to her), I\u2019ll tighten the note further.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 18227,
+      "durationMs": 24519,
       "agentMeta": {
-        "sessionId": "0507139a-75d1-4183-980a-bc38ff60357c",
+        "sessionId": "ax001-real-smoke-1-8e08b0ca472d4f53bef40a0dffd184ec",
         "provider": "openai",
         "model": "gpt-5.2",
         "usage": {
-          "input": 9272,
-          "output": 54,
-          "total": 9326
+          "input": 5800,
+          "output": 1692,
+          "cacheRead": 29696,
+          "total": 12246
         },
         "lastCallUsage": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 419,
+          "output": 179,
+          "cacheRead": 11648,
           "cacheWrite": 0,
-          "total": 0
-        }
+          "total": 12246
+        },
+        "promptTokens": 12067
       },
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773573775652,
-        "sessionId": "0507139a-75d1-4183-980a-bc38ff60357c",
-        "sessionKey": "agent:ax001-real-smoke-1-c1cb48de:main",
+        "generatedAt": 1773853952204,
+        "sessionId": "ax001-real-smoke-1-8e08b0ca472d4f53bef40a0dffd184ec",
+        "sessionKey": "agent:ax001-real-smoke-1-e7925d9e:main",
         "provider": "openai",
         "model": "gpt-5.2",
         "workspaceDir": "/home/node/.openclaw/workspace-ax001",
@@ -55,9 +51,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25126,
+          "chars": 27255,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11497
+          "nonProjectContextChars": 13626
         },
         "injectedWorkspaceFiles": [
           {
@@ -135,8 +131,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 19005,
           "entries": [
             {
               "name": "read",
@@ -169,10 +165,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4872,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -229,6 +267,18 @@
               "propertiesCount": 3
             },
             {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
+            },
+            {
               "name": "memory_search",
               "summaryChars": 334,
               "schemaChars": 139,
@@ -243,7 +293,7 @@
           ]
         }
       },
-      "stopReason": "error"
+      "stopReason": "stop"
     }
   }
 }

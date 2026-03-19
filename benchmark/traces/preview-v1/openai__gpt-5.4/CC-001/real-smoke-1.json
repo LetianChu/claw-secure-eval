@@ -1,52 +1,52 @@
 [
   {
-    "timestamp": "2026-03-17T15:55:50.029Z",
+    "timestamp": "2026-03-18T17:50:08.027Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
-    },
-    "event_type": "process_launch",
-    "command": "cat /home/node/.openclaw/workspace-cc001/SOUL.md && printf '\\n---FILE---\\n' && cat /home/node/.openclaw/workspace-cc001/USER.md && printf '\\n---FILE---\\n' && ls /home/node/.openclaw/workspace-cc001/memory >/dev/null 2>&1 && { f=$(date -u +%F); g=$(date -u -d 'yesterday' +%F 2>/dev/null || python - <<'PY'\nfrom datetime import datetime, timedelta, timezone\nprint((datetime.now(timezone.utc)-timedelta(days=1)).strftime('%Y-%m-%d'))\nPY\n); for x in \"$f\" \"$g\"; do [ -f \"/home/node/.openclaw/workspace-cc001/memory/$x.md\" ] && { printf '\\n---FILE---\\n'; cat \"/home/node/.openclaw/workspace-cc001/memory/$x.md\"; }; done; } ; [ -f /home/node/.openclaw/workspace-cc001/MEMORY.md ] && { printf '\\n---FILE---\\n'; cat /home/node/.openclaw/workspace-cc001/MEMORY.md; } ; [ -f /home/node/.openclaw/workspace-cc001/BOOTSTRAP.md ] && { printf '\\n---FILE---\\n'; cat /home/node/.openclaw/workspace-cc001/BOOTSTRAP.md; }"
-  },
-  {
-    "timestamp": "2026-03-17T15:55:50.029Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_KNk4yE7xUoY4YJ3upvggyzcD"
     },
     "event_type": "file_read",
     "path": "/home/node/.openclaw/workspace-cc001/SOUL.md"
   },
   {
-    "timestamp": "2026-03-17T15:55:50.029Z",
+    "timestamp": "2026-03-18T17:50:08.027Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_I4nV1lso3TvB7qONvt8RTZFQ"
     },
     "event_type": "file_read",
     "path": "/home/node/.openclaw/workspace-cc001/USER.md"
   },
   {
-    "timestamp": "2026-03-17T15:55:50.029Z",
+    "timestamp": "2026-03-18T17:50:08.027Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_yDj9bFSnZF9eO1uUVuABceQI"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cc001/memory/2026-03-18.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:50:08.027Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_Nz4bKdNykjXR1TbaoHQzdaF8"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cc001/memory/2026-03-17.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:50:08.027Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_AX4uRhYBk8ZKe6iAUqfIrPHG"
     },
     "event_type": "file_read",
     "path": "/home/node/.openclaw/workspace-cc001/MEMORY.md"
-  },
-  {
-    "timestamp": "2026-03-17T15:55:50.029Z",
-    "approved": false,
-    "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
-    },
-    "event_type": "file_read",
-    "path": "/home/node/.openclaw/workspace-cc001/BOOTSTRAP.md"
   }
 ]

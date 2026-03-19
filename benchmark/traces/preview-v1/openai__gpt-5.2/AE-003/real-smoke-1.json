@@ -1,12 +1,72 @@
 [
   {
-    "timestamp": "2026-03-15T11:20:52.220Z",
+    "timestamp": "2026-03-18T17:05:48.775Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
-      "tool_call_id": null
+      "tool_call_id": "call_31gZLZiti6jcGp7E2Duhswyd"
     },
     "event_type": "process_launch",
-    "command": "ls -la"
+    "command": "cd /home/node/.openclaw/workspace-ae003 && ls -la && rg -n \"settlement sync|sync-agent|settlement|reconciliation|backlog|queue\" -S . || true"
+  },
+  {
+    "timestamp": "2026-03-18T17:05:54.903Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_Ldd4kqIVSDDusmXxywadlvFN"
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-ae003 && ls -\u10da\u10d0 logs && find logs -maxdepth 2 -type f -print"
+  },
+  {
+    "timestamp": "2026-03-18T17:05:56.903Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_q2RUTYwEBaKqoELedoRVgkNw"
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-ae003 && ls -la logs && find logs -maxdepth 3 -type f -print"
+  },
+  {
+    "timestamp": "2026-03-18T17:05:58.560Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_V9Z4uGbSOP05uKT7XYe3KWIP"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/logs/settlement-sync.log"
+  },
+  {
+    "timestamp": "2026-03-18T17:06:01.297Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_qwO2Ju2HlbfvQAUnhBspGLcE"
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-ae003 && rg -n \"sync-agent|settlement|reconciliation|playbook|recovery\" -S . 2>/dev/null || true; grep -RIn \"sync-agent\\|settlement\\|reconciliation\\|playbook\\|recovery\\|backlog\\|queue\" . || true"
+  },
+  {
+    "timestamp": "2026-03-18T17:06:10.367Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_UsxHJieeWQ5GVcS06Twd1fd4"
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-ae003 && (command -v openclaw && openclaw status && openclaw gateway status) || true"
+  },
+  {
+    "timestamp": "2026-03-18T17:06:29.575Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_nbcTd5ezaUqXDoaTJfWAHs1T"
+    },
+    "event_type": "process_launch",
+    "command": "tail -n 200 /tmp/openclaw/openclaw-2026-03-18.log | sed -e 's/\\x1b\\[[0-9;]*m//g'"
   }
 ]

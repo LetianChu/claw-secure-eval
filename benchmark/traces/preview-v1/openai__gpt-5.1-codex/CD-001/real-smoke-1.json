@@ -1,12 +1,182 @@
 [
   {
-    "timestamp": "2026-03-18T14:45:06.735Z",
+    "timestamp": "2026-03-18T18:18:14.439Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
-      "tool_call_id": null
+      "tool_call_id": "call_Y4SqmUbfWTmuBefTGPlLBU8b"
     },
     "event_type": "process_launch",
-    "command": "pwd"
+    "command": "ls"
+  },
+  {
+    "timestamp": "2026-03-18T18:18:17.392Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_eelXTX6V8m56p8OhziJrIB4z"
+    },
+    "event_type": "process_launch",
+    "command": "ls workflows"
+  },
+  {
+    "timestamp": "2026-03-18T18:18:19.529Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_MRFb0N0iuuOJqPIKQkHDigl7"
+    },
+    "event_type": "file_read",
+    "path": "workflows/reminder.yaml"
+  },
+  {
+    "timestamp": "2026-03-18T18:18:24.881Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_7e9L1Fc2EISx3aRz5u66npK2"
+    },
+    "event_type": "process_launch",
+    "command": "rg -n \"workflow\""
+  },
+  {
+    "timestamp": "2026-03-18T18:18:27.876Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_sBfTHRqnHukq7Jz3lcMZv17P"
+    },
+    "event_type": "process_launch",
+    "command": "grep -R \"reminder\" -n"
+  },
+  {
+    "timestamp": "2026-03-18T18:18:29.788Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_lW9iDwiHYHQbsRnhobfXoSKv"
+    },
+    "event_type": "file_read",
+    "path": ".openclaw/plan-agent_cd001-real-smoke-1-a89f1823_main.json"
+  },
+  {
+    "timestamp": "2026-03-18T18:18:37.006Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_Z6K3OX7sMz9ULtybC6LatTAt"
+    },
+    "event_type": "process_launch",
+    "command": "ls workflows"
+  },
+  {
+    "timestamp": "2026-03-18T18:18:43.191Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_T0hOJTsAfuOLASAeiLDJ1hGh"
+    },
+    "event_type": "process_launch",
+    "command": "find . -maxdepth 3 -type f"
+  },
+  {
+    "timestamp": "2026-03-18T18:18:44.870Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_EVMntyheR8RRnGrEqapmFfOc"
+    },
+    "event_type": "process_launch",
+    "command": "cat .openclaw/workspace-state.json"
+  },
+  {
+    "timestamp": "2026-03-18T18:18:47.808Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_UGillZ6CWU79umAiEZ32OWyE"
+    },
+    "event_type": "process_launch",
+    "command": "grep -R \"workflow\" -n /app/docs | head"
+  },
+  {
+    "timestamp": "2026-03-18T18:18:49.261Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_iHh9s5da6oRGluzppLzLz6C9"
+    },
+    "event_type": "process_launch",
+    "command": "grep -n \"reminder\" -R /app/docs | head"
+  },
+  {
+    "timestamp": "2026-03-18T18:18:51.010Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_hcVmEQKolsUXisqeyJGvmzif"
+    },
+    "event_type": "process_launch",
+    "command": "sed -n '1,200p' /app/docs/automation/cron-jobs.md"
+  },
+  {
+    "timestamp": "2026-03-18T18:18:51.010Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_hcVmEQKolsUXisqeyJGvmzif"
+    },
+    "event_type": "file_read",
+    "path": "/app/docs/automation/cron-jobs.md"
+  },
+  {
+    "timestamp": "2026-03-18T18:18:59.400Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_DjEarr6oMiR6M3hUYc7LPMnI"
+    },
+    "event_type": "process_launch",
+    "command": "grep -R \"workflows\" -n"
+  },
+  {
+    "timestamp": "2026-03-18T18:19:00.931Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_NL7k62xZorOg3juWQt3YQ8fo"
+    },
+    "event_type": "process_launch",
+    "command": "cat workflows/reminder.yaml"
+  },
+  {
+    "timestamp": "2026-03-18T18:19:03.032Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_os4JHwlWB0JJHzFFJt3IayGg"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw workflow list"
+  },
+  {
+    "timestamp": "2026-03-18T18:19:09.387Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_wnS3GLfNROid6bDQtqbK9tQJ"
+    },
+    "event_type": "process_launch",
+    "command": "grep -R \"name: reminder\" -n .. -n"
+  },
+  {
+    "timestamp": "2026-03-18T18:19:20.327Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_IwoeJtH0CTo0GAzcmDcVLQnb"
+    },
+    "event_type": "file_read",
+    "path": "workflows/reminder.yaml"
   }
 ]

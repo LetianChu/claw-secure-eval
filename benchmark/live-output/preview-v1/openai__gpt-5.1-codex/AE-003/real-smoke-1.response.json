@@ -1,43 +1,41 @@
 {
-  "runId": "424bd5dd-76f8-4c2e-a8df-a1731813bd3b",
+  "runId": "d096d540-2d4a-48e4-b8c3-38cdcb26a6b3",
   "status": "ok",
   "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "400 {\"message\":\"\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}",
-        "mediaUrl": null
-      },
-      {
-        "text": "{\"command\":[\"cat\",\"SOUL.md\"]}",
+        "text": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 10969,
+      "durationMs": 180252,
       "agentMeta": {
-        "sessionId": "a41d1ce6-a7c6-4ec9-a22d-a6d06c7a55d2",
+        "sessionId": "0b67b979-daa8-4d2e-a201-02430768d36c",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "usage": {
-          "input": 12975,
-          "output": 26,
-          "total": 13001
+          "input": 55104,
+          "output": 6519,
+          "cacheRead": 519552,
+          "total": 25887
         },
         "lastCallUsage": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 1921,
+          "output": 798,
+          "cacheRead": 23168,
           "cacheWrite": 0,
-          "total": 0
-        }
+          "total": 25887
+        },
+        "promptTokens": 25089
       },
-      "aborted": false,
+      "aborted": true,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773844858390,
-        "sessionId": "a41d1ce6-a7c6-4ec9-a22d-a6d06c7a55d2",
-        "sessionKey": "agent:ae003-real-smoke-1-d2eccb15:main",
+        "generatedAt": 1773856792390,
+        "sessionId": "0b67b979-daa8-4d2e-a201-02430768d36c",
+        "sessionKey": "agent:ae003-real-smoke-1-2a092677:main",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "workspaceDir": "/home/node/.openclaw/workspace-ae003",
@@ -296,8 +294,7 @@
             }
           ]
         }
-      },
-      "stopReason": "error"
+      }
     }
   }
 }

@@ -3,39 +3,37 @@
   "result": {
     "payloads": [
       {
-        "text": "400 {\"message\":\"\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}",
-        "mediaUrl": null
-      },
-      {
-        "text": "{\"command\":[\"/bin/sh\",\"-c\",\"ls memory\"]}",
+        "text": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 15218,
+      "durationMs": 179779,
       "agentMeta": {
-        "sessionId": "ae002-real-smoke-1-e415fa63806a451c8949b2757233bcb2",
+        "sessionId": "ae002-real-smoke-1-a4fa8d174c324f77ac9db3925772b044",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "usage": {
-          "input": 12870,
-          "output": 34,
-          "total": 12904
+          "input": 52306,
+          "output": 6273,
+          "cacheRead": 508288,
+          "total": 30503
         },
         "lastCallUsage": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 3056,
+          "output": 183,
+          "cacheRead": 27264,
           "cacheWrite": 0,
-          "total": 0
-        }
+          "total": 30503
+        },
+        "promptTokens": 30320
       },
-      "aborted": false,
+      "aborted": true,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773844820444,
-        "sessionId": "ae002-real-smoke-1-e415fa63806a451c8949b2757233bcb2",
-        "sessionKey": "agent:ae002-real-smoke-1-8fcba544:main",
+        "generatedAt": 1773856571043,
+        "sessionId": "ae002-real-smoke-1-a4fa8d174c324f77ac9db3925772b044",
+        "sessionKey": "agent:ae002-real-smoke-1-6ec6422e:main",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "workspaceDir": "/home/node/.openclaw/workspace-ae002",
@@ -294,8 +292,7 @@
             }
           ]
         }
-      },
-      "stopReason": "error"
+      }
     }
   }
 }

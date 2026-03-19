@@ -1,43 +1,41 @@
 {
-  "runId": "46e7e0cd-2cb1-4e7d-bf79-e91f68be032a",
+  "runId": "208ca77e-425e-4945-b62b-ae028a981760",
   "status": "ok",
   "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "400 {\"message\":\"\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}",
-        "mediaUrl": null
-      },
-      {
-        "text": "{\"command\":[\"bash\",\"-lc\",\"ls -la\"]}",
+        "text": "\u26a0\ufe0f \u23f0 Cron: `reminder-workflow (weekly, starts next week)` failed",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 11274,
+      "durationMs": 179969,
       "agentMeta": {
-        "sessionId": "58634ba9-5694-4d8b-a8fb-791a99211817",
+        "sessionId": "a5d2697b-d728-4b20-aa48-bbf9588f1ef1",
         "provider": "openai",
         "model": "gpt-5.2",
         "usage": {
-          "input": 9175,
-          "output": 32,
-          "total": 9207
+          "input": 81112,
+          "output": 13224,
+          "cacheRead": 450304,
+          "total": 84925
         },
         "lastCallUsage": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 479,
+          "output": 1118,
+          "cacheRead": 83328,
           "cacheWrite": 0,
-          "total": 0
-        }
+          "total": 84925
+        },
+        "promptTokens": 83807
       },
-      "aborted": false,
+      "aborted": true,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773573898374,
-        "sessionId": "58634ba9-5694-4d8b-a8fb-791a99211817",
-        "sessionKey": "agent:cd001-real-smoke-1-5c603408:main",
+        "generatedAt": 1773854665303,
+        "sessionId": "a5d2697b-d728-4b20-aa48-bbf9588f1ef1",
+        "sessionKey": "agent:cd001-real-smoke-1-52cf1580:main",
         "provider": "openai",
         "model": "gpt-5.2",
         "workspaceDir": "/home/node/.openclaw/workspace-cd001",
@@ -55,9 +53,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 25126,
+          "chars": 27433,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 11497
+          "nonProjectContextChars": 13804
         },
         "injectedWorkspaceFiles": [
           {
@@ -135,8 +133,8 @@
           ]
         },
         "tools": {
-          "listChars": 1921,
-          "schemaChars": 7606,
+          "listChars": 2623,
+          "schemaChars": 18993,
           "entries": [
             {
               "name": "read",
@@ -169,10 +167,52 @@
               "propertiesCount": 12
             },
             {
+              "name": "browser",
+              "summaryChars": 1251,
+              "schemaChars": 2799,
+              "propertiesCount": 48
+            },
+            {
+              "name": "canvas",
+              "summaryChars": 106,
+              "schemaChars": 661,
+              "propertiesCount": 18
+            },
+            {
+              "name": "nodes",
+              "summaryChars": 122,
+              "schemaChars": 1800,
+              "propertiesCount": 37
+            },
+            {
               "name": "cron",
               "summaryChars": 2689,
               "schemaChars": 690,
               "propertiesCount": 13
+            },
+            {
+              "name": "message",
+              "summaryChars": 89,
+              "schemaChars": 4860,
+              "propertiesCount": 91
+            },
+            {
+              "name": "tts",
+              "summaryChars": 152,
+              "schemaChars": 223,
+              "propertiesCount": 2
+            },
+            {
+              "name": "gateway",
+              "summaryChars": 464,
+              "schemaChars": 497,
+              "propertiesCount": 12
+            },
+            {
+              "name": "agents_list",
+              "summaryChars": 118,
+              "schemaChars": 33,
+              "propertiesCount": 0
             },
             {
               "name": "sessions_list",
@@ -229,6 +269,18 @@
               "propertiesCount": 3
             },
             {
+              "name": "shell",
+              "summaryChars": 74,
+              "schemaChars": 226,
+              "propertiesCount": 3
+            },
+            {
+              "name": "update_plan",
+              "summaryChars": 70,
+              "schemaChars": 288,
+              "propertiesCount": 2
+            },
+            {
               "name": "memory_search",
               "summaryChars": 334,
               "schemaChars": 139,
@@ -243,7 +295,7 @@
           ]
         }
       },
-      "stopReason": "error"
+      "stopReason": "toolUse"
     }
   }
 }

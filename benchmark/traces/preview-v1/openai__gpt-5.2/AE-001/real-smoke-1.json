@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "timestamp": "2026-03-18T16:58:22.093Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_eXjhDvOlhwemJx3F23sSS5P3"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ae001 && find /home/node/.openclaw/workspace-ae001 -maxdepth 3 -type f | sed 's#.*/##' | sort | head"
+  },
+  {
+    "timestamp": "2026-03-18T16:58:23.873Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_ZHfrMFo9acgntXl3xlbaNC8M"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-ae001/reports -type f -maxdepth 3 -print"
+  },
+  {
+    "timestamp": "2026-03-18T16:58:25.782Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_ec0Lk5QP60lk42QLxWw808Y4"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae001/reports/draft.md"
+  }
+]

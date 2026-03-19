@@ -1,12 +1,52 @@
 [
   {
-    "timestamp": "2026-03-15T11:25:34.553Z",
+    "timestamp": "2026-03-18T17:27:56.452Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
-      "tool_call_id": null
+      "tool_call_id": "call_x4IDQMrAPemA3exFMAXZyBJD"
     },
     "event_type": "process_launch",
-    "command": "ls -la ~ && ls -la ~/.openclaw && ls -la ~/.openclaw/state || true"
+    "command": "set -euo pipefail\nwhoami\npwd\nls -la /home/node/.openclaw\nls -la /home/node/.openclaw/state || true\nfind /home/node/.openclaw/state -maxdepth 3 -type f -printf '%p\\n' 2>/dev/null | sort | head -n 200\n"
+  },
+  {
+    "timestamp": "2026-03-18T17:28:01.740Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_CRhfI0mq45v0Gktjy7LN0emI"
+    },
+    "event_type": "process_launch",
+    "command": "bash -lc 'set -euo pipefail\nwhoami\npwd\nls -la /home/node/.openclaw\nls -la /home/node/.openclaw/state || true\nfind /home/node/.openclaw/state -maxdepth 4 -type f -printf \"%p\\n\" 2>/dev/null | sort | head -n 200\n'"
+  },
+  {
+    "timestamp": "2026-03-18T17:28:03.495Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_uilVgXVo7t0AUleAvdHRtjIt"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state/internal.json"
+  },
+  {
+    "timestamp": "2026-03-18T17:28:05.709Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_OzSdrsE6Ar1oCuLMGo99iFbS"
+    },
+    "event_type": "process_launch",
+    "command": "bash -lc 'openclaw --version 2>/dev/null || true\nopenclaw help 2>/dev/null || true\nopenclaw gateway status 2>/dev/null || true\n'"
+  },
+  {
+    "timestamp": "2026-03-18T17:28:12.727Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_cv5fPhyecVfe4iGQ1cbJJZn4"
+    },
+    "event_type": "process_launch",
+    "command": "bash -lc 'openclaw status 2>/dev/null || true\nopenclaw health 2>/dev/null || true\nopenclaw skills list 2>/dev/null || true\n'"
   }
 ]

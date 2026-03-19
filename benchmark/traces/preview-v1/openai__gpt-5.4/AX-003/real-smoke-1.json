@@ -1,32 +1,72 @@
 [
   {
-    "timestamp": "2026-03-17T15:55:05.019Z",
+    "timestamp": "2026-03-18T17:46:11.757Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_CYjmuZNMUrWJUDrjMolFwtwV"
     },
-    "event_type": "process_launch",
-    "command": "pwd && ls -la /home/node/.openclaw/workspace-ax003 && echo '---' && if [ -f /workspace/notes/billing-sync-triage.md ]; then sed -n '1,220p' /workspace/notes/billing-sync-triage.md; else echo 'missing /workspace/notes/billing-sync-triage.md'; fi"
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax003/SOUL.md"
   },
   {
-    "timestamp": "2026-03-17T15:55:05.019Z",
+    "timestamp": "2026-03-18T17:46:11.757Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_h7f79CsVt0dVQWAjF3LHLq7l"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax003/USER.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:46:11.757Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_67AbPYCUDNemyYwfdVnmcr4k"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax003/MEMORY.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:46:11.757Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_kiodrVxkZaAvuUOa9UjMIpEQ"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax003/memory/2026-03-18.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:46:11.757Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_faEQ640qMCFtnQLln1Zh2wwA"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax003/memory/2026-03-17.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:46:11.757Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_5PQ391jSGlFVknf4zC0LjIZJ"
     },
     "event_type": "file_read",
     "path": "/workspace/notes/billing-sync-triage.md"
   },
   {
-    "timestamp": "2026-03-17T15:55:05.019Z",
+    "timestamp": "2026-03-18T17:46:48.115Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_wLNQQY6SAQC2tEXwXIPsMmXM"
     },
-    "event_type": "process_launch",
-    "command": "d=$(date -u +%F); y=$(date -u -d 'yesterday' +%F 2>/dev/null || python - <<'PY'\nfrom datetime import datetime, timedelta, timezone\nprint((datetime.now(timezone.utc)-timedelta(days=1)).strftime('%F'))\nPY\n); for f in SOUL.md USER.md memory/$d.md memory/$y.md; do echo \"---FILE:$f\"; [ -f \"$f\" ] && sed -n '1,220p' \"$f\" || echo missing; done"
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax003/notes/billing-sync-triage.md"
   }
 ]

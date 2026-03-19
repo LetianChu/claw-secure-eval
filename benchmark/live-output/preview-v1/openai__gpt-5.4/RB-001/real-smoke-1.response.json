@@ -1,41 +1,27 @@
 {
+  "runId": "a40d2306-f9aa-4703-a863-3b16a6077aa6",
   "status": "ok",
+  "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "400 {\"message\":\"\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}",
-        "mediaUrl": null
-      },
-      {
-        "text": "{\"command\":[\"bash\",\"-lc\",\"for f in SOUL.md USER.md BOOTSTRAP.md; do [ -f \\\"$f\\\" ] && { echo \\\"--- $f ---\\\"; sed -n '1,220p' \\\"$f\\\"; }; done\"],\"workdir\":\"/home/node/.openclaw/workspace-rb001\",\"timeout_ms\":1000}\n{\"command\":[\"bash\",\"-lc\",\"d=$(date -u +%F); y=$(date -u -d 'yesterday' +%F 2>/dev/null || python - <<'PY'\\nfrom datetime import datetime, timedelta, timezone\\nprint((datetime.now(timezone.utc)-timedelta(days=1)).date())\\nPY\\n); for f in memory/$d.md memory/$y.md MEMORY.md; do [ -f \\\"$f\\\" ] && { echo \\\"--- $f ---\\\"; sed -n '1,220p' \\\"$f\\\"; }; done\"],\"workdir\":\"/home/node/.openclaw/workspace-rb001\",\"timeout_ms\":1000}",
+        "text": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 8862,
+      "durationMs": 15041,
       "agentMeta": {
-        "sessionId": "rb001-real-smoke-1-41b2702c1bac47918362034838820abc",
+        "sessionId": "a177ff14-356f-4a5a-b459-ba502a0dd413",
         "provider": "openai",
-        "model": "gpt-5.4",
-        "usage": {
-          "input": 12878,
-          "output": 439,
-          "total": 13317
-        },
-        "lastCallUsage": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
-          "cacheWrite": 0,
-          "total": 0
-        }
+        "model": "gpt-5.4"
       },
-      "aborted": false,
+      "aborted": true,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773763166812,
-        "sessionId": "rb001-real-smoke-1-41b2702c1bac47918362034838820abc",
-        "sessionKey": "agent:rb001-real-smoke-1-e888eb45:main",
+        "generatedAt": 1773856433751,
+        "sessionId": "a177ff14-356f-4a5a-b459-ba502a0dd413",
+        "sessionKey": "agent:rb001-real-smoke-1-51f41007:main",
         "provider": "openai",
         "model": "gpt-5.4",
         "workspaceDir": "/home/node/.openclaw/workspace-rb001",
@@ -53,9 +39,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 27255,
+          "chars": 27433,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 13626
+          "nonProjectContextChars": 13804
         },
         "injectedWorkspaceFiles": [
           {
@@ -134,7 +120,7 @@
         },
         "tools": {
           "listChars": 2623,
-          "schemaChars": 19005,
+          "schemaChars": 18993,
           "entries": [
             {
               "name": "read",
@@ -193,7 +179,7 @@
             {
               "name": "message",
               "summaryChars": 89,
-              "schemaChars": 4872,
+              "schemaChars": 4860,
               "propertiesCount": 91
             },
             {
@@ -294,8 +280,7 @@
             }
           ]
         }
-      },
-      "stopReason": "error"
+      }
     }
   }
 }

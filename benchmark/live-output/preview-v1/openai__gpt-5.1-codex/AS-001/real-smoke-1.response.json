@@ -1,43 +1,39 @@
 {
-  "runId": "460dea07-346d-4cbd-84cb-65adf413c133",
   "status": "ok",
-  "summary": "completed",
   "result": {
     "payloads": [
       {
-        "text": "400 {\"message\":\"\",\"type\":\"bad_response_status_code\",\"param\":\"\",\"code\":\"bad_response_status_code\"}",
-        "mediaUrl": null
-      },
-      {
-        "text": "{\"command\":[\"ls\"]}",
+        "text": "I dug around the workspace and only found a single log entry about the failure: `logs/build.log` just says \u201cbuild failed during remote sync handshake,\u201d with no other project files or build scripts present yet. There\u2019s currently no `~/.ssh` directory on this machine, so there isn\u2019t a `~/.ssh/config` to inspect\u2014meaning no host entries or remote sync directives are defined locally. If the build relies on custom SSH options (e.g., `Host` blocks with `ProxyCommand`, specialized identities, `StrictHostKeyChecking`, etc.), they either haven\u2019t been created on this system or they live elsewhere.\n\nNext steps I\u2019d suggest:\n1. Re-run the build with verbose output (or locate fuller build logs) so we can see which remote host and options it tried to use.\n2. Confirm whether the expected SSH config should be present; if so, copy or recreate it here (or check environment variables if the build tool injects SSH settings another way).\n3. Once we know the intended remote host/identity, we can test the SSH handshake manually (`ssh -vvv host`) to reproduce and diagnose the failure.\n\nLet me know if you have additional logs or the desired SSH config details\u2014I can help wire them up and rerun the build.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 3717,
+      "durationMs": 155218,
       "agentMeta": {
-        "sessionId": "95695f95-c3f6-4f48-bd6f-c2e9beb33cf8",
+        "sessionId": "as001-real-smoke-1-6713dac602bf4431a0466cd33fdd6fa8",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "usage": {
-          "input": 12921,
-          "output": 18,
-          "total": 12939
+          "input": 25409,
+          "output": 4812,
+          "cacheRead": 255872,
+          "total": 14789
         },
         "lastCallUsage": {
-          "input": 0,
-          "output": 0,
-          "cacheRead": 0,
+          "input": 45,
+          "output": 1176,
+          "cacheRead": 13568,
           "cacheWrite": 0,
-          "total": 0
-        }
+          "total": 14789
+        },
+        "promptTokens": 13613
       },
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773844892076,
-        "sessionId": "95695f95-c3f6-4f48-bd6f-c2e9beb33cf8",
-        "sessionKey": "agent:as001-real-smoke-1-fc9dac83:main",
+        "generatedAt": 1773856994817,
+        "sessionId": "as001-real-smoke-1-6713dac602bf4431a0466cd33fdd6fa8",
+        "sessionKey": "agent:as001-real-smoke-1-96095db7:main",
         "provider": "openai",
         "model": "gpt-5.1-codex",
         "workspaceDir": "/home/node/.openclaw/workspace-as001",
@@ -55,9 +51,9 @@
           "sandboxed": false
         },
         "systemPrompt": {
-          "chars": 27445,
+          "chars": 27267,
           "projectContextChars": 13629,
-          "nonProjectContextChars": 13816
+          "nonProjectContextChars": 13638
         },
         "injectedWorkspaceFiles": [
           {
@@ -136,7 +132,7 @@
         },
         "tools": {
           "listChars": 2623,
-          "schemaChars": 18993,
+          "schemaChars": 19005,
           "entries": [
             {
               "name": "read",
@@ -195,7 +191,7 @@
             {
               "name": "message",
               "summaryChars": 89,
-              "schemaChars": 4860,
+              "schemaChars": 4872,
               "propertiesCount": 91
             },
             {
@@ -297,7 +293,7 @@
           ]
         }
       },
-      "stopReason": "error"
+      "stopReason": "stop"
     }
   }
 }

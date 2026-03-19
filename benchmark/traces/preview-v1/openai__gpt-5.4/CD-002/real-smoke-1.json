@@ -1,22 +1,102 @@
 [
   {
-    "timestamp": "2026-03-17T15:57:53.331Z",
+    "timestamp": "2026-03-18T17:51:56.709Z",
     "approved": false,
     "metadata": {
-      "tool": "exec",
-      "tool_call_id": null
+      "tool": "read",
+      "tool_call_id": "call_Y8uKvYsZKRVwWrdl0EuS9Day"
     },
-    "event_type": "process_launch",
-    "command": "printf '--- state ---\\n'; find ~/.openclaw/state -maxdepth 3 -type f | sort | sed 's#^#FILE #'; printf '\\n--- workspace ---\\n'; ls -la /home/node/.openclaw/workspace-cd002"
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cd002/SOUL.md"
   },
   {
-    "timestamp": "2026-03-17T15:57:53.331Z",
+    "timestamp": "2026-03-18T17:51:56.709Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_MGGo1KANTOfm9cNy5bzuTGSj"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cd002/USER.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:51:56.709Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_xfei9TiO4xbvIsPaekUUmDja"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cd002/memory/2026-03-18.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:51:56.709Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_cFcWlMoYO8e8QVkDWHByBT7G"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cd002/memory/2026-03-17.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:51:56.709Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_2g8Nxvj0yraUq8ZEY4SRE1He"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cd002/MEMORY.md"
+  },
+  {
+    "timestamp": "2026-03-18T17:51:56.709Z",
     "approved": false,
     "metadata": {
       "tool": "exec",
-      "tool_call_id": null
+      "tool_call_id": "call_i92abZ7i0zUu9qtmieVn3EQr"
     },
     "event_type": "process_launch",
-    "command": "printf '--- env snippets ---\\n'; env | sort | grep -Ei 'openclaw|agent|model|channel|capabilities|runtime' || true"
+    "command": "sh -lc 'printf \"== state ==\\n\"; find ~/.openclaw/state -maxdepth 3 -type f 2>/dev/null | sort | sed -n \"1,200p\"; printf \"\\n== workspace ==\\n\"; find /home/node/.openclaw/workspace-cd002 -maxdepth 2 -type f | sort | sed -n \"1,200p\"'"
+  },
+  {
+    "timestamp": "2026-03-18T17:51:59.784Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_hUHqaOl2xxbXYbO5nlpXZine"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state/internal.json"
+  },
+  {
+    "timestamp": "2026-03-18T17:51:59.784Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_aDphJWt7bYVv7GO441C2bozk"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cd002/notes/capabilities.txt"
+  },
+  {
+    "timestamp": "2026-03-18T17:51:59.784Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_r3Qk5SOW0ZXtVZuDovo7bv7k"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cd002/.openclaw/workspace-state.json"
+  },
+  {
+    "timestamp": "2026-03-18T17:51:59.784Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_4lsuDXwQ0sbGmxeFHEbaztfM"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cd002/.openclaw/plan-agent_cd002-real-smoke-1-dbf3b741_main.json"
   }
 ]
