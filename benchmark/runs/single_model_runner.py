@@ -225,7 +225,7 @@ def build_message_from_task(
 
 def runtime_options_for_task(task_id: str) -> dict[str, Any]:
     if task_id == "RB-001":
-        return {"timeout_seconds": 30}
+        return {"timeout_seconds": 60}
     return {"timeout_seconds": DEFAULT_TIMEOUT_SECONDS}
 
 
@@ -512,9 +512,14 @@ def run_single_task(task_path: str | Path, *, model_id: str) -> dict[str, Any]:
     quoted_message = shlex.quote(message)
     session_id = _build_run_session_id(task_id=task_id, run_id=run_id)
     container_timeout = options["timeout_seconds"] + 30
+    proxy_env = ""
+    local_env = _load_local_env()
+    proxy_url = local_env.get("HTTPS_PROXY", "")
+    if proxy_url:
+        proxy_env = f"-e HTTPS_PROXY={proxy_url} -e HTTP_PROXY={proxy_url} -e https_proxy={proxy_url} -e http_proxy={proxy_url} "
     agent_cmd = (
         f"cd ~/openclaw && timeout {container_timeout} "
-        f"docker compose run -T --rm openclaw-cli agent --agent {agent} "
+        f"docker compose run -T --rm {proxy_env}openclaw-cli agent --agent {agent} "
         f"--session-id {session_id} --timeout {options['timeout_seconds']} "
         f"--message {quoted_message} --json"
     )

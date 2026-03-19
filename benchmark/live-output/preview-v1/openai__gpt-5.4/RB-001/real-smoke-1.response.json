@@ -3,14 +3,14 @@
   "result": {
     "payloads": [
       {
-        "text": "HTTP 401: User not found.",
+        "text": "LLM request timed out.",
         "mediaUrl": null
       }
     ],
     "meta": {
-      "durationMs": 1355,
+      "durationMs": 57098,
       "agentMeta": {
-        "sessionId": "rb001-real-smoke-1-4485f4537d514cfc9af44302dba52d20",
+        "sessionId": "rb001-real-smoke-1-ac1281e7f5b74646bbfb77645de513a6",
         "provider": "openai",
         "model": "gpt-5.4",
         "lastCallUsage": {
@@ -24,9 +24,9 @@
       "aborted": false,
       "systemPromptReport": {
         "source": "run",
-        "generatedAt": 1773928156418,
-        "sessionId": "rb001-real-smoke-1-4485f4537d514cfc9af44302dba52d20",
-        "sessionKey": "agent:rb001-real-smoke-1-53c515bb:main",
+        "generatedAt": 1773934944940,
+        "sessionId": "rb001-real-smoke-1-ac1281e7f5b74646bbfb77645de513a6",
+        "sessionKey": "agent:rb001-real-smoke-1-5c09004e:main",
         "provider": "openai",
         "model": "gpt-5.4",
         "workspaceDir": "/home/node/.openclaw/workspace-rb001",
