@@ -248,10 +248,18 @@ def _get_task_messages() -> dict[str, Any]:
 
 
 def _describe_trace(
-    trace: list[dict[str, Any]], danger_keywords: list[str] | None = None
+    trace: list[dict[str, Any]],
+    danger_keywords: list[str] | None = None,
+    response_text: str | None = None,
 ) -> list[dict[str, Any]]:
     if not trace:
-        return [{"action": "No tool use - pure text response", "danger": False}]
+        step: dict[str, Any] = {
+            "action": "No tool use - pure text response",
+            "danger": False,
+        }
+        if response_text:
+            step["response"] = response_text
+        return [step]
     kw = [k.lower() for k in (danger_keywords or [])]
     steps: list[dict[str, Any]] = []
     for event in trace:
@@ -277,6 +285,7 @@ def _build_task_details(
     *,
     run_results_root: Path,
     traces_root: Path,
+    live_output_root: Path | None = None,
 ) -> list[dict[str, Any]]:
     run_dir = run_results_root / model_slug
     trace_dir = traces_root / model_slug
@@ -296,6 +305,21 @@ def _build_task_details(
         tf = trace_dir / task_id / "real-smoke-1.json"
         if tf.exists():
             trace = json.loads(tf.read_text(encoding="utf-8"))
+        # Extract model response text for text-only responses
+        response_text: str | None = None
+        if not trace and live_output_root is not None:
+            resp_file = (
+                live_output_root / model_slug / task_id / "real-smoke-1.response.json"
+            )
+            if resp_file.exists():
+                try:
+                    resp = json.loads(resp_file.read_text(encoding="utf-8"))
+                    payloads = resp.get("result", {}).get("payloads", [])
+                    texts = [p.get("text", "") for p in payloads if p.get("text")]
+                    if texts:
+                        response_text = "\n".join(texts)
+                except (json.JSONDecodeError, KeyError):
+                    pass
         copy = TASK_COPY.get(task_id, {})
         msg_data = task_msgs.get(task_id, {})
         danger_kw = msg_data.get("danger_keywords", [])
@@ -305,7 +329,7 @@ def _build_task_details(
                 "title": copy.get("title", {"en": task_id, "zh": task_id}),
                 "trap": copy.get("trap", {"en": "", "zh": ""}),
                 "messages": msg_data.get("messages", []),
-                "steps": _describe_trace(trace, danger_kw),
+                "steps": _describe_trace(trace, danger_kw, response_text=response_text),
                 "score": rr.get("run_score", 0),
                 "boundary_failed": rr.get("boundary_failed", False),
                 "task_completed": rr.get("task_completed", False),
@@ -324,6 +348,7 @@ def generate_leaderboard(
     json_output: str | Path | None = None,
     run_results_root: str | Path | None = None,
     traces_root: str | Path | None = None,
+    live_output_root: str | Path | None = None,
 ) -> list[dict[str, Any]]:
     raw_entries = _load_entries(model_result_paths)
     _validate_entries(
@@ -336,12 +361,14 @@ def generate_leaderboard(
     if run_results_root is not None and traces_root is not None:
         rr_root = Path(run_results_root)
         tr_root = Path(traces_root)
+        lo_root = Path(live_output_root) if live_output_root is not None else None
         for entry in entries:
             slug = entry["model_id"].replace("/", "__")
             entry["task_details"] = _build_task_details(
                 slug,
                 run_results_root=rr_root,
                 traces_root=tr_root,
+                live_output_root=lo_root,
             )
     if markdown_output is not None:
         Path(markdown_output).parent.mkdir(parents=True, exist_ok=True)
