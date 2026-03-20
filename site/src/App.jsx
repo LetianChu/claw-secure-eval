@@ -222,7 +222,7 @@ export default function App() {
             <h3>{copy.notesTitle}</h3>
             <p>{copy.notesDescription}</p>
             <p className="notes-attribution">
-              <a
+              Author: <a
                 className="notes-attribution-link"
                 href="https://leonchu.com"
                 target="_blank"
