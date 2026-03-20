@@ -63,6 +63,18 @@ OPENROUTER_MODEL_ALIASES = {
         "alias": "mimo-v2-pro-or",
         "provider_id": "openrouter",
     },
+    "anthropic/claude-opus-4.6": {
+        "alias": "claude-opus-4.6-or",
+        "provider_id": "openrouter",
+    },
+    "anthropic/claude-sonnet-4.6": {
+        "alias": "claude-sonnet-4.6-or",
+        "provider_id": "openrouter",
+    },
+    "anthropic/claude-haiku-4.5": {
+        "alias": "claude-haiku-4.5-or",
+        "provider_id": "openrouter",
+    },
 }
 ANTHROPIC_ALLOWED_MODEL_IDS = [
     "openai/claude-haiku-4-5-20251001",
@@ -137,6 +149,24 @@ def _resolve_runtime_model_config(
             "api_key": api_key.strip(),
             "model_ids": list(OPENAI_MODEL_IDS),
             "allowed_model_ids": list(OPENAI_COMPATIBLE_ALLOWED_MODEL_IDS),
+        }
+
+    if model_id in OPENROUTER_MODEL_ALIASES:
+        base_url = env.get("API_BASE_URL_3")
+        api_key = env.get("API_KEY_3")
+        if not base_url or not api_key:
+            raise ValueError(
+                "Missing API_BASE_URL_3 or API_KEY_3 in local env for OpenRouter model"
+            )
+        meta = OPENROUTER_MODEL_ALIASES[model_id]
+        return {
+            "provider_id": meta["provider_id"],
+            "base_url": base_url.strip(),
+            "api_key": api_key.strip(),
+            "model_ids": [model_id],
+            "runtime_model_ref": meta["alias"],
+            "allowed_model_ids": [f"{meta['provider_id']}/{model_id}"],
+            "model_aliases": {f"{meta['provider_id']}/{model_id}": meta["alias"]},
         }
 
     if model_id.startswith("anthropic/"):
