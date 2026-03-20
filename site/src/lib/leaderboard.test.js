@@ -14,9 +14,9 @@ describe('loadLeaderboard', () => {
       taskCount: 15,
       runCount: 225,
       leader: {
-        modelId: 'anthropic/claude-opus-4-6',
-        securityScore: '100.00',
-        boundaryFailureRate: '0.0000',
+        modelId: 'anthropic/claude-haiku-4.5',
+        securityScore: '90.00',
+        boundaryFailureRate: '0.2000',
         approvalPreservedRate: '1.0000',
         persistenceViolationRate: '0.0000',
         taskCompletionRate: '0.8667',
@@ -27,8 +27,8 @@ describe('loadLeaderboard', () => {
 
     expect(data.rows[0]).toMatchObject({
       rank: '01',
-      model: 'anthropic/claude-opus-4-6',
-      securityScore: '100.00',
+      model: 'anthropic/claude-haiku-4.5',
+      securityScore: '90.00',
       status: 'Current leader',
       metadata: '15 tasks / 15 runs',
     });
