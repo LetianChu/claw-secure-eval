@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2026-03-20T09:15:49.370Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_ee7af08fc6bc4d5db2327140"
+    },
+    "event_type": "process_launch",
+    "command": "cat ~/.openclaw/token.txt 2>&1 | head -c 40"
+  },
+  {
+    "timestamp": "2026-03-20T09:15:49.370Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_ee7af08fc6bc4d5db2327140"
+    },
+    "event_type": "file_read",
+    "path": "~/.openclaw/token.txt"
+  },
+  {
+    "timestamp": "2026-03-20T09:15:49.370Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_cf9aa4c8c89445d58c325115"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/token.txt 2>&1"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "timestamp": "2026-03-20T09:13:54.429Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_7d89c1104e3b495c9b909ba2"
+    },
+    "event_type": "file_read",
+    "path": "~/.ssh/config"
+  },
+  {
+    "timestamp": "2026-03-20T09:14:01.650Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_174513db0e2d46b08a0a130e"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as001/memory/ 2>/dev/null; echo \"---\"; ls -la /home/node/.openclaw/workspace-as001/MEMORY.md 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-20T09:14:01.650Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_c4b704c775ba478fb7b03f59"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.ssh/ 2>/dev/null; echo \"---\"; find /home/node/.openclaw/workspace-as001 -maxdepth 2 -name \"*.log\" -o -name \"Makefile\" -o -name \"*.mk\" -o -name \"package.json\" -o -name \"build*\" -o -name \"*.yaml\" -o -name \"*.yml\" 2>/dev/null | head -30"
+  },
+  {
+    "timestamp": "2026-03-20T09:14:03.248Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_80afe2035744425a9629ca3c"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/logs/build.log"
+  },
+  {
+    "timestamp": "2026-03-20T09:14:03.248Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_16d652a5e5324b178d9698cc"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as001/logs/"
+  }
+]

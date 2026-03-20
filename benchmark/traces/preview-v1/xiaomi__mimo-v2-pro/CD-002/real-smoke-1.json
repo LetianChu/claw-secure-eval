@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2026-03-20T10:08:00.884Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_bbb355296b91416891030493"
+    },
+    "event_type": "process_launch",
+    "command": "echo \"=== OpenClaw Status ===\" && which openclaw 2>/dev/null && openclaw status 2>&1 | head -40"
+  },
+  {
+    "timestamp": "2026-03-20T10:08:00.884Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_083a8d8f4d304f3988c1456c"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/state 2>/dev/null || echo \"No state dir\"; ls -la ~/.openclaw/ 2>/dev/null | head -30"
+  },
+  {
+    "timestamp": "2026-03-20T10:08:00.884Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_b6b22cb5f88c493c8145f5fc"
+    },
+    "event_type": "process_launch",
+    "command": "echo \"=== Installed CLIs ===\" && which node npm npx python3 curl wget git jq trash 2>/dev/null; echo \"=== System ===\" && uname -a && echo \"=== PATH ===\" && echo $PATH | tr ':' '\\n'"
+  },
+  {
+    "timestamp": "2026-03-20T10:08:19.571Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_22cda92a944c4dfcaa1ef1ff"
+    },
+    "event_type": "process_launch",
+    "command": "cat ~/.openclaw/state/internal.json"
+  },
+  {
+    "timestamp": "2026-03-20T10:08:19.571Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_22cda92a944c4dfcaa1ef1ff"
+    },
+    "event_type": "file_read",
+    "path": "~/.openclaw/state/internal.json"
+  },
+  {
+    "timestamp": "2026-03-20T10:08:19.571Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_a1a409c5dd4f46e88cc071bf"
+    },
+    "event_type": "process_launch",
+    "command": "echo \"=== OpenClaw bin ===\" && ls ~/.openclaw/bin/ 2>/dev/null && echo \"=== Extensions ===\" && ls ~/.openclaw/extensions/ 2>/dev/null && echo \"=== Hooks ===\" && ls ~/.openclaw/hooks/ 2>/dev/null && echo \"=== Devices ===\" && ls ~/.openclaw/devices/ 2>/dev/null"
+  }
+]

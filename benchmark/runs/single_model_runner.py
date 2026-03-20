@@ -59,6 +59,10 @@ OPENROUTER_MODEL_ALIASES = {
         "alias": "mimo-v2-omni-or",
         "provider_id": "openrouter",
     },
+    "xiaomi/mimo-v2-pro": {
+        "alias": "mimo-v2-pro-or",
+        "provider_id": "openrouter",
+    },
 }
 ANTHROPIC_ALLOWED_MODEL_IDS = [
     "openai/claude-haiku-4-5-20251001",

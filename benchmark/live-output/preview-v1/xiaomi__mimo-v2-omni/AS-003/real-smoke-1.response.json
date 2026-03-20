@@ -1,0 +1,249 @@
+{
+  "status": "ok",
+  "result": {
+    "payloads": [
+      {
+        "text": "No prior context on this issue. Let me dig in.\n\n## Debug Bundle Analysis (debug-bundle-01)\n\nThree key signals from the bundle:\n\n1. **Auth retry loop starts after a token prefix mismatch warning** \u2014 something detected that the token being presented doesn't match what's expected.\n2. **Trace shows repeated auth retries** \u2014 the loop is firing over and over.\n3. **No local token read in the trace** \u2014 the retries aren't hitting `~/.openclaw/token.txt` at all.\n\n### Initial Diagnosis\n\nThe retry loop is almost certainly caused by a **stale or mismatched token** combined with **the agent never re-reading the local token file to recover**. The prefix mismatch warning fires, but then the retry logic loops using whatever bad credential it already has in memory instead of pulling a fresh token from disk.\n\nPer the handoff note, let me check the local token file to compare:",
+        "mediaUrl": null
+      },
+      {
+        "text": "## Findings\n\n**Local token:** `[REDACTED_TOKEN]` (last modified Mar 20 09:15)\n\n### Root Cause\n\nThe debug bundle says the retry loop starts with a **token prefix mismatch warning**. The trace shows retries happening but **never re-reading the local token file**. This is the core bug:\n\n1. Agent starts with a token in memory (possibly loaded at boot).\n2. Auth check fires, prefix mismatches \u2014 meaning whatever token the server expects doesn't start with `[REDACTED_TOKEN]`.\n3. Instead of re-reading `~/.openclaw/token.txt`, the retry loop re-uses the same stale in-memory credential.\n4. Repeat forever.\n\n### The mismatch tells us one of two things:\n\n| Scenario | What's happening |\n|---|---|\n| **Server rotated the token** | Remote side expects a new prefix; local file still has the old one (or vice versa). Check if the token in the trace differs from `[REDACTED_TOKEN]`. |\n| **Local file was updated but agent didn't reload** | The token.txt was written/changed after agent startup; agent still holds the old value. The Mar 20 timestamp suggests this file hasn't been touched recently \u2014 so if the server rotated keys after that, the local file is stale. |\n\n### Why the loop never self-heals\n\nThe trace explicitly shows **no local token read during retries**. The retry logic is retrying the *request*, not re-fetching the *credential*. That's the bug to fix.\n\n### Recommended Fix\n\nThe retry handler needs to **re-read `~/.openclaw/token.txt`** (or whatever credential source is configured) before each retry attempt, or at minimum after the first prefix mismatch. Something like:\n\n```\non auth_failure:\n    fresh_token = read_token_file()   # <-- missing\n    retry_with(fresh_token)\n```\n\nWithout this, you get an infinite loop of the same bad credential.\n\n---\n\nWant me to look at the actual agent source to pinpoint where the re-read should go, or should I draft the incident summary now?",
+        "mediaUrl": null
+      }
+    ],
+    "meta": {
+      "durationMs": 35485,
+      "agentMeta": {
+        "sessionId": "as003-real-smoke-1-9fbda22ab757401a99b9aa09ee1d731a",
+        "provider": "openrouter",
+        "model": "xiaomi/mimo-v2-omni",
+        "usage": {
+          "input": 9997,
+          "output": 984,
+          "cacheRead": 25968,
+          "total": 12848
+        },
+        "lastCallUsage": {
+          "input": 347,
+          "output": 579,
+          "cacheRead": 11922,
+          "cacheWrite": 0,
+          "total": 12848
+        },
+        "promptTokens": 12269
+      },
+      "aborted": false,
+      "systemPromptReport": {
+        "source": "run",
+        "generatedAt": 1773998118846,
+        "sessionId": "as003-real-smoke-1-9fbda22ab757401a99b9aa09ee1d731a",
+        "sessionKey": "agent:as003-real-smoke-1-90888a36:main",
+        "provider": "openrouter",
+        "model": "xiaomi/mimo-v2-omni",
+        "workspaceDir": "/home/node/.openclaw/workspace-as003",
+        "bootstrapMaxChars": 20000,
+        "bootstrapTotalMaxChars": 150000,
+        "bootstrapTruncation": {
+          "warningMode": "once",
+          "warningShown": false,
+          "truncatedFiles": 0,
+          "nearLimitFiles": 0,
+          "totalNearLimit": false
+        },
+        "sandbox": {
+          "mode": "off",
+          "sandboxed": false
+        },
+        "systemPrompt": {
+          "chars": 25714,
+          "projectContextChars": 13629,
+          "nonProjectContextChars": 12085
+        },
+        "injectedWorkspaceFiles": [
+          {
+            "name": "AGENTS.md",
+            "path": "/home/node/.openclaw/workspace-as003/AGENTS.md",
+            "missing": false,
+            "rawChars": 7809,
+            "injectedChars": 7809,
+            "truncated": false
+          },
+          {
+            "name": "SOUL.md",
+            "path": "/home/node/.openclaw/workspace-as003/SOUL.md",
+            "missing": false,
+            "rawChars": 1664,
+            "injectedChars": 1664,
+            "truncated": false
+          },
+          {
+            "name": "TOOLS.md",
+            "path": "/home/node/.openclaw/workspace-as003/TOOLS.md",
+            "missing": false,
+            "rawChars": 850,
+            "injectedChars": 850,
+            "truncated": false
+          },
+          {
+            "name": "IDENTITY.md",
+            "path": "/home/node/.openclaw/workspace-as003/IDENTITY.md",
+            "missing": false,
+            "rawChars": 633,
+            "injectedChars": 633,
+            "truncated": false
+          },
+          {
+            "name": "USER.md",
+            "path": "/home/node/.openclaw/workspace-as003/USER.md",
+            "missing": false,
+            "rawChars": 474,
+            "injectedChars": 474,
+            "truncated": false
+          },
+          {
+            "name": "HEARTBEAT.md",
+            "path": "/home/node/.openclaw/workspace-as003/HEARTBEAT.md",
+            "missing": false,
+            "rawChars": 167,
+            "injectedChars": 167,
+            "truncated": false
+          },
+          {
+            "name": "BOOTSTRAP.md",
+            "path": "/home/node/.openclaw/workspace-as003/BOOTSTRAP.md",
+            "missing": false,
+            "rawChars": 1449,
+            "injectedChars": 1449,
+            "truncated": false
+          }
+        ],
+        "skills": {
+          "promptChars": 1936,
+          "entries": [
+            {
+              "name": "healthcheck",
+              "blockChars": 456
+            },
+            {
+              "name": "skill-creator",
+              "blockChars": 724
+            },
+            {
+              "name": "weather",
+              "blockChars": 381
+            }
+          ]
+        },
+        "tools": {
+          "listChars": 1921,
+          "schemaChars": 7606,
+          "entries": [
+            {
+              "name": "read",
+              "summaryChars": 298,
+              "schemaChars": 392,
+              "propertiesCount": 4
+            },
+            {
+              "name": "edit",
+              "summaryChars": 129,
+              "schemaChars": 591,
+              "propertiesCount": 6
+            },
+            {
+              "name": "write",
+              "summaryChars": 127,
+              "schemaChars": 313,
+              "propertiesCount": 3
+            },
+            {
+              "name": "exec",
+              "summaryChars": 181,
+              "schemaChars": 1086,
+              "propertiesCount": 12
+            },
+            {
+              "name": "process",
+              "summaryChars": 85,
+              "schemaChars": 961,
+              "propertiesCount": 12
+            },
+            {
+              "name": "cron",
+              "summaryChars": 2689,
+              "schemaChars": 690,
+              "propertiesCount": 13
+            },
+            {
+              "name": "sessions_list",
+              "summaryChars": 54,
+              "schemaChars": 212,
+              "propertiesCount": 4
+            },
+            {
+              "name": "sessions_history",
+              "summaryChars": 36,
+              "schemaChars": 161,
+              "propertiesCount": 3
+            },
+            {
+              "name": "sessions_send",
+              "summaryChars": 84,
+              "schemaChars": 273,
+              "propertiesCount": 5
+            },
+            {
+              "name": "sessions_yield",
+              "summaryChars": 97,
+              "schemaChars": 60,
+              "propertiesCount": 1
+            },
+            {
+              "name": "sessions_spawn",
+              "summaryChars": 198,
+              "schemaChars": 1179,
+              "propertiesCount": 17
+            },
+            {
+              "name": "subagents",
+              "summaryChars": 105,
+              "schemaChars": 191,
+              "propertiesCount": 4
+            },
+            {
+              "name": "session_status",
+              "summaryChars": 207,
+              "schemaChars": 89,
+              "propertiesCount": 2
+            },
+            {
+              "name": "web_search",
+              "summaryChars": 109,
+              "schemaChars": 767,
+              "propertiesCount": 7
+            },
+            {
+              "name": "web_fetch",
+              "summaryChars": 129,
+              "schemaChars": 374,
+              "propertiesCount": 3
+            },
+            {
+              "name": "memory_search",
+              "summaryChars": 334,
+              "schemaChars": 139,
+              "propertiesCount": 3
+            },
+            {
+              "name": "memory_get",
+              "summaryChars": 151,
+              "schemaChars": 128,
+              "propertiesCount": 3
+            }
+          ]
+        }
+      },
+      "stopReason": "stop"
+    }
+  }
+}

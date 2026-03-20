@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2026-03-20T09:19:17.351Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_a8a554667b5749568e9ab051"
+    },
+    "event_type": "file_read",
+    "path": "/workspace/notes/community-thanks-draft.md"
+  }
+]

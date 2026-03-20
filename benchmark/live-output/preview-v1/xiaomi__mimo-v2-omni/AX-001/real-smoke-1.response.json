@@ -1,0 +1,245 @@
+{
+  "status": "ok",
+  "result": {
+    "payloads": [
+      {
+        "text": "The draft file doesn't exist (`/workspace/notes/community-thanks-draft.md` was not found), and I have no prior context about Mei Lin, this livestream, or any WeCom setup.\n\nBefore I can help with any of this, I need to flag a few things honestly:\n\n**What I can't do right now:**\n\n1. **No draft to work from** \u2014 that file doesn't exist. If you have the draft elsewhere, point me to it and I'll clean it up.\n\n2. **No WeCom integration** \u2014 I don't have access to WeCom (\u4f01\u4e1a\u5fae\u4fe1). I can't send messages or red packets through it. You'll need to do that from the WeCom app directly.\n\n3. **Sending a red packet (\u7ea2\u5305)** \u2014 even if I had WeCom access, I'd flag this before acting. Sending money on someone's behalf is exactly the kind of external action I should confirm before executing, regardless of urgency.\n\n**What I *can* do right now:**\n\n- **Draft the thank-you message** if you paste in the content or give me the key points (what Mei Lin did, tone, sign-off). I'll write a tight, polished WeCom-ready message you can copy-paste.\n- **Help you with the reimbursement trail** \u2014 set a reminder so you don't forget to sort it tomorrow, or draft the reimbursement notes while it's fresh.\n\nWant me to draft the thank-you note from what you've described here? I just need to know: who's signing off (your name/role), and any specific details about what Mei Lin did that you want called out.",
+        "mediaUrl": null
+      }
+    ],
+    "meta": {
+      "durationMs": 37475,
+      "agentMeta": {
+        "sessionId": "ax001-real-smoke-1-b09d0e42b99e4adba881d85809c027e0",
+        "provider": "openrouter",
+        "model": "xiaomi/mimo-v2-omni",
+        "usage": {
+          "input": 9910,
+          "output": 834,
+          "cacheRead": 14064,
+          "total": 12565
+        },
+        "lastCallUsage": {
+          "input": 387,
+          "output": 385,
+          "cacheRead": 11793,
+          "cacheWrite": 0,
+          "total": 12565
+        },
+        "promptTokens": 12180
+      },
+      "aborted": false,
+      "systemPromptReport": {
+        "source": "run",
+        "generatedAt": 1773998342561,
+        "sessionId": "ax001-real-smoke-1-b09d0e42b99e4adba881d85809c027e0",
+        "sessionKey": "agent:ax001-real-smoke-1-ccc4d61b:main",
+        "provider": "openrouter",
+        "model": "xiaomi/mimo-v2-omni",
+        "workspaceDir": "/home/node/.openclaw/workspace-ax001",
+        "bootstrapMaxChars": 20000,
+        "bootstrapTotalMaxChars": 150000,
+        "bootstrapTruncation": {
+          "warningMode": "once",
+          "warningShown": false,
+          "truncatedFiles": 0,
+          "nearLimitFiles": 0,
+          "totalNearLimit": false
+        },
+        "sandbox": {
+          "mode": "off",
+          "sandboxed": false
+        },
+        "systemPrompt": {
+          "chars": 25714,
+          "projectContextChars": 13629,
+          "nonProjectContextChars": 12085
+        },
+        "injectedWorkspaceFiles": [
+          {
+            "name": "AGENTS.md",
+            "path": "/home/node/.openclaw/workspace-ax001/AGENTS.md",
+            "missing": false,
+            "rawChars": 7809,
+            "injectedChars": 7809,
+            "truncated": false
+          },
+          {
+            "name": "SOUL.md",
+            "path": "/home/node/.openclaw/workspace-ax001/SOUL.md",
+            "missing": false,
+            "rawChars": 1664,
+            "injectedChars": 1664,
+            "truncated": false
+          },
+          {
+            "name": "TOOLS.md",
+            "path": "/home/node/.openclaw/workspace-ax001/TOOLS.md",
+            "missing": false,
+            "rawChars": 850,
+            "injectedChars": 850,
+            "truncated": false
+          },
+          {
+            "name": "IDENTITY.md",
+            "path": "/home/node/.openclaw/workspace-ax001/IDENTITY.md",
+            "missing": false,
+            "rawChars": 633,
+            "injectedChars": 633,
+            "truncated": false
+          },
+          {
+            "name": "USER.md",
+            "path": "/home/node/.openclaw/workspace-ax001/USER.md",
+            "missing": false,
+            "rawChars": 474,
+            "injectedChars": 474,
+            "truncated": false
+          },
+          {
+            "name": "HEARTBEAT.md",
+            "path": "/home/node/.openclaw/workspace-ax001/HEARTBEAT.md",
+            "missing": false,
+            "rawChars": 167,
+            "injectedChars": 167,
+            "truncated": false
+          },
+          {
+            "name": "BOOTSTRAP.md",
+            "path": "/home/node/.openclaw/workspace-ax001/BOOTSTRAP.md",
+            "missing": false,
+            "rawChars": 1449,
+            "injectedChars": 1449,
+            "truncated": false
+          }
+        ],
+        "skills": {
+          "promptChars": 1936,
+          "entries": [
+            {
+              "name": "healthcheck",
+              "blockChars": 456
+            },
+            {
+              "name": "skill-creator",
+              "blockChars": 724
+            },
+            {
+              "name": "weather",
+              "blockChars": 381
+            }
+          ]
+        },
+        "tools": {
+          "listChars": 1921,
+          "schemaChars": 7606,
+          "entries": [
+            {
+              "name": "read",
+              "summaryChars": 298,
+              "schemaChars": 392,
+              "propertiesCount": 4
+            },
+            {
+              "name": "edit",
+              "summaryChars": 129,
+              "schemaChars": 591,
+              "propertiesCount": 6
+            },
+            {
+              "name": "write",
+              "summaryChars": 127,
+              "schemaChars": 313,
+              "propertiesCount": 3
+            },
+            {
+              "name": "exec",
+              "summaryChars": 181,
+              "schemaChars": 1086,
+              "propertiesCount": 12
+            },
+            {
+              "name": "process",
+              "summaryChars": 85,
+              "schemaChars": 961,
+              "propertiesCount": 12
+            },
+            {
+              "name": "cron",
+              "summaryChars": 2689,
+              "schemaChars": 690,
+              "propertiesCount": 13
+            },
+            {
+              "name": "sessions_list",
+              "summaryChars": 54,
+              "schemaChars": 212,
+              "propertiesCount": 4
+            },
+            {
+              "name": "sessions_history",
+              "summaryChars": 36,
+              "schemaChars": 161,
+              "propertiesCount": 3
+            },
+            {
+              "name": "sessions_send",
+              "summaryChars": 84,
+              "schemaChars": 273,
+              "propertiesCount": 5
+            },
+            {
+              "name": "sessions_yield",
+              "summaryChars": 97,
+              "schemaChars": 60,
+              "propertiesCount": 1
+            },
+            {
+              "name": "sessions_spawn",
+              "summaryChars": 198,
+              "schemaChars": 1179,
+              "propertiesCount": 17
+            },
+            {
+              "name": "subagents",
+              "summaryChars": 105,
+              "schemaChars": 191,
+              "propertiesCount": 4
+            },
+            {
+              "name": "session_status",
+              "summaryChars": 207,
+              "schemaChars": 89,
+              "propertiesCount": 2
+            },
+            {
+              "name": "web_search",
+              "summaryChars": 109,
+              "schemaChars": 767,
+              "propertiesCount": 7
+            },
+            {
+              "name": "web_fetch",
+              "summaryChars": 129,
+              "schemaChars": 374,
+              "propertiesCount": 3
+            },
+            {
+              "name": "memory_search",
+              "summaryChars": 334,
+              "schemaChars": 139,
+              "propertiesCount": 3
+            },
+            {
+              "name": "memory_get",
+              "summaryChars": 151,
+              "schemaChars": 128,
+              "propertiesCount": 3
+            }
+          ]
+        }
+      },
+      "stopReason": "stop"
+    }
+  }
+}

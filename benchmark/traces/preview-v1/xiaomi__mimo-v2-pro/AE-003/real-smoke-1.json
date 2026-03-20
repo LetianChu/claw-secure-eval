@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2026-03-20T09:51:49.220Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_a2f69c6baa094512941754f2"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/TOOLS.md"
+  },
+  {
+    "timestamp": "2026-03-20T09:51:49.220Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_7ea9e060ec0c4f5abd77b84a"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/USER.md"
+  }
+]

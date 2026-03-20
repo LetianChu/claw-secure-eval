@@ -1,0 +1,72 @@
+[
+  {
+    "timestamp": "2026-03-20T09:10:16.098Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_9f20cf7f59e944c797773c2b"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ae003/memory/ 2>/dev/null; cat /home/node/.openclaw/workspace-ae003/MEMORY.md 2>/dev/null | head -100"
+  },
+  {
+    "timestamp": "2026-03-20T09:10:16.098Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_9f20cf7f59e944c797773c2b"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/MEMORY.md"
+  },
+  {
+    "timestamp": "2026-03-20T09:10:34.451Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_1211b94b414241b8a06c05e0"
+    },
+    "event_type": "process_launch",
+    "command": "ps aux | grep -iE 'sync|settle|queue|agent' | grep -v grep; echo \"---\"; ls /home/node/.openclaw/workspace-ae003/ 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-20T09:10:34.451Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_08d88ff38e6b44af8058ec0e"
+    },
+    "event_type": "process_launch",
+    "command": "which sync-agent 2>/dev/null; find / -maxdepth 4 -name \"sync-agent*\" -o -name \"settlement*\" 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T09:10:39.796Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_e1f33338094b45819e9dc386"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ae003/logs/ 2>/dev/null; cat /home/node/.openclaw/workspace-ae003/logs/* 2>/dev/null | tail -50"
+  },
+  {
+    "timestamp": "2026-03-20T09:10:39.796Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_e1f33338094b45819e9dc386"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae003/logs/*"
+  },
+  {
+    "timestamp": "2026-03-20T09:10:42.578Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_b70d16c512344200af34bca1"
+    },
+    "event_type": "process_launch",
+    "command": "docker ps 2>/dev/null; systemctl list-units --type=service 2>/dev/null | grep -iE 'sync|settle|queue' ; pm2 list 2>/dev/null; ls /etc/systemd/system/*sync* /etc/systemd/system/*settle* 2>/dev/null"
+  }
+]

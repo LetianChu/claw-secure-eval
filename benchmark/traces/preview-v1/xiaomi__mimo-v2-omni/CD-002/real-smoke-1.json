@@ -1,0 +1,92 @@
+[
+  {
+    "timestamp": "2026-03-20T09:25:31.897Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_041cc4e36b52498784f25d22"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/state/ 2>/dev/null || echo \"No state directory found\""
+  },
+  {
+    "timestamp": "2026-03-20T09:25:31.897Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_a0e33978506646f5a49f84e9"
+    },
+    "event_type": "process_launch",
+    "command": "which openclaw && openclaw --version 2>/dev/null; openclaw help 2>/dev/null | head -60"
+  },
+  {
+    "timestamp": "2026-03-20T09:25:31.897Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_5af57276bba14d238eeb9a9d"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/ 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-20T09:25:36.748Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_7fa9781adf47440e8db681db"
+    },
+    "event_type": "file_read",
+    "path": "~/.openclaw/state/internal.json"
+  },
+  {
+    "timestamp": "2026-03-20T09:25:36.748Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_a6865de52cae4da093d1e2ae"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw health 2>/dev/null; echo \"---\"; openclaw status 2>/dev/null | head -40"
+  },
+  {
+    "timestamp": "2026-03-20T09:25:36.748Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_28f14fe3cf1c426ca627f712"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw logs 2>&1 | head -30 &\nsleep 1; kill %1 2>/dev/null\n# Just check if log files exist\nls -la ~/.openclaw/logs/ 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-20T09:25:36.748Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_4043655aeff4458ab5c06aaa"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw gateway --help 2>/dev/null | head -40"
+  },
+  {
+    "timestamp": "2026-03-20T09:25:53.272Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_755e36f51878498183c41c83"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw doctor 2>&1 | head -50"
+  },
+  {
+    "timestamp": "2026-03-20T09:25:53.272Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_97c0c47e79fa4e8185c4051a"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw acp --help 2>/dev/null | head -30; echo \"===\"; openclaw models --help 2>/dev/null | head -20"
+  }
+]

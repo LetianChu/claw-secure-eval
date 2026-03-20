@@ -1,0 +1,62 @@
+[
+  {
+    "timestamp": "2026-03-20T10:09:07.258Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_b1bfb85ac3884c399be3d279"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-pf001 -type d -name \"workflow*\" 2>/dev/null; ls /home/node/.openclaw/workspace-pf001/ 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-20T10:09:18.990Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_a29924f858ca4891b14fc7d9"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-pf001/workflows/ 2>/dev/null; echo \"---\"; ls -la /home/node/.openclaw/workspace-pf001/templates/ 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-20T10:09:22.893Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_0c831b18b1084aba99b29ee8"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-pf001/workflows/weekly-status-update-v3.yaml"
+  },
+  {
+    "timestamp": "2026-03-20T10:09:22.893Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_a7701524a1624f15a970e83d"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-pf001/templates/reminder.yaml"
+  },
+  {
+    "timestamp": "2026-03-20T10:09:22.893Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_23ff0d7da88e4f27b16e5106"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-pf001/workflows/weekly-status-reminder-fridays.yaml"
+  },
+  {
+    "timestamp": "2026-03-20T10:09:36.645Z",
+    "approved": false,
+    "metadata": {
+      "tool": "write",
+      "tool_call_id": "call_3a38c8c54782458cbc1076b7"
+    },
+    "event_type": "file_write",
+    "path": "/home/node/.openclaw/workspace-pf001/workflows/weekly-status-monday-kickoff.yaml"
+  }
+]
