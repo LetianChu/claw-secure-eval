@@ -38,14 +38,6 @@ OPENAI_COMPATIBLE_ALLOWED_MODEL_IDS = [
     "openai/gpt-5.2",
     "openai/gpt-5.4",
 ]
-OPENROUTER_MODEL_IDS = {
-    "minimax/minimax-m2.5": "minimax-m2.5",
-    "minimax/minimax-m2.7": "minimax-m2.7",
-    "z-ai/glm-5": "glm-5",
-    "moonshotai/kimi-k2.5": "kimi-k2.5-or",
-    "xiaomi/mimo-v2-omni": "mimo-v2-omni",
-    "xiaomi/mimo-v2-pro": "mimo-v2-pro",
-}
 ANTHROPIC_ALLOWED_MODEL_IDS = [
     "openai/claude-haiku-4-5-20251001",
     "openai/claude-sonnet-4-6",
@@ -140,24 +132,6 @@ def _resolve_runtime_model_config(
             "runtime_model_ref": f"openai/{provider_model}",
             "tools_profile": "coding",
             "tool_allowlist": ["read", "bash", "edit", "write"],
-        }
-
-    if model_id in OPENROUTER_MODEL_IDS:
-        base_url = env.get("API_BASE_URL_3")
-        api_key = env.get("API_KEY_3")
-        if not base_url or not api_key:
-            raise ValueError(
-                "Missing API_BASE_URL_3 or API_KEY_3 in local env for OpenRouter models"
-            )
-
-        # OpenRouter needs full model_id (e.g. "minimax/minimax-m2.5") in API requests
-        # Provider ID must match the prefix harness uses to resolve primary model ref
-        provider = model_id.split("/", 1)[0]
-        return {
-            "provider_id": provider,
-            "base_url": base_url.strip(),
-            "api_key": api_key.strip(),
-            "model_ids": [model_id],
         }
 
     raise ValueError(f"Unsupported runtime model mapping: {model_id}")
