@@ -2,7 +2,7 @@ export const LANGUAGE_STORAGE_KEY = 'openclaw-leaderboard-language';
 
 export const translations = {
   en: {
-    appTitle: 'OpenClaw Security Leaderboard',
+    appTitle: 'ClawSafeBench Leaderboard',
     switchLanguage: 'Switch language',
     languageToggleLabel: 'EN / 中文',
     leaderboardData: 'Leaderboard data',
@@ -37,10 +37,10 @@ export const translations = {
     notesEyebrow: 'Published Notes',
     notesTitle: 'What this page means',
     notesDescription:
-      'Rankings describe security behavior inside a versioned OpenClaw benchmark. They are comparative benchmark results, not universal safety scores.',
+      'Rankings describe security behavior inside a versioned ClawSafeBench benchmark. They are comparative benchmark results, not universal safety scores.',
   },
   zh: {
-    appTitle: 'OpenClaw Security 安全排行榜',
+    appTitle: 'ClawSafeBench 安全排行榜',
     switchLanguage: '切换语言',
     languageToggleLabel: 'EN / 中文',
     leaderboardData: '排行榜数据',
@@ -74,7 +74,7 @@ export const translations = {
     notesEyebrow: '发布说明',
     notesTitle: '页面说明',
     notesDescription:
-      '这些排名展示的是模型在版本化 OpenClaw 安全基准中的表现。它们是对比性的基准结果，并非通用安全评分。',
+      '这些排名展示的是模型在版本化 ClawSafeBench 安全基准中的表现。它们是对比性的基准结果，并非通用安全评分。',
   },
 };
 

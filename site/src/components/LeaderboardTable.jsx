@@ -3,7 +3,7 @@ const tableCopy = {
     captionTitle: 'Preview leaderboard',
     captionSummary: (modelCount, lastUpdated) =>
       `${modelCount} models loaded from the current artifact. Updated ${lastUpdated}.`,
-    regionLabel: 'OpenClaw leaderboard',
+    regionLabel: 'ClawSafeBench leaderboard',
     columns: {
       rank: 'Rank',
       model: 'Model',
@@ -25,7 +25,7 @@ const tableCopy = {
     captionTitle: '预览排行榜',
     captionSummary: (modelCount, lastUpdated) =>
       `当前工件已载入 ${modelCount} 个模型。已更新 ${lastUpdated}。`,
-    regionLabel: 'OpenClaw 排行榜',
+    regionLabel: 'ClawSafeBench 排行榜',
     columns: {
       rank: '排名',
       model: '模型',

@@ -1,8 +1,85 @@
-# OpenClaw SafeBench
+# ClawSafeBench
 
-A real-runtime security benchmark and leaderboard for OpenClaw agents.
+A real-runtime security benchmark and leaderboard for AI coding agents.
 
-OpenClaw SafeBench evaluates whether agentic models can complete realistic operational tasks **without violating security boundaries** such as secret access, approval bypass, persistent footholds, or credential exfiltration.
+ClawSafeBench evaluates whether agentic models can complete realistic operational tasks **without violating security boundaries** such as secret access, approval bypass, persistent footholds, or credential exfiltration.
+
+## How ClawSafeBench works
+
+```mermaid
+flowchart TB
+    subgraph Inputs["Inputs"]
+        A1["Operator Request"]
+        A2["Delayed / Injected Content"]
+        A3["Workspace State"]
+        A4["Protected Assets"]
+    end
+
+    subgraph Runtime["Real Runtime"]
+        B1["OpenClaw Agent"]
+        B2["WSL2 + Docker"]
+        B3["Tools / Memory / Workflows"]
+    end
+
+    subgraph Behavior["Observed Behavior"]
+        C1["Reads"]
+        C2["Writes"]
+        C3["Commands"]
+        C4["Persistent Changes"]
+        C5["Refusals / Explanations"]
+    end
+
+    subgraph Evaluation["Evaluation"]
+        D1["Trace + Live Output"]
+        D2["Rule-Based Oracles"]
+        D3["Manual Review"]
+        D4["Corrected Run Results"]
+    end
+
+    subgraph Output["Output"]
+        E1["Model Aggregates"]
+        E2["Leaderboard"]
+    end
+
+    A1 --> B1
+    A2 --> B1
+    A3 --> B1
+    A4 --> B1
+
+    B1 --> B2
+    B2 --> B3
+    B3 --> C1
+    B3 --> C2
+    B3 --> C3
+    B3 --> C4
+    B3 --> C5
+
+    C1 --> D1
+    C2 --> D1
+    C3 --> D1
+    C4 --> D1
+    C5 --> D1
+
+    D1 --> D2
+    D2 --> D3
+    D3 --> D4
+    D4 --> E1
+    E1 --> E2
+
+    classDef input fill:#eef2ff,stroke:#4f46e5,stroke-width:1px,color:#111827;
+    classDef runtime fill:#ecfeff,stroke:#0891b2,stroke-width:1px,color:#111827;
+    classDef behavior fill:#f0fdf4,stroke:#16a34a,stroke-width:1px,color:#111827;
+    classDef eval fill:#fff7ed,stroke:#ea580c,stroke-width:1px,color:#111827;
+    classDef output fill:#faf5ff,stroke:#9333ea,stroke-width:1px,color:#111827;
+
+    class A1,A2,A3,A4 input;
+    class B1,B2,B3 runtime;
+    class C1,C2,C3,C4,C5 behavior;
+    class D1,D2,D3,D4 eval;
+    class E1,E2 output;
+```
+
+> ClawSafeBench measures security by placing models in a real runtime, observing what they actually do, and combining rule-based scoring with manual review before publishing leaderboard results.
 
 ## What this repository contains
 
@@ -12,7 +89,7 @@ This repo combines three layers:
 - **Evaluator** — rule-based scoring plus manual-review-driven corrections for latent failures and false passes
 - **Leaderboard** — generated JSON/Markdown artifacts for cross-model comparison
 
-## What SafeBench measures
+## What ClawSafeBench measures
 
 The current preview benchmark focuses on these failure classes:
 
@@ -66,7 +143,7 @@ Additional tracked metrics:
 
 ## Important note on review quality
 
-SafeBench is **not** a naive trace-only benchmark.
+ClawSafeBench is **not** a naive trace-only benchmark.
 
 During development we found multiple classes of false positives / false negatives that required manual review, for example:
 
@@ -106,7 +183,7 @@ python leaderboard/generate_leaderboard.py
 
 ## Philosophy
 
-SafeBench is built around one idea:
+ClawSafeBench is built around one idea:
 
 > A model is only safe if it behaves safely **in a real runtime**, under realistic tool access, ambiguous operator requests, delayed injections, and persistent state.
 

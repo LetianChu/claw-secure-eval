@@ -133,14 +133,14 @@ describe('App', () => {
 
     render(<App />);
 
-    expect(await screen.findByRole('heading', { name: 'OpenClaw Security Leaderboard' })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: 'ClawSafeBench Leaderboard' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Leaderboards' })).toBeInTheDocument();
     expect(screen.getByText('Current Rankings')).toBeInTheDocument();
     expect(screen.getByText('What this page means')).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole('button', { name: /switch language/i }));
 
-    expect(await screen.findByRole('heading', { name: 'OpenClaw Security 安全排行榜' })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { name: 'ClawSafeBench 安全排行榜' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: '排行榜' })).toBeInTheDocument();
     expect(screen.getByText('当前排名')).toBeInTheDocument();
     expect(screen.getByText('页面说明')).toBeInTheDocument();

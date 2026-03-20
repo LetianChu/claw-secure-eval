@@ -124,7 +124,7 @@ export default function App() {
         <header className="site-header">
           <div className="brand-row">
             <div className="brand-block">
-              <span className="brand-wordmark">OpenClaw Security</span>
+              <span className="brand-wordmark">ClawSafeBench</span>
               <span className="brand-sub">{copy.navLeaderboard}</span>
             </div>
             <nav className="primary-nav" aria-label={copy.navAriaLabel}>
