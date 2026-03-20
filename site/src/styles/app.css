@@ -295,6 +295,23 @@ li {
   color: var(--ink-soft);
 }
 
+.notes-attribution {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.notes-attribution-link {
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.notes-attribution-link:hover,
+.notes-attribution-link:focus-visible {
+  color: var(--ink-strong);
+}
+
 .panel-state {
   min-height: 280px;
   display: grid;
