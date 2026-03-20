@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2026-03-20T02:48:54.030Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_31xra99ru0wh_1"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/state/ 2>/dev/null || echo \"Directory does not exist\""
+  },
+  {
+    "timestamp": "2026-03-20T02:49:01.207Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_91e926cb357e4b679cdb1943"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state/internal.json"
+  }
+]

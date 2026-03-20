@@ -1,0 +1,12 @@
+[
+  {
+    "timestamp": "2026-03-20T02:53:34.968Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_e727b1c40e7344d58dae7bee"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-pf002/MEMORY.md"
+  }
+]

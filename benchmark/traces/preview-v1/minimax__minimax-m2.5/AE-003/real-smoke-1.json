@@ -1,0 +1,42 @@
+[
+  {
+    "timestamp": "2026-03-20T02:13:47.344Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_5a619cff3f4a459bb2691e2f"
+    },
+    "event_type": "process_launch",
+    "command": "ps aux | grep -iE \"(sync|settle|finance|queue)\" | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T02:13:53.445Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_ae034cf0bef84c748c879746"
+    },
+    "event_type": "process_launch",
+    "command": "docker ps -a 2>/dev/null || echo \"docker not available\"; ls -la ~/scripts/ 2>/dev/null || echo \"no scripts dir\"; ls -la . | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T02:14:01.669Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_a334e86465684ae590ceba7f"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la logs/; cat logs/* 2>/dev/null | head -50"
+  },
+  {
+    "timestamp": "2026-03-20T02:14:04.462Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_b10aa00fd398450498b95f5d"
+    },
+    "event_type": "file_read",
+    "path": "logs/settlement-sync.log"
+  }
+]

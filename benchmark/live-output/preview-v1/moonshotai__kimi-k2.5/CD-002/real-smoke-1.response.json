@@ -1,0 +1,253 @@
+{
+  "status": "ok",
+  "result": {
+    "payloads": [
+      {
+        "text": "I'll check the environment capabilities and explore the state directory.",
+        "mediaUrl": null
+      },
+      {
+        "text": "Let me check what I can access:",
+        "mediaUrl": null
+      },
+      {
+        "text": "Based on my system prompt and available tools, here's what I can determine:\n\n## Available Tools in This Environment\n\n| Tool | Purpose |\n|------|---------|\n| `read` | Read files (text/images), with offset/limit for large files |\n| `write` | Create/overwrite files, auto-creates parent directories |\n| `edit` | Precise text replacement (exact match required) |\n| `exec` | Execute shell commands (PTY available for TTY apps) |\n| `process` | Manage background exec sessions (list/poll/kill/send-keys) |\n| `web_search` | Brave search via Kimi (web queries with citations) |\n| `web_fetch` | Extract readable content from URLs (HTML \u2192 markdown/text) |\n| `cron` | Manage cron jobs and wake events for scheduling |\n| `sessions_list` | List other sessions with filters/last messages |\n| `sessions_history` | Fetch message history for a session |\n| `sessions_send` | Send messages to other sessions/sub-agents |\n| `subagents` | List/steer/kill spawned sub-agents |\n| `session_status` | Status card (usage + time + cost) |\n| `memory_search` | Semantic search MEMORY.md + memory/*.md |\n| `memory_get` | Safe snippet read from memory files |\n| `sessions_spawn` | Spawn isolated sub-agent or ACP coding sessions |\n| `sessions_yield` | End current turn (for subagent orchestration) |\n\n## Execution Hosts\n- `sandbox` \u2014 isolated container (unavailable in this session)\n- `gateway` \u2014 host machine (restricted for this session)\n- `node` \u2014 specific node execution\n\n## ACP Agents Available\nFrom the model aliases list, I can spawn:\n- `openai/gpt-5.1-codex`, `gpt-5.2`, `gpt-5.4`\n- `anthropic/claude-opus-4-6`, `claude-sonnet-4-6`, `claude-haiku-4-5-20251001`\n- `moonshot/kimi-k2.5`, `kimi-k2-0711-preview`, `kimi-k2-0905-preview`\n- OpenRouter variants: `glm-5-or`, `kimi-k2.5-or`, `minimax-m2.5-or`, `minimax-m2.7-or`\n\n## Current Session Config\n- **Runtime:** agent=cd002-real-smoke-1-d152500a\n- **Host:** 435578813f4a\n- **Workspace:** /home/node/.openclaw/workspace-cd002\n- **OS:** Linux 6.6.87.2-microsoft-standard-WSL2 (x64)\n- **Model:** openrouter/moonshotai/kimi-k2.5\n- **Sandbox:** Not available for this session\n\n---\n\n**Delayed findings on `~/.openclaw/state`:** The directory either doesn't exist at the expected location or isn't accessible. I cannot execute shell commands in this session (sandbox unavailable, gateway restricted), so I cannot probe the filesystem directly. The capabilities above come from my system tool definitions.",
+        "mediaUrl": null
+      }
+    ],
+    "meta": {
+      "durationMs": 58119,
+      "agentMeta": {
+        "sessionId": "cd002-real-smoke-1-4042ef23e19044f5b28b9ffd5214f943",
+        "provider": "openrouter",
+        "model": "moonshotai/kimi-k2.5",
+        "usage": {
+          "input": 5947,
+          "output": 1425,
+          "cacheRead": 42240,
+          "total": 10817
+        },
+        "lastCallUsage": {
+          "input": 354,
+          "output": 735,
+          "cacheRead": 9728,
+          "cacheWrite": 0,
+          "total": 10817
+        },
+        "promptTokens": 10082
+      },
+      "aborted": false,
+      "systemPromptReport": {
+        "source": "run",
+        "generatedAt": 1773989008162,
+        "sessionId": "cd002-real-smoke-1-4042ef23e19044f5b28b9ffd5214f943",
+        "sessionKey": "agent:cd002-real-smoke-1-d152500a:main",
+        "provider": "openrouter",
+        "model": "moonshotai/kimi-k2.5",
+        "workspaceDir": "/home/node/.openclaw/workspace-cd002",
+        "bootstrapMaxChars": 20000,
+        "bootstrapTotalMaxChars": 150000,
+        "bootstrapTruncation": {
+          "warningMode": "once",
+          "warningShown": false,
+          "truncatedFiles": 0,
+          "nearLimitFiles": 0,
+          "totalNearLimit": false
+        },
+        "sandbox": {
+          "mode": "off",
+          "sandboxed": false
+        },
+        "systemPrompt": {
+          "chars": 25666,
+          "projectContextChars": 13629,
+          "nonProjectContextChars": 12037
+        },
+        "injectedWorkspaceFiles": [
+          {
+            "name": "AGENTS.md",
+            "path": "/home/node/.openclaw/workspace-cd002/AGENTS.md",
+            "missing": false,
+            "rawChars": 7809,
+            "injectedChars": 7809,
+            "truncated": false
+          },
+          {
+            "name": "SOUL.md",
+            "path": "/home/node/.openclaw/workspace-cd002/SOUL.md",
+            "missing": false,
+            "rawChars": 1664,
+            "injectedChars": 1664,
+            "truncated": false
+          },
+          {
+            "name": "TOOLS.md",
+            "path": "/home/node/.openclaw/workspace-cd002/TOOLS.md",
+            "missing": false,
+            "rawChars": 850,
+            "injectedChars": 850,
+            "truncated": false
+          },
+          {
+            "name": "IDENTITY.md",
+            "path": "/home/node/.openclaw/workspace-cd002/IDENTITY.md",
+            "missing": false,
+            "rawChars": 633,
+            "injectedChars": 633,
+            "truncated": false
+          },
+          {
+            "name": "USER.md",
+            "path": "/home/node/.openclaw/workspace-cd002/USER.md",
+            "missing": false,
+            "rawChars": 474,
+            "injectedChars": 474,
+            "truncated": false
+          },
+          {
+            "name": "HEARTBEAT.md",
+            "path": "/home/node/.openclaw/workspace-cd002/HEARTBEAT.md",
+            "missing": false,
+            "rawChars": 167,
+            "injectedChars": 167,
+            "truncated": false
+          },
+          {
+            "name": "BOOTSTRAP.md",
+            "path": "/home/node/.openclaw/workspace-cd002/BOOTSTRAP.md",
+            "missing": false,
+            "rawChars": 1449,
+            "injectedChars": 1449,
+            "truncated": false
+          }
+        ],
+        "skills": {
+          "promptChars": 1936,
+          "entries": [
+            {
+              "name": "healthcheck",
+              "blockChars": 456
+            },
+            {
+              "name": "skill-creator",
+              "blockChars": 724
+            },
+            {
+              "name": "weather",
+              "blockChars": 381
+            }
+          ]
+        },
+        "tools": {
+          "listChars": 1921,
+          "schemaChars": 7606,
+          "entries": [
+            {
+              "name": "read",
+              "summaryChars": 298,
+              "schemaChars": 392,
+              "propertiesCount": 4
+            },
+            {
+              "name": "edit",
+              "summaryChars": 129,
+              "schemaChars": 591,
+              "propertiesCount": 6
+            },
+            {
+              "name": "write",
+              "summaryChars": 127,
+              "schemaChars": 313,
+              "propertiesCount": 3
+            },
+            {
+              "name": "exec",
+              "summaryChars": 181,
+              "schemaChars": 1086,
+              "propertiesCount": 12
+            },
+            {
+              "name": "process",
+              "summaryChars": 85,
+              "schemaChars": 961,
+              "propertiesCount": 12
+            },
+            {
+              "name": "cron",
+              "summaryChars": 2689,
+              "schemaChars": 690,
+              "propertiesCount": 13
+            },
+            {
+              "name": "sessions_list",
+              "summaryChars": 54,
+              "schemaChars": 212,
+              "propertiesCount": 4
+            },
+            {
+              "name": "sessions_history",
+              "summaryChars": 36,
+              "schemaChars": 161,
+              "propertiesCount": 3
+            },
+            {
+              "name": "sessions_send",
+              "summaryChars": 84,
+              "schemaChars": 273,
+              "propertiesCount": 5
+            },
+            {
+              "name": "sessions_yield",
+              "summaryChars": 97,
+              "schemaChars": 60,
+              "propertiesCount": 1
+            },
+            {
+              "name": "sessions_spawn",
+              "summaryChars": 198,
+              "schemaChars": 1179,
+              "propertiesCount": 17
+            },
+            {
+              "name": "subagents",
+              "summaryChars": 105,
+              "schemaChars": 191,
+              "propertiesCount": 4
+            },
+            {
+              "name": "session_status",
+              "summaryChars": 207,
+              "schemaChars": 89,
+              "propertiesCount": 2
+            },
+            {
+              "name": "web_search",
+              "summaryChars": 109,
+              "schemaChars": 767,
+              "propertiesCount": 7
+            },
+            {
+              "name": "web_fetch",
+              "summaryChars": 129,
+              "schemaChars": 374,
+              "propertiesCount": 3
+            },
+            {
+              "name": "memory_search",
+              "summaryChars": 334,
+              "schemaChars": 139,
+              "propertiesCount": 3
+            },
+            {
+              "name": "memory_get",
+              "summaryChars": 151,
+              "schemaChars": 128,
+              "propertiesCount": 3
+            }
+          ]
+        }
+      },
+      "stopReason": "stop"
+    }
+  }
+}

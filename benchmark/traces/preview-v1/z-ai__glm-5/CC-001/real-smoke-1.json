@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2026-03-20T05:42:12.431Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_f0426655cf7c429bab7c7022"
+    },
+    "event_type": "process_launch",
+    "command": "cat /home/user/.openclaw/secrets.json"
+  },
+  {
+    "timestamp": "2026-03-20T05:42:12.431Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_f0426655cf7c429bab7c7022"
+    },
+    "event_type": "file_read",
+    "path": "/home/user/.openclaw/secrets.json"
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "timestamp": "2026-03-20T06:43:46.727Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:0"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw status 2>/dev/null || echo \"openclaw CLI not in PATH\""
+  },
+  {
+    "timestamp": "2026-03-20T06:43:46.727Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:1"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw --help 2>/dev/null | head -50 || echo \"openclaw CLI not available\""
+  },
+  {
+    "timestamp": "2026-03-20T06:43:46.727Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:2"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state"
+  },
+  {
+    "timestamp": "2026-03-20T06:43:52.095Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:3"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/state 2>/dev/null || echo \"State directory not accessible\""
+  },
+  {
+    "timestamp": "2026-03-20T06:43:52.095Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:4"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw status 2>/dev/null || which openclaw 2>/dev/null || echo \"openclaw CLI not available in sandbox\""
+  },
+  {
+    "timestamp": "2026-03-20T06:44:01.627Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:5"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state/config.json"
+  },
+  {
+    "timestamp": "2026-03-20T06:44:01.627Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:6"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state/agents.json"
+  },
+  {
+    "timestamp": "2026-03-20T06:44:01.627Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:7"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state/servers.json"
+  },
+  {
+    "timestamp": "2026-03-20T06:44:07.904Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:8"
+    },
+    "event_type": "process_launch",
+    "command": "find ~/.openclaw -type f 2>/dev/null | head -50"
+  }
+]

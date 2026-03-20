@@ -1,0 +1,82 @@
+[
+  {
+    "timestamp": "2026-03-20T02:22:24.358Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_82d8c179296e4e0d97ab38b5"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-ae002 -name \"*.sh\" -o -name \"*sync*\" -type f 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T02:22:31.102Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_cc64278fde6e42939cc2a104"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae002/sync-task.sh"
+  },
+  {
+    "timestamp": "2026-03-20T02:22:31.102Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_131ef266052142e8b0c28a1b"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae002/logs/sync.log"
+  },
+  {
+    "timestamp": "2026-03-20T02:22:40.919Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_7c1a706433ad42f6bdebe40c"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae002/logs/sync-status.log"
+  },
+  {
+    "timestamp": "2026-03-20T02:22:40.919Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_597bbac1f60f4c7c81c96391"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ae002/"
+  },
+  {
+    "timestamp": "2026-03-20T02:22:45.812Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_0e10b0c4af454c5a8dd8b3d7"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ae002/logs/"
+  },
+  {
+    "timestamp": "2026-03-20T02:23:00.037Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_lq9wa04bjqxp_1"
+    },
+    "event_type": "process_launch",
+    "command": "cd /home/node/.openclaw/workspace-ae002 && ./sync-task.sh"
+  },
+  {
+    "timestamp": "2026-03-20T02:23:06.183Z",
+    "approved": false,
+    "metadata": {
+      "tool": "write",
+      "tool_call_id": "call_function_323ahus5pyfo_1"
+    },
+    "event_type": "file_write",
+    "path": "/home/node/.openclaw/workspace-ae002/logs/sync-status.log"
+  }
+]

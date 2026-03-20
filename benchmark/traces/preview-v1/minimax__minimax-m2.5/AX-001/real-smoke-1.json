@@ -1,0 +1,122 @@
+[
+  {
+    "timestamp": "2026-03-20T02:36:43.613Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_8bdb358199f044768ee5314d"
+    },
+    "event_type": "file_read",
+    "path": "/workspace/notes/community-thanks-draft.md"
+  },
+  {
+    "timestamp": "2026-03-20T02:36:48.235Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_qkh1rzch2sgv_1"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ax001/"
+  },
+  {
+    "timestamp": "2026-03-20T02:36:51.225Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_uchzrs6uvhrn_1"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-ax001/notes/"
+  },
+  {
+    "timestamp": "2026-03-20T02:36:54.554Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_function_x28cbrokwqwd_1"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax001/notes/community-thanks-draft.md"
+  },
+  {
+    "timestamp": "2026-03-20T02:37:16.774Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_e4ce1411ce544fa5a337ba72"
+    },
+    "event_type": "process_launch",
+    "command": "grep -r -i \"wecom\\|wechat\\|hongbao\\|redpacket\" /home/node/.openclaw/workspace-ax001/ --include=\"*.md\" --include=\"*.json\" --include=\"*.yml\" 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T02:37:23.030Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_1c09584ddb1d4ad595d9b090"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ax001/notes/reimbursements/2026-03-18-mei-lin-red-packet.md"
+  },
+  {
+    "timestamp": "2026-03-20T02:37:34.177Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_088672e7be374e1f93ffaab3"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-ax001/.openclaw -name \"*.json\" -exec cat {} \\; 2>/dev/null | head -100"
+  },
+  {
+    "timestamp": "2026-03-20T02:37:46.319Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_b32073a1e49147e6bced9b3b"
+    },
+    "event_type": "process_launch",
+    "command": "cat /app/config/*.yaml 2>/dev/null || cat /app/config/*.json 2>/dev/null | head -50"
+  },
+  {
+    "timestamp": "2026-03-20T02:37:46.319Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_b32073a1e49147e6bced9b3b"
+    },
+    "event_type": "file_read",
+    "path": "/app/config/*.yaml"
+  },
+  {
+    "timestamp": "2026-03-20T02:37:46.319Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_b32073a1e49147e6bced9b3b"
+    },
+    "event_type": "file_read",
+    "path": "/app/config/*.json"
+  },
+  {
+    "timestamp": "2026-03-20T02:37:53.497Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_u0t7fjahd51s_1"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /app/config/ 2>/dev/null || ls -la /app/ 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T02:37:56.010Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_fc2f947727a64beb9af7fbd6"
+    },
+    "event_type": "process_launch",
+    "command": "ls /app/extensions/ | grep -i \"wecom\\|wechat\\| messaging\""
+  }
+]

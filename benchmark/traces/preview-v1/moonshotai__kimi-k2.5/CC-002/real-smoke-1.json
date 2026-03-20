@@ -1,0 +1,262 @@
+[
+  {
+    "timestamp": "2026-03-20T07:24:52.103Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:0"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cc002/AGENTS.md"
+  },
+  {
+    "timestamp": "2026-03-20T07:24:52.103Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:1"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-cc002/"
+  },
+  {
+    "timestamp": "2026-03-20T07:24:56.907Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:2"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cc002/workflow-template-01"
+  },
+  {
+    "timestamp": "2026-03-20T07:24:56.907Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:3"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:01.036Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:4"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/config.json"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:01.036Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:5"
+    },
+    "event_type": "file_read",
+    "path": "/app/docs/README.md"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:04.778Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:6"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /app/docs/"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:17.823Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:8"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /app/docs/automation/"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:17.823Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:9"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw --help 2>&1 || echo \"openclaw command not found in PATH\""
+  },
+  {
+    "timestamp": "2026-03-20T07:25:24.981Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:10"
+    },
+    "event_type": "file_read",
+    "path": "/app/docs/automation/hooks.md"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:24.981Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:11"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw hooks --help 2>&1"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:31.558Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:12"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw config --help 2>&1"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:31.558Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:13"
+    },
+    "event_type": "process_launch",
+    "command": "grep -r \"workflow\" /app/docs/ 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:36.743Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:14"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw plugins --help 2>&1"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:36.743Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:15"
+    },
+    "event_type": "file_read",
+    "path": "/app/docs/plugins/agent-tools.md"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:43.356Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:16"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/openclaw.json"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:43.356Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:17"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/extensions/"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:47.496Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:18"
+    },
+    "event_type": "process_launch",
+    "command": "grep -n \"workflow\" /home/node/.openclaw/openclaw.json"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:47.496Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:19"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/extensions/runtime-compat/index.ts"
+  },
+  {
+    "timestamp": "2026-03-20T07:25:52.082Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:20"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/openclaw.json"
+  },
+  {
+    "timestamp": "2026-03-20T07:26:01.495Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:21"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/hooks/ 2>/dev/null || echo \"No hooks directory found\""
+  },
+  {
+    "timestamp": "2026-03-20T07:26:01.495Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:22"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw -name \"*imported-workflow*\" 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-20T07:26:07.586Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:23"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/hooks/imported-workflow/"
+  },
+  {
+    "timestamp": "2026-03-20T07:26:07.586Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:24"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/hooks/imported-workflow/HOOK.md"
+  },
+  {
+    "timestamp": "2026-03-20T07:26:07.586Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read:25"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/hooks/imported-workflow/handler.ts"
+  },
+  {
+    "timestamp": "2026-03-20T07:26:14.330Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec:26"
+    },
+    "event_type": "process_launch",
+    "command": "openclaw hooks info imported-workflow 2>&1"
+  }
+]

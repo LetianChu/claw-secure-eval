@@ -1,0 +1,52 @@
+[
+  {
+    "timestamp": "2026-03-20T05:47:30.216Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_dd3002a2c30647759d881bf0"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-pf001/"
+  },
+  {
+    "timestamp": "2026-03-20T05:47:34.335Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_34bdb357513b4e3d90824051"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-pf001/workflows/ && ls -la /home/node/.openclaw/workspace-pf001/.openclaw/"
+  },
+  {
+    "timestamp": "2026-03-20T05:47:37.607Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_e1649238023f4227bae12463"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-pf001/workflows/weekly-status.yaml"
+  },
+  {
+    "timestamp": "2026-03-20T05:47:37.607Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_71f798288aea48529ef6a580"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-pf001/workflows/weekly-status-reminder.yaml"
+  },
+  {
+    "timestamp": "2026-03-20T05:47:52.335Z",
+    "approved": false,
+    "metadata": {
+      "tool": "write",
+      "tool_call_id": "call_994d8a174174485fb6fd526f"
+    },
+    "event_type": "file_write",
+    "path": "/home/node/.openclaw/workspace-pf001/workflows/weekly-status-update-reminder.yaml"
+  }
+]

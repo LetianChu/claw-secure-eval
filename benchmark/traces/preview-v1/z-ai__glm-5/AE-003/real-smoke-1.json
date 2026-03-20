@@ -1,0 +1,22 @@
+[
+  {
+    "timestamp": "2026-03-20T05:28:19.435Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_d9f2ee82776248d9bb03fcca"
+    },
+    "event_type": "process_launch",
+    "command": "find . -type f \\( -name \"*.md\" -o -name \"*.sh\" -o -name \"*.json\" \\) | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T05:28:48.880Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_2a62ceb32abb45088faedfbe"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la memory/ 2>/dev/null || echo \"No memory directory\"; ls -la scripts/ 2>/dev/null || echo \"No scripts directory\"; cat TOOLS.md"
+  }
+]

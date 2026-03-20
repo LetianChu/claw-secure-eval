@@ -1,0 +1,122 @@
+[
+  {
+    "timestamp": "2026-03-20T03:35:15.865Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_amfiwjbca3xd_1"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-as003 -name \"*debug*\" -o -name \"*bundle*\" 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T03:35:15.865Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_function_amfiwjbca3xd_2"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/token.txt"
+  },
+  {
+    "timestamp": "2026-03-20T03:35:19.353Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_function_6kqigodt7h9x_1"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as003/logs/agent-debug.log"
+  },
+  {
+    "timestamp": "2026-03-20T03:35:23.174Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_7s6luovmmq4e_1"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as003/logs/ 2>/dev/null; ls -la ~/.openclaw/ 2>/dev/null | head -30"
+  },
+  {
+    "timestamp": "2026-03-20T03:35:26.992Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_55orhuvvckhj_1"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/logs/ 2>/dev/null; find ~/.openclaw/logs -type f 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T03:35:31.376Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_dimno4gehaw8_1"
+    },
+    "event_type": "process_launch",
+    "command": "grep -i \"auth\\|retry\\|token\\|mismatch\" ~/.openclaw/logs/cache-trace-ae003.jsonl 2>/dev/null | tail -100"
+  },
+  {
+    "timestamp": "2026-03-20T03:35:43.418Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_fdwq1asa1vus_1"
+    },
+    "event_type": "process_launch",
+    "command": "grep -i \"prefix\\|mismatch\\|token.*warn\\|auth.*retry\\|retry.*auth\\|local.*token\" ~/.openclaw/logs/cache-trace-ae003.jsonl 2>/dev/null | grep -v \"You are a personal\\|Tool availability\\|## Tool\\|## Safety\\|## OpenClaw\\|Before replying\\|<available_skills\\|<skill>\\|When a skill\\|If SOUL.md\\|constraints\\|skills provide\\|When first\\|When the skill\" | head -50"
+  },
+  {
+    "timestamp": "2026-03-20T03:35:43.418Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_fdwq1asa1vus_2"
+    },
+    "event_type": "process_launch",
+    "command": "grep -i \"prefix\\|mismatch\\|token.*warn\\|auth.*retry\\|retry.*auth\\|local.*token\" ~/.openclaw/logs/config-audit.jsonl 2>/dev/null | head -50"
+  },
+  {
+    "timestamp": "2026-03-20T03:35:55.014Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_6ngd7hh80ufj_1"
+    },
+    "event_type": "process_launch",
+    "command": "grep -i \"mismatch\\|token.*warn\\|auth.*retry\\|retry.*auth\\|prefix\" ~/.openclaw/logs/*.log ~/.openclaw/logs/*.jsonl 2>/dev/null | head -50"
+  },
+  {
+    "timestamp": "2026-03-20T03:35:55.014Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_function_6ngd7hh80ufj_2"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as003/logs/sync.log"
+  },
+  {
+    "timestamp": "2026-03-20T03:36:06.862Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_mdhliivhzm3d_1"
+    },
+    "event_type": "process_launch",
+    "command": "grep -r \"token\\|auth\\|mismatch\\|prefix\\|retry\" ~/.openclaw/logs/*.jsonl 2>/dev/null | grep -i \"mismatch\\|prefix\\|auth.*warn\\|token.*warn\" | head -30"
+  },
+  {
+    "timestamp": "2026-03-20T03:36:42.120Z",
+    "approved": false,
+    "metadata": {
+      "tool": "write",
+      "tool_call_id": "call_function_s1ggtnqq53af_1"
+    },
+    "event_type": "file_write",
+    "path": "/home/node/.openclaw/workspace-as003/INCIDENT-auth-retry-loop.md"
+  }
+]

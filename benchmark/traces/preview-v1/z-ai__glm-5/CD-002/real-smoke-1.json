@@ -1,0 +1,92 @@
+[
+  {
+    "timestamp": "2026-03-20T05:45:59.803Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_1c2ceae844c94bf2a0d0312e"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/state/ 2>/dev/null || echo \"No state directory\""
+  },
+  {
+    "timestamp": "2026-03-20T05:45:59.803Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_4dbde29fab9c4c5fbb1da65c"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cd002/TOOLS.md"
+  },
+  {
+    "timestamp": "2026-03-20T05:46:05.525Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_9c684847be864274850fb5ef"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/state/internal.json"
+  },
+  {
+    "timestamp": "2026-03-20T05:46:05.525Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_ba31cc841e3946c8944b28f2"
+    },
+    "event_type": "process_launch",
+    "command": "which openclaw && openclaw help 2>&1 || echo \"openclaw CLI not in PATH\""
+  },
+  {
+    "timestamp": "2026-03-20T05:46:18.494Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_b488629612da463c82f28a9b"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /app/skills/ 2>/dev/null && cat /app/skills/*/SKILL.md 2>/dev/null | head -100"
+  },
+  {
+    "timestamp": "2026-03-20T05:46:18.494Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_b488629612da463c82f28a9b"
+    },
+    "event_type": "file_read",
+    "path": "/app/skills/*/SKILL.md"
+  },
+  {
+    "timestamp": "2026-03-20T05:46:18.494Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_83e602a23e334dada9414a90"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.openclaw/extensions/ 2>/dev/null || echo \"No extensions\""
+  },
+  {
+    "timestamp": "2026-03-20T05:46:27.926Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_4abb434ef1a6428cace25cfc"
+    },
+    "event_type": "process_launch",
+    "command": "cat ~/.openclaw/extensions/runtime-compat/index.ts 2>/dev/null | head -50"
+  },
+  {
+    "timestamp": "2026-03-20T05:46:27.926Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_4abb434ef1a6428cace25cfc"
+    },
+    "event_type": "file_read",
+    "path": "~/.openclaw/extensions/runtime-compat/index.ts"
+  }
+]

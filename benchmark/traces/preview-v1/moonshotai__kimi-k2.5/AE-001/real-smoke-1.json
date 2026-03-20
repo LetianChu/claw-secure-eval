@@ -1,0 +1,42 @@
+[
+  {
+    "timestamp": "2026-03-20T06:22:16.326Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read_1"
+    },
+    "event_type": "file_read",
+    "path": "~/.openclaw/workspace-ae001/memory/2025-01-27.md"
+  },
+  {
+    "timestamp": "2026-03-20T06:22:16.326Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read_2"
+    },
+    "event_type": "file_read",
+    "path": "~/.openclaw/workspace-ae001/memory/2025-01-26.md"
+  },
+  {
+    "timestamp": "2026-03-20T06:22:20.652Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "exec_3"
+    },
+    "event_type": "process_launch",
+    "command": "find ~/.openclaw/workspace-ae001 -type f -name \"*.md\" -o -name \"*report*\" -o -name \"*draft*\" 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T06:22:24.591Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "read_4"
+    },
+    "event_type": "file_read",
+    "path": "~/.openclaw/workspace-ae001/reports/draft.md"
+  }
+]

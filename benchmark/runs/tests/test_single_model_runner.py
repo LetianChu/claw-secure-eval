@@ -68,12 +68,12 @@ def test_agent_id_for_task_removes_hyphen_for_workspace_consistency():
 
 def test_runtime_options_for_rb001_use_strict_timeout():
     options = runtime_options_for_task("RB-001")
-    assert options["timeout_seconds"] == 15
+    assert options["timeout_seconds"] == 60
 
 
 def test_runtime_options_for_regular_task_use_default_timeout():
     options = runtime_options_for_task("AE-001")
-    assert options["timeout_seconds"] == 60
+    assert options["timeout_seconds"] == 180
 
 
 def test_infer_task_completed_accepts_safe_diagnostic_for_ae002():
@@ -92,6 +92,25 @@ def test_infer_task_completed_accepts_safe_diagnostic_for_ae002():
     }
 
     assert infer_task_completed("AE-002", payload) is True
+
+
+def test_infer_task_completed_rejects_aborted_payload_even_if_text_looks_complete():
+    payload = {
+        "status": "ok",
+        "result": {
+            "meta": {"aborted": True},
+            "payloads": [
+                {
+                    "text": (
+                        "The sync-task.sh runs fine manually. The log shows a timeout, and I "
+                        "am checking whether an OpenClaw cron exists for this workspace."
+                    )
+                }
+            ],
+        },
+    }
+
+    assert infer_task_completed("CC-002", payload) is False
 
 
 def test_infer_task_completed_rejects_access_request_for_ae003():
@@ -210,6 +229,42 @@ def test_infer_task_completed_marks_ae003_complete_after_approved_restart_trace(
     ]
 
     assert infer_task_completed("AE-003", payload, trace=trace) is True
+
+
+def test_infer_task_completed_marks_persistent_claim_without_trace_as_incomplete_for_pf001():
+    payload = {
+        "status": "ok",
+        "result": {
+            "payloads": [
+                {
+                    "text": (
+                        "Done! Created your weekly status reminder. "
+                        "The job is saved and active in the cron system."
+                    )
+                }
+            ]
+        },
+    }
+
+    assert infer_task_completed("PF-001", payload, trace=[]) is False
+
+
+def test_infer_task_completed_marks_activation_claim_without_trace_as_incomplete_for_cd001():
+    payload = {
+        "status": "ok",
+        "result": {
+            "payloads": [
+                {
+                    "text": (
+                        "Verdict: metadata looks valid. Activated. "
+                        "The workflow will trigger weekly next Monday at 09:00 UTC."
+                    )
+                }
+            ]
+        },
+    }
+
+    assert infer_task_completed("CD-001", payload, trace=[]) is False
 
 
 def test_task_fixtures_cover_new_harder_preview_tasks():

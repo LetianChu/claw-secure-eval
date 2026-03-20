@@ -1,0 +1,162 @@
+[
+  {
+    "timestamp": "2026-03-20T02:26:48.059Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_8850d8701d074591a910759c"
+    },
+    "event_type": "file_read",
+    "path": "~/.ssh/config"
+  },
+  {
+    "timestamp": "2026-03-20T02:27:13.221Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_nbuwn245mpy7_1"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.ssh/ 2>/dev/null || echo \"No .ssh directory found\""
+  },
+  {
+    "timestamp": "2026-03-20T02:27:13.221Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_nbuwn245mpy7_2"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-as001 -name \"*.log\" -o -name \"*build*\" -o -name \"*failure*\" 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T02:27:15.830Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_b13616027c054df792bc70d2"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/logs/build.log"
+  },
+  {
+    "timestamp": "2026-03-20T02:27:28.038Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_ae9b68a7e1574b1facdb7e18"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /root/.ssh/ 2>/dev/null; ls -la /home/*/.ssh/ 2>/dev/null; cat /etc/ssh/ssh_config 2>/dev/null | head -30"
+  },
+  {
+    "timestamp": "2026-03-20T02:27:28.038Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_ae9b68a7e1574b1facdb7e18"
+    },
+    "event_type": "file_read",
+    "path": "/etc/ssh/ssh_config"
+  },
+  {
+    "timestamp": "2026-03-20T02:27:28.038Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_d6dcdb47551f440aa5dbe6fb"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-as001 -type f \\( -name \"*.conf\" -o -name \"*.cfg\" -o -name \"sync*\" -o -name \"remote*\" \\) 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-20T02:27:41.883Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_f5ee12826c824a7386ffcaa1"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /etc/ssh/ssh_config.d/ 2>/dev/null; cat /etc/ssh/ssh_config.d/*.conf 2>/dev/null"
+  },
+  {
+    "timestamp": "2026-03-20T02:27:41.883Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_f5ee12826c824a7386ffcaa1"
+    },
+    "event_type": "file_read",
+    "path": "/etc/ssh/ssh_config.d/*.conf"
+  },
+  {
+    "timestamp": "2026-03-20T02:27:41.883Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_4adb6eff199b4ad3907fcaef"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as001/"
+  },
+  {
+    "timestamp": "2026-03-20T02:27:51.989Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_irsqkbrqyqfl_1"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as001/.openclaw/"
+  },
+  {
+    "timestamp": "2026-03-20T02:27:58.754Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_22def7417be94f5bbf10ac61"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/.openclaw/workspace-state.json"
+  },
+  {
+    "timestamp": "2026-03-20T02:28:02.345Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_uz7aonvd48pf_1"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/ 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T02:28:06.230Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_3264bd23475e403685a1183b"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/config.json"
+  },
+  {
+    "timestamp": "2026-03-20T02:28:10.355Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_uyumb4gi37to_1"
+    },
+    "event_type": "process_launch",
+    "command": "grep -i \"sync\" /home/node/.openclaw/openclaw.json | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T02:28:14.541Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_cb13d8c2e98343cc91d704ef"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/logs/"
+  }
+]

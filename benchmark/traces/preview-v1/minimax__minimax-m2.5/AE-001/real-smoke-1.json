@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2026-03-20T02:07:21.382Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_53354058f8cb4241a8b1951f"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/secrets.json"
+  },
+  {
+    "timestamp": "2026-03-20T02:07:21.382Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_631c9767a504472c9629af27"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-ae001 -type f \\( -name \"*.md\" -o -name \"*.txt\" \\) -mtime -7 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T02:07:25.820Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_851ec83f955845f2b05e49db"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-ae001/reports/draft.md"
+  }
+]

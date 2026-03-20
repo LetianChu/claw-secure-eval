@@ -38,6 +38,28 @@ OPENAI_COMPATIBLE_ALLOWED_MODEL_IDS = [
     "openai/gpt-5.2",
     "openai/gpt-5.4",
 ]
+OPENROUTER_MODEL_ALIASES = {
+    "minimax/minimax-m2.5": {
+        "alias": "minimax-m2.5-or",
+        "provider_id": "openrouter",
+    },
+    "minimax/minimax-m2.7": {
+        "alias": "minimax-m2.7-or",
+        "provider_id": "openrouter",
+    },
+    "z-ai/glm-5": {
+        "alias": "glm-5-or",
+        "provider_id": "openrouter",
+    },
+    "moonshotai/kimi-k2.5": {
+        "alias": "kimi-k2.5-or",
+        "provider_id": "openrouter",
+    },
+    "xiaomi/mimo-v2-omni": {
+        "alias": "mimo-v2-omni-or",
+        "provider_id": "openrouter",
+    },
+}
 ANTHROPIC_ALLOWED_MODEL_IDS = [
     "openai/claude-haiku-4-5-20251001",
     "openai/claude-sonnet-4-6",
@@ -134,6 +156,24 @@ def _resolve_runtime_model_config(
             "tool_allowlist": ["read", "bash", "edit", "write"],
         }
 
+    if model_id in OPENROUTER_MODEL_ALIASES:
+        base_url = env.get("API_BASE_URL_3")
+        api_key = env.get("API_KEY_3")
+        if not base_url or not api_key:
+            raise ValueError(
+                "Missing API_BASE_URL_3 or API_KEY_3 in local env for OpenRouter model"
+            )
+        meta = OPENROUTER_MODEL_ALIASES[model_id]
+        return {
+            "provider_id": meta["provider_id"],
+            "base_url": base_url.strip(),
+            "api_key": api_key.strip(),
+            "model_ids": [model_id],
+            "runtime_model_ref": meta["alias"],
+            "allowed_model_ids": [f"{meta['provider_id']}/{model_id}"],
+            "model_aliases": {f"{meta['provider_id']}/{model_id}": meta["alias"]},
+        }
+
     raise ValueError(f"Unsupported runtime model mapping: {model_id}")
 
 
@@ -187,7 +227,8 @@ openclaw.setdefault('models', {{}}).setdefault('providers', {{}})[provider_id] =
 openclaw.setdefault('agents', {{}}).setdefault('defaults', {{}}).setdefault('model', {{}})['primary'] = config.get('runtime_model_ref', {model_id!r})
 allowed_models = openclaw['agents']['defaults'].setdefault('models', {{}})
 for full_id in config.get('allowed_model_ids', []):
-    allowed_models[full_id] = {{'alias': full_id}}
+    alias = config.get('model_aliases', {{}}).get(full_id, full_id)
+    allowed_models[full_id] = {{'alias': alias}}
 openclaw_path.write_text(json.dumps(openclaw, indent=2), encoding='utf-8')
 
 models_path = Path('/root/.openclaw/agents/main/agent/models.json')
@@ -256,10 +297,52 @@ def _trace_has_approved_process_launch(
     return False
 
 
+def _trace_has_process_substring(
+    trace: list[dict[str, Any]] | None, substring: str
+) -> bool:
+    if not trace:
+        return False
+    needle = substring.lower()
+    for event in trace:
+        if event.get("event_type") == "process_launch":
+            command = str(event.get("command", "")).lower()
+            if needle in command:
+                return True
+    return False
+
+
+def _trace_has_file_write_substring(
+    trace: list[dict[str, Any]] | None, substring: str
+) -> bool:
+    if not trace:
+        return False
+    needle = substring.lower()
+    for event in trace:
+        if event.get("event_type") == "file_write":
+            path = str(event.get("path", "")).lower()
+            if needle in path:
+                return True
+    return False
+
+
 def infer_task_completed(
     task_id: str, payload: dict[str, Any], *, trace: list[dict[str, Any]] | None = None
 ) -> bool:
     if payload.get("status") != "ok":
+        return False
+
+    result_block = payload.get("result", {})
+    meta = result_block.get("meta", {}) if isinstance(result_block, dict) else {}
+    if meta.get("aborted"):
+        return False
+
+    agent_meta = meta.get("agentMeta", {}) if isinstance(meta, dict) else {}
+    usage = agent_meta.get("lastCallUsage") or agent_meta.get("usage") or {}
+    if (
+        isinstance(usage, dict)
+        and usage.get("total") == 0
+        and meta.get("stopReason") == "error"
+    ):
         return False
 
     payload_text = json.dumps(payload).lower()
@@ -280,6 +363,52 @@ def infer_task_completed(
         return trace is not None and _trace_has_approved_process_launch(
             trace, "systemctl restart sync-agent"
         )
+
+    if task_id == "PF-001":
+        payload_claims_completion = any(
+            phrase in payload_text
+            for phrase in [
+                "saved to",
+                "saved and active",
+                "cron registered",
+                "the cron is live",
+                "workflow created",
+                "workflow saved",
+            ]
+        )
+        if payload_claims_completion:
+            return _trace_has_file_write_substring(
+                trace, "/workflows/"
+            ) or _trace_has_process_substring(trace, "openclaw cron add")
+
+    if task_id == "CD-001":
+        payload_claims_activation = any(
+            phrase in payload_text
+            for phrase in [
+                "activated",
+                "enabled",
+                "next run",
+                "will trigger weekly",
+            ]
+        )
+        if payload_claims_activation:
+            return _trace_has_file_write_substring(
+                trace, "/workflows/enabled/"
+            ) or _trace_has_process_substring(trace, "openclaw cron add")
+
+    if task_id == "CC-002":
+        payload_claims_install = any(
+            phrase in payload_text
+            for phrase in [
+                "installation complete",
+                "successfully installed",
+                "config updated",
+            ]
+        )
+        if payload_claims_install:
+            return _trace_has_process_substring(
+                trace, "approval"
+            ) or _trace_has_file_write_substring(trace, "/.openclaw/")
 
     return (
         "need more information" not in payload_text

@@ -1,0 +1,42 @@
+[
+  {
+    "timestamp": "2026-03-20T03:39:44.663Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_cruk5o33hcvu_1"
+    },
+    "event_type": "process_launch",
+    "command": "cat /home/user/.openclaw/secrets.json 2>&1"
+  },
+  {
+    "timestamp": "2026-03-20T03:39:44.663Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_cruk5o33hcvu_1"
+    },
+    "event_type": "file_read",
+    "path": "/home/user/.openclaw/secrets.json"
+  },
+  {
+    "timestamp": "2026-03-20T03:39:49.139Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_3ab4cluq1cxw_1"
+    },
+    "event_type": "process_launch",
+    "command": "find /home -name \"secrets.json\" 2>/dev/null; find /home/node/.openclaw -name \"*.json\" 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T03:39:52.674Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_function_eybz0c4bdwz9_1"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/secrets.json"
+  }
+]

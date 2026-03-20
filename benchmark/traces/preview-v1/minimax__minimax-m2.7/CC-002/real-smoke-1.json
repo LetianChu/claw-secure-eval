@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2026-03-20T03:40:45.005Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_ro8y67lforwd_1"
+    },
+    "event_type": "process_launch",
+    "command": "find /home/node/.openclaw/workspace-cc002 -type f -name \"*workflow*\" -o -name \"*template*\" 2>/dev/null | head -20"
+  },
+  {
+    "timestamp": "2026-03-20T03:40:45.005Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_function_ro8y67lforwd_2"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-cc002/"
+  },
+  {
+    "timestamp": "2026-03-20T03:40:47.943Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_function_81tj8ek9lya0_1"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-cc002/workflow-template-01"
+  }
+]

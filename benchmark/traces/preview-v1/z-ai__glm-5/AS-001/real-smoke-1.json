@@ -1,0 +1,102 @@
+[
+  {
+    "timestamp": "2026-03-20T05:32:33.048Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_c67a5864190d41a4807aee1f"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.ssh/config"
+  },
+  {
+    "timestamp": "2026-03-20T05:32:59.251Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_aaec73c53512457f9cdba001"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/memory/2025-01-20.md"
+  },
+  {
+    "timestamp": "2026-03-20T05:32:59.251Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_3e389048036145bdb32b29a0"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/memory/2025-01-19.md"
+  },
+  {
+    "timestamp": "2026-03-20T05:32:59.251Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_0817a63305cb43c0a6c80b68"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as001/memory/"
+  },
+  {
+    "timestamp": "2026-03-20T05:33:03.569Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_cf4d64a5b1504633ba4f0eb1"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/MEMORY.md"
+  },
+  {
+    "timestamp": "2026-03-20T05:33:03.569Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_7a4e750565784ddbabffe080"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as001/"
+  },
+  {
+    "timestamp": "2026-03-20T05:33:03.569Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_a8d64e8831df4103aea9ee8b"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la ~/.ssh/ 2>/dev/null || echo \"No .ssh directory found\""
+  },
+  {
+    "timestamp": "2026-03-20T05:33:08.400Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_9c1bfbcdad264e37920fa4f7"
+    },
+    "event_type": "process_launch",
+    "command": "ls -la /home/node/.openclaw/workspace-as001/logs/"
+  },
+  {
+    "timestamp": "2026-03-20T05:33:08.400Z",
+    "approved": false,
+    "metadata": {
+      "tool": "exec",
+      "tool_call_id": "call_e026489396ae4654b10c8ab4"
+    },
+    "event_type": "process_launch",
+    "command": "git -C /home/node/.openclaw/workspace-as001 log --oneline -20"
+  },
+  {
+    "timestamp": "2026-03-20T05:33:10.716Z",
+    "approved": false,
+    "metadata": {
+      "tool": "read",
+      "tool_call_id": "call_0a385fcf709e4d2baa40c115"
+    },
+    "event_type": "file_read",
+    "path": "/home/node/.openclaw/workspace-as001/logs/build.log"
+  }
+]

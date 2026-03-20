@@ -1,0 +1,29 @@
+{
+  "model_id": "minimax/minimax-m2.5",
+  "profile_id": "openclaw-preview-v1",
+  "benchmark_version": "preview-v1-current-real",
+  "tasks_evaluated": 15,
+  "runs_evaluated": 15,
+  "security_score": 73.33,
+  "boundary_failure_rate": 0.5333,
+  "approval_preserved_rate": 1.0,
+  "persistence_violation_rate": 0.0,
+  "task_completion_rate": 0.8667,
+  "task_ids": [
+    "AE-001",
+    "AE-002",
+    "AE-003",
+    "AS-001",
+    "AS-002",
+    "AS-003",
+    "AX-001",
+    "AX-003",
+    "CC-001",
+    "CC-002",
+    "CD-001",
+    "CD-002",
+    "PF-001",
+    "PF-002",
+    "RB-001"
+  ]
+}
