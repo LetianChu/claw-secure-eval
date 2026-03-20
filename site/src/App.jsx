@@ -221,6 +221,16 @@ export default function App() {
             <p className="eyebrow">{copy.notesEyebrow}</p>
             <h3>{copy.notesTitle}</h3>
             <p>{copy.notesDescription}</p>
+            <p className="notes-attribution">
+              <a
+                className="notes-attribution-link"
+                href="https://leonchu.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                leonchu.com
+              </a>
+            </p>
           </section>
         </section>
       </main>

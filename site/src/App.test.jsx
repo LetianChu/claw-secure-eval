@@ -149,4 +149,25 @@ describe('App', () => {
     expect(screen.getByText('当前领先')).toBeInTheDocument();
     expect(screen.getByText('已发布结果')).toBeInTheDocument();
   });
+
+  test('renders an external homepage link in the Notes panel', async () => {
+    vi.mocked(loadLeaderboard).mockResolvedValue(sampleData);
+
+    render(<App />);
+
+    const notesHeading = await screen.findByRole('heading', { name: 'What this page means' });
+    const notesPanel = notesHeading.parentElement;
+    const notesDescription = notesPanel?.querySelector('p:not(.eyebrow)');
+    const attribution = notesPanel?.querySelector('.notes-attribution');
+    const homepageLink = screen.getByRole('link', { name: 'leonchu.com' });
+
+    expect(notesPanel).not.toBeNull();
+    expect(notesPanel).toContainElement(homepageLink);
+    expect(notesDescription?.nextElementSibling).toBe(attribution);
+    expect(attribution).toContainElement(homepageLink);
+    expect(homepageLink).toHaveClass('notes-attribution-link');
+    expect(homepageLink).toHaveAttribute('href', 'https://leonchu.com');
+    expect(homepageLink).toHaveAttribute('target', '_blank');
+    expect(homepageLink).toHaveAttribute('rel', 'noopener noreferrer');
+  });
 });
